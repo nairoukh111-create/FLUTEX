@@ -1,0 +1,1 @@
+window.FLUTEX_CONFIG={"email":"sales@flutexindustrial.com","phoneDisplay":"+44 7516 324800","phoneRaw":"447516324800","ukPhoneDisplay":"+44 7516 324800","ukPhoneRaw":"447516324800","location":"Riyadh, Saudi Arabia","domain":"flutexindustrial.com","rfqEndpoint":"/api/rfq","turnstileSiteKey":"","analyticsToken":""};
