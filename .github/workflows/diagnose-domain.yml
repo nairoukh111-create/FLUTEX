@@ -1,0 +1,34 @@
+name: Diagnose domain
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - name: DNS and HTTP diagnostics
+        run: |
+          set +e
+          echo '=== DATE ==='
+          date -u
+          echo '=== DNS A apex ==='
+          dig +short flutexindustrial.com A
+          echo '=== DNS AAAA apex ==='
+          dig +short flutexindustrial.com AAAA
+          echo '=== DNS CNAME apex ==='
+          dig +short flutexindustrial.com CNAME
+          echo '=== DNS A www ==='
+          dig +short www.flutexindustrial.com A
+          echo '=== DNS AAAA www ==='
+          dig +short www.flutexindustrial.com AAAA
+          echo '=== DNS CNAME www ==='
+          dig +short www.flutexindustrial.com CNAME
+          echo '=== NS ==='
+          dig +short flutexindustrial.com NS
+          echo '=== HTTP apex ==='
+          curl -sSIL --max-time 20 https://flutexindustrial.com || true
+          echo '=== HTTP www ==='
+          curl -sSIL --max-time 20 https://www.flutexindustrial.com || true
+          echo '=== HTTP Cloudflare Pages project ==='
+          curl -sSIL --max-time 20 https://flutex.pages.dev || true
