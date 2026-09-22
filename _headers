@@ -25,3 +25,6 @@
 
 /assets/js/*.v16.js
   Cache-Control: public, max-age=31536000, immutable
+
+/assets/css/*.v17.css
+  Cache-Control: public, max-age=31536000, immutable
