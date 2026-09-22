@@ -8,10 +8,10 @@
 /*.html
   Cache-Control: no-cache
 
-/assets/css/*.v14.css
+/assets/css/*.v15.css
   Cache-Control: public, max-age=31536000, immutable
 
-/assets/js/*.v14.js
+/assets/js/*.v15.js
   Cache-Control: public, max-age=31536000, immutable
 
 /assets/images/*

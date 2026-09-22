@@ -1,0 +1,1 @@
+(()=>{const t=window.FLUTEX_CONFIG?.analyticsToken;if(!t)return;const s=document.createElement('script');s.defer=true;s.src='https://static.cloudflareinsights.com/beacon.min.js';s.dataset.cfBeacon=JSON.stringify({token:t});document.head.appendChild(s)})();
