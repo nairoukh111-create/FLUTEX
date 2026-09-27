@@ -32,6 +32,9 @@
 /assets/css/*.v18.css
   Cache-Control: public, max-age=31536000, immutable
 
+/assets/css/*.v20.css
+  Cache-Control: public, max-age=31536000, immutable
+
 /assets/css/*.v19.css
   Cache-Control: public, max-age=31536000, immutable
 
