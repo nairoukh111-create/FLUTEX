@@ -186,7 +186,7 @@ def system_page(it, en_slug):
         f'<div><dt>التطبيقات</dt><dd>{E(" · ".join(apps))}</dd></div>'
         f'<div><dt>أرقام المرجع المغطاة</dt><dd>{n}</dd></div></dl>'
         f'<div class="seo-actions"><a class="btn btn-primary" href="/ar/contact?product={rfq}">اطلب عرض سعر لـ {E(sysname)} ←</a>'
-        f'<a class="btn btn-outline" href="https://wa.me/966531402801?text={urllib.parse.quote("طلب عرض سعر: " + brand + " " + sysname)}" rel="noopener" target="_blank">واتساب</a></div>'
+        f'<a class="btn btn-outline" href="https://wa.me/966531699987?text={urllib.parse.quote("طلب عرض سعر: " + brand + " " + sysname)}" rel="noopener" target="_blank">واتساب</a></div>'
         '</div><div class="seo-media">'
         f'<img alt="مستهلكات بلازما متوافقة لنظام {E(brand)} {E(sysname)}" decoding="async" height="652" loading="lazy" src="/assets/catalog/plasma-parts.webp" width="869"/>'
         "</div></div></section>"
