@@ -26,7 +26,8 @@ NEW = (
     'document.addEventListener("visibilitychange",function(){if(!document.hidden)kick();});'
     '["pointerdown","touchstart","keydown","scroll"].forEach(function(e){'
     'window.addEventListener(e,kick,{passive:true});});'
-    'var tries=0,iv=setInterval(function(){kick();if(++tries>10||!v[i].paused)clearInterval(iv);},700);'
+    'setInterval(function(){if(document.hidden)return;var c=v[i];'
+    'if(c.paused&&!c.ended&&c.readyState>2)play(c);},2000);'
     '})();</script>'
 )
 
