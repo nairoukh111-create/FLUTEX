@@ -690,3 +690,8 @@ html[lang="ar"] .tool-finder-intro-copy h3{letter-spacing:0;line-height:1.18}
   .wa-float .wa-label{display:none}
 }
 @media print{.wa-float{display:none}}
+
+/* --- registered trade mark line --- */
+.corporate-tm{display:block;margin-top:6px;opacity:.72;font-size:12px;line-height:1.5}
+.corporate-tm sup{font-size:.7em;vertical-align:super}
+.about-tm{margin:26px auto 0;max-width:900px;padding:16px 20px;border:1px solid var(--line);border-radius:14px;font-size:14px;line-height:1.7}
