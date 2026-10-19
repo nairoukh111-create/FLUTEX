@@ -234,17 +234,17 @@ def system_page(it, en_slug):
 def brand_page(brand, items, en_slug):
     ar_url = f"{BASE}/ar/plasma/{en_slug}"
     en_url = f"{BASE}/plasma/{en_slug}"
-    total = sum(len(i["references"]) for i in items)
+    total = len({r for i in items for r in i["references"]})
     comps = sorted({ar_comp(c) for i in items for c in i["components"]})
     title = f"مستهلكات بلازما {brand} متوافقة في السعودية | FLUTEX"
     desc = (f"قطع غيار بلازما متوافقة لأنظمة {brand}: {arjoin(comps[:5])}. "
-            f"{len(items)} عائلة نظام و{total} رقم مرجع أصلي. عروض أسعار للسعودية والخليج.")
+            f"{len(items)} عائلة نظام و{total} رقم مرجع أصلي فريد. عروض أسعار للسعودية والخليج.")
     qa = [
         (f"ما أنظمة {brand} التي تغطيها FLUTEX؟",
          f"تغطي FLUTEX {len(items)} عائلة أنظمة من {brand}: "
          f"{arjoin([' / '.join(i['systems']) for i in items])}. لكل نظام صفحة خاصة تسرد أرقام المرجع المغطاة."),
         (f"كم عدد أرقام مرجع {brand} المغطاة؟",
-         f"حوالي {total} رقم مرجع أصلي من {brand} عبر هذه الأنظمة، وتشمل {arjoin(comps)}. "
+         f"حوالي {total} رقم مرجع أصلي فريد من {brand} عبر هذه الأنظمة، وتشمل {arjoin(comps)}. "
          f"أسماء العلامات وأرقام القطع تُستخدم لتحديد التوافق فقط."),
         (f"هل توفّرون قطع {brand} المتوافقة في السعودية؟", SAUDI_A),
     ]
@@ -261,7 +261,7 @@ def brand_page(brand, items, en_slug):
         f'<strong>{E(brand)}</strong></div>'
         '<div class="eyebrow">تغطية التوافق</div>'
         f'<h1>مستهلكات {E(brand)} المتوافقة</h1>'
-        f'<p>{len(items)} عائلة نظام و{total} رقم مرجع أصلي مغطى.</p></div></section>'
+        f'<p>{len(items)} عائلة نظام و{total} رقم مرجع أصلي فريد مغطى.</p></div></section>'
         '<section class="seo-section"><div class="container">'
         f'<h2>أنظمة {E(brand)} المدعومة</h2>'
         f'<p class="seo-lead">اختر النظام لعرض أرقام المرجع الأصلية المغطاة والمكوّنات المتوفرة.</p>'

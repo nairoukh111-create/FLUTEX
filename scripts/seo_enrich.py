@@ -86,14 +86,15 @@ def faq_for_system(it):
 def faq_for_brand(brand, items):
     sysnames = [" / ".join(i["systems"]) for i in items]
     total = sum(len(i["references"]) for i in items)
+    unique = len({r for i in items for r in i["references"]})
     comps = sorted({c for i in items for c in i["components"]})
     return [
         (f"Which {brand} plasma systems does FLUTEX cover?",
          f"FLUTEX covers {len(items)} {brand} system families: {joinlist(sysnames)}. "
          f"Each system has its own page listing the original reference numbers covered."),
         (f"How many original {brand} reference numbers are covered?",
-         f"Approximately {total} original {brand} reference numbers are covered across these "
-         f"systems, spanning {joinlist([c.lower() for c in comps])}. Brand and part-number "
+         f"Across {len(items)} system families, there are {total} system-level reference listings "
+         f"representing {unique} distinct original {brand} reference numbers, spanning {joinlist([c.lower() for c in comps])}. Brand and part-number "
          f"references identify compatibility only and are not sold as genuine OEM parts "
          f"unless stated in the quotation."),
         (f"Does FLUTEX supply {brand} compatible consumables in Saudi Arabia?",
