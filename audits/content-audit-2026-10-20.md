@@ -19,8 +19,6 @@ Scope: all 162 sitemap pages. This is a repository content audit, not an indexin
 
 ## Identical reference lists across different system entries
 
-- Hypertherm (67 references): MAX200 / HT2000 / HySpeed HT2000; MAXPRO200
-- Hypertherm (72 references): XPR170 / XPR300; HT4001 / HT4400
 - Thermal Dynamics (56 references): SL60 / SL100; SL40; PCH/M-62 / PCH/M-102; XT301
 - ESAB (45 references): PT-36; PT-19XLS; PT-600
 - Kjellberg (47 references): FineFocus 800 / FineFocus 900 / FineFocus 1600; PA-50 / PA-S75 / PB-S75 / PA-S76 / PB-S77 / PB-S80
@@ -51,11 +49,11 @@ Scope: all 162 sitemap pages. This is a repository content audit, not an indexin
 | /plasma/hypertherm-powermax-105-consumables | 613 | 2 | Pass | Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed |
 | /plasma/hypertherm-powermax-125-consumables | 592 | 2 | Pass | Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed |
 | /plasma/hypertherm-max200-ht2000-consumables | 654 | 2 | Pass | Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed |
-| /plasma/hypertherm-maxpro200-consumables | 627 | 2 | Pass | Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed |
+| /plasma/hypertherm-maxpro200-consumables | 595 | 2 | Pass | Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed |
 | /plasma/hypertherm-hsd130-consumables | 620 | 2 | Pass | Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed |
 | /plasma/hypertherm-hpr130-hpr260-consumables | 775 | 2 | Pass | Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed |
-| /plasma/hypertherm-xpr170-xpr300-consumables | 650 | 2 | Pass | Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed |
-| /plasma/hypertherm-ht4001-ht4400-consumables | 622 | 2 | Pass | Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed |
+| /plasma/hypertherm-xpr170-xpr300-consumables | 626 | 2 | Pass | Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed |
+| /plasma/hypertherm-ht4001-ht4400-consumables | 574 | 2 | Pass | Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed |
 | /plasma/thermal-dynamics-sl60-sl100-consumables | 679 | 2 | Pass | Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed |
 | /plasma/thermal-dynamics-sl40-consumables | 637 | 2 | Pass | Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed |
 | /plasma/thermal-dynamics-pch-m-62-pch-m-102-consumables | 705 | 2 | Pass | Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed |
@@ -163,15 +161,15 @@ Scope: all 162 sitemap pages. This is a repository content audit, not an indexin
 | /ar/plasma/hypertherm-compatible-consumables | 221 | 3 | Pass | Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed |
 | /ar/plasma/hypertherm-hpr130-hpr260-consumables | 679 | 3 | Pass | Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed |
 | /ar/plasma/hypertherm-hsd130-consumables | 528 | 3 | Pass | Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed |
-| /ar/plasma/hypertherm-ht4001-ht4400-consumables | 525 | 3 | Pass | Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed |
+| /ar/plasma/hypertherm-ht4001-ht4400-consumables | 477 | 3 | Pass | Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed |
 | /ar/plasma/hypertherm-max200-ht2000-consumables | 557 | 3 | Pass | Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed |
-| /ar/plasma/hypertherm-maxpro200-consumables | 537 | 3 | Pass | Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed |
+| /ar/plasma/hypertherm-maxpro200-consumables | 505 | 3 | Pass | Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed |
 | /ar/plasma/hypertherm-powermax-105-consumables | 528 | 3 | Pass | Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed |
 | /ar/plasma/hypertherm-powermax-125-consumables | 511 | 3 | Pass | Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed |
 | /ar/plasma/hypertherm-powermax-1250-powermax-1650-consumables | 542 | 3 | Pass | Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed |
 | /ar/plasma/hypertherm-powermax-30-powermax-30xp-consumables | 555 | 3 | Pass | Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed |
 | /ar/plasma/hypertherm-powermax-45-consumables | 502 | 3 | Pass | Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed |
-| /ar/plasma/hypertherm-xpr170-xpr300-consumables | 564 | 3 | Pass | Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed |
+| /ar/plasma/hypertherm-xpr170-xpr300-consumables | 540 | 3 | Pass | Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed |
 | /ar/plasma/ipt-compatible-consumables | 159 | 3 | Pass | Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed |
 | /ar/plasma/ipt-ipt60-pt60h-consumables | 467 | 3 | Pass | Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed |
 | /ar/plasma/ipt-ipt80-pt80-consumables | 458 | 3 | Pass | Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed |

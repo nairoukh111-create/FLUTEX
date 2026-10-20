@@ -266,22 +266,22 @@
       "depth": 2,
       "nearest": {
         "path": "/plasma/hypertherm-maxpro200-consumables",
-        "five_word_jaccard": 0.596
+        "five_word_jaccard": 0.495
       }
     },
     {
       "url": "https://flutexindustrial.com/plasma/hypertherm-maxpro200-consumables",
       "path": "/plasma/hypertherm-maxpro200-consumables",
       "title": "MAXPRO200 Compatible Plasma Consumables – Hypertherm | FLUTEX",
-      "main_words": 627,
+      "main_words": 595,
       "errors": [],
       "review": [
         "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
       ],
       "depth": 2,
       "nearest": {
-        "path": "/plasma/hypertherm-max200-ht2000-consumables",
-        "five_word_jaccard": 0.596
+        "path": "/plasma/hypertherm-hsd130-consumables",
+        "five_word_jaccard": 0.499
       }
     },
     {
@@ -296,7 +296,7 @@
       "depth": 2,
       "nearest": {
         "path": "/plasma/hypertherm-maxpro200-consumables",
-        "five_word_jaccard": 0.479
+        "five_word_jaccard": 0.499
       }
     },
     {
@@ -318,30 +318,30 @@
       "url": "https://flutexindustrial.com/plasma/hypertherm-xpr170-xpr300-consumables",
       "path": "/plasma/hypertherm-xpr170-xpr300-consumables",
       "title": "XPR170 Compatible Plasma Consumables – Hypertherm | FLUTEX",
-      "main_words": 650,
+      "main_words": 626,
       "errors": [],
       "review": [
         "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
       ],
       "depth": 2,
       "nearest": {
-        "path": "/plasma/hypertherm-ht4001-ht4400-consumables",
-        "five_word_jaccard": 0.582
+        "path": "/plasma/hypertherm-maxpro200-consumables",
+        "five_word_jaccard": 0.46
       }
     },
     {
       "url": "https://flutexindustrial.com/plasma/hypertherm-ht4001-ht4400-consumables",
       "path": "/plasma/hypertherm-ht4001-ht4400-consumables",
       "title": "HT4001 Compatible Plasma Consumables – Hypertherm | FLUTEX",
-      "main_words": 622,
+      "main_words": 574,
       "errors": [],
       "review": [
         "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
       ],
       "depth": 2,
       "nearest": {
-        "path": "/plasma/hypertherm-xpr170-xpr300-consumables",
-        "five_word_jaccard": 0.582
+        "path": "/plasma/hypertherm-max200-ht2000-consumables",
+        "five_word_jaccard": 0.471
       }
     },
     {
@@ -1937,22 +1937,22 @@
       "depth": 3,
       "nearest": {
         "path": "/ar/plasma/hypertherm-maxpro200-consumables",
-        "five_word_jaccard": 0.447
+        "five_word_jaccard": 0.468
       }
     },
     {
       "url": "https://flutexindustrial.com/ar/plasma/hypertherm-ht4001-ht4400-consumables",
       "path": "/ar/plasma/hypertherm-ht4001-ht4400-consumables",
       "title": "مستهلكات بلازما HT4001 / HT4400 متوافقة – Hypertherm | FLUTEX",
-      "main_words": 525,
+      "main_words": 477,
       "errors": [],
       "review": [
         "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
       ],
       "depth": 3,
       "nearest": {
-        "path": "/ar/plasma/hypertherm-xpr170-xpr300-consumables",
-        "five_word_jaccard": 0.568
+        "path": "/ar/plasma/hypertherm-max200-ht2000-consumables",
+        "five_word_jaccard": 0.431
       }
     },
     {
@@ -1967,14 +1967,14 @@
       "depth": 3,
       "nearest": {
         "path": "/ar/plasma/hypertherm-maxpro200-consumables",
-        "five_word_jaccard": 0.597
+        "five_word_jaccard": 0.475
       }
     },
     {
       "url": "https://flutexindustrial.com/ar/plasma/hypertherm-maxpro200-consumables",
       "path": "/ar/plasma/hypertherm-maxpro200-consumables",
       "title": "مستهلكات بلازما MAXPRO200 متوافقة – Hypertherm | FLUTEX",
-      "main_words": 537,
+      "main_words": 505,
       "errors": [],
       "review": [
         "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
@@ -1982,7 +1982,7 @@
       "depth": 3,
       "nearest": {
         "path": "/ar/plasma/hypertherm-max200-ht2000-consumables",
-        "five_word_jaccard": 0.597
+        "five_word_jaccard": 0.475
       }
     },
     {
@@ -2064,7 +2064,7 @@
       "url": "https://flutexindustrial.com/ar/plasma/hypertherm-xpr170-xpr300-consumables",
       "path": "/ar/plasma/hypertherm-xpr170-xpr300-consumables",
       "title": "مستهلكات بلازما XPR170 / XPR300 متوافقة – Hypertherm | FLUTEX",
-      "main_words": 564,
+      "main_words": 540,
       "errors": [],
       "review": [
         "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
@@ -2072,7 +2072,7 @@
       "depth": 3,
       "nearest": {
         "path": "/ar/plasma/hypertherm-ht4001-ht4400-consumables",
-        "five_word_jaccard": 0.568
+        "five_word_jaccard": 0.417
       }
     },
     {
@@ -2422,22 +2422,6 @@
     }
   ],
   "identical_reference_lists": [
-    {
-      "brand": "Hypertherm",
-      "reference_count": 67,
-      "systems": [
-        "MAX200 / HT2000 / HySpeed HT2000",
-        "MAXPRO200"
-      ]
-    },
-    {
-      "brand": "Hypertherm",
-      "reference_count": 72,
-      "systems": [
-        "XPR170 / XPR300",
-        "HT4001 / HT4400"
-      ]
-    },
     {
       "brand": "Thermal Dynamics",
       "reference_count": 56,
