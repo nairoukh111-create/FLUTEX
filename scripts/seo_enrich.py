@@ -23,7 +23,7 @@ E = lambda s: html.escape(str(s), quote=True)
 
 
 def load_systems():
-    s = open("assets/js/plasma-finder.v15.js", encoding="utf-8").read()
+    s = open("assets/js/plasma-finder.v16.js", encoding="utf-8").read()
     i = s.index("const systems = ") + len("const systems = ")
     depth = 0
     for k in range(i, len(s)):
