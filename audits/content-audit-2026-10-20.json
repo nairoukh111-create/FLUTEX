@@ -1,0 +1,2504 @@
+{
+  "date": "2026-10-20",
+  "scope": 162,
+  "pages": [
+    {
+      "url": "https://flutexindustrial.com/",
+      "path": "/",
+      "title": "Industrial Cutting Tools & Plasma Consumables Supplier | FLUTEX",
+      "main_words": 523,
+      "errors": [],
+      "review": [
+        "Automated structure/navigation checks passed; page purpose reviewed by category; no blanket rewrite"
+      ],
+      "depth": 0,
+      "nearest": {
+        "path": "/products",
+        "five_word_jaccard": 0.041
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/products",
+      "path": "/products",
+      "title": "Industrial Tooling & Consumables Catalogue | FLUTEX",
+      "main_words": 290,
+      "errors": [],
+      "review": [
+        "Automated structure/navigation checks passed; page purpose reviewed by category; no blanket rewrite"
+      ],
+      "depth": 1,
+      "nearest": {
+        "path": "/",
+        "five_word_jaccard": 0.041
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/plasma-consumables",
+      "path": "/plasma-consumables",
+      "title": "Plasma Consumables & Spare Parts – Hypertherm, Kjellberg | FLUTEX",
+      "main_words": 1900,
+      "errors": [],
+      "review": [
+        "Automated structure/navigation checks passed; page purpose reviewed by category; no blanket rewrite"
+      ],
+      "depth": 1,
+      "nearest": {
+        "path": "/plasma/kjellberg-compatible-consumables",
+        "five_word_jaccard": 0.103
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/cutting-tools",
+      "path": "/cutting-tools",
+      "title": "Carbide End Mills, HSS Drills & Modular Drilling | FLUTEX",
+      "main_words": 925,
+      "errors": [],
+      "review": [
+        "Automated structure/navigation checks passed; page purpose reviewed by category; no blanket rewrite"
+      ],
+      "depth": 1,
+      "nearest": {
+        "path": "/tools/din-338-hss-straight-shank-twist-drills",
+        "five_word_jaccard": 0.062
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/cnc-tools",
+      "path": "/cnc-tools",
+      "title": "ER Collets, Collet Chucks, Saw Blades & Router Bits | FLUTEX",
+      "main_words": 230,
+      "errors": [],
+      "review": [
+        "Automated structure/navigation checks passed; page purpose reviewed by category; no blanket rewrite"
+      ],
+      "depth": 1,
+      "nearest": {
+        "path": "/welding-consumables",
+        "five_word_jaccard": 0.033
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/cutting-fluid",
+      "path": "/cutting-fluid",
+      "title": "MQL Cutting Fluid for Aluminum & CNC Machining | FLUTEX",
+      "main_words": 426,
+      "errors": [],
+      "review": [
+        "Exact product TDS/SDS needed to substantiate published numerical and safety data"
+      ],
+      "depth": 1,
+      "nearest": {
+        "path": "/welding-consumables",
+        "five_word_jaccard": 0.022
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/welding-consumables",
+      "path": "/welding-consumables",
+      "title": "MIG Welding Consumables – Contact Tips, Nozzles, Liners | FLUTEX",
+      "main_words": 184,
+      "errors": [],
+      "review": [
+        "Automated structure/navigation checks passed; page purpose reviewed by category; no blanket rewrite"
+      ],
+      "depth": 1,
+      "nearest": {
+        "path": "/special-tools",
+        "five_word_jaccard": 0.037
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/special-tools",
+      "path": "/special-tools",
+      "title": "Impact Bits & Special Industrial Tools | FLUTEX",
+      "main_words": 193,
+      "errors": [],
+      "review": [
+        "Automated structure/navigation checks passed; page purpose reviewed by category; no blanket rewrite"
+      ],
+      "depth": 1,
+      "nearest": {
+        "path": "/welding-consumables",
+        "five_word_jaccard": 0.037
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/about",
+      "path": "/about",
+      "title": "About FLUTEX Industrial",
+      "main_words": 421,
+      "errors": [],
+      "review": [
+        "Company/policy page structure checked; legal claims not re-verified"
+      ],
+      "depth": 1,
+      "nearest": {
+        "path": "/terms",
+        "five_word_jaccard": 0.032
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/contact",
+      "path": "/contact",
+      "title": "Contact & RFQ | FLUTEX Industrial",
+      "main_words": 165,
+      "errors": [],
+      "review": [
+        "Automated structure/navigation checks passed; page purpose reviewed by category; no blanket rewrite"
+      ],
+      "depth": 1,
+      "nearest": {
+        "path": "/aluminum-saw-blades",
+        "five_word_jaccard": 0.005
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/privacy",
+      "path": "/privacy",
+      "title": "Privacy Notice | FLUTEX Industrial",
+      "main_words": 176,
+      "errors": [],
+      "review": [
+        "Company/policy page structure checked; legal claims not re-verified"
+      ],
+      "depth": 1,
+      "nearest": null
+    },
+    {
+      "url": "https://flutexindustrial.com/terms",
+      "path": "/terms",
+      "title": "Website Terms | FLUTEX Industrial",
+      "main_words": 249,
+      "errors": [],
+      "review": [
+        "Company/policy page structure checked; legal claims not re-verified"
+      ],
+      "depth": 1,
+      "nearest": {
+        "path": "/about",
+        "five_word_jaccard": 0.032
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/plasma/hypertherm-powermax-1250-powermax-1650-consumables",
+      "path": "/plasma/hypertherm-powermax-1250-powermax-1650-consumables",
+      "title": "Powermax 1250 Compatible Plasma Consumables – Hypertherm | FLUTEX",
+      "main_words": 633,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/plasma/hypertherm-powermax-45-consumables",
+        "five_word_jaccard": 0.558
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/plasma/hypertherm-powermax-30-powermax-30xp-consumables",
+      "path": "/plasma/hypertherm-powermax-30-powermax-30xp-consumables",
+      "title": "Powermax 30 Compatible Plasma Consumables – Hypertherm | FLUTEX",
+      "main_words": 650,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/plasma/hypertherm-powermax-1250-powermax-1650-consumables",
+        "five_word_jaccard": 0.542
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/plasma/hypertherm-powermax-45-consumables",
+      "path": "/plasma/hypertherm-powermax-45-consumables",
+      "title": "Powermax 45 Compatible Plasma Consumables – Hypertherm | FLUTEX",
+      "main_words": 589,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/plasma/hypertherm-powermax-105-consumables",
+        "five_word_jaccard": 0.608
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/plasma/hypertherm-powermax-105-consumables",
+      "path": "/plasma/hypertherm-powermax-105-consumables",
+      "title": "Powermax 105 Compatible Plasma Consumables – Hypertherm | FLUTEX",
+      "main_words": 613,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/plasma/hypertherm-powermax-45-consumables",
+        "five_word_jaccard": 0.608
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/plasma/hypertherm-powermax-125-consumables",
+      "path": "/plasma/hypertherm-powermax-125-consumables",
+      "title": "Powermax 125 Compatible Plasma Consumables – Hypertherm | FLUTEX",
+      "main_words": 592,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/plasma/hypertherm-powermax-45-consumables",
+        "five_word_jaccard": 0.559
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/plasma/hypertherm-max200-ht2000-consumables",
+      "path": "/plasma/hypertherm-max200-ht2000-consumables",
+      "title": "MAX200 Compatible Plasma Consumables – Hypertherm | FLUTEX",
+      "main_words": 654,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/plasma/hypertherm-maxpro200-consumables",
+        "five_word_jaccard": 0.596
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/plasma/hypertherm-maxpro200-consumables",
+      "path": "/plasma/hypertherm-maxpro200-consumables",
+      "title": "MAXPRO200 Compatible Plasma Consumables – Hypertherm | FLUTEX",
+      "main_words": 627,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/plasma/hypertherm-max200-ht2000-consumables",
+        "five_word_jaccard": 0.596
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/plasma/hypertherm-hsd130-consumables",
+      "path": "/plasma/hypertherm-hsd130-consumables",
+      "title": "HSD130 Compatible Plasma Consumables – Hypertherm | FLUTEX",
+      "main_words": 620,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/plasma/hypertherm-maxpro200-consumables",
+        "five_word_jaccard": 0.479
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/plasma/hypertherm-hpr130-hpr260-consumables",
+      "path": "/plasma/hypertherm-hpr130-hpr260-consumables",
+      "title": "HPR130 Compatible Plasma Consumables – Hypertherm | FLUTEX",
+      "main_words": 775,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/plasma/hypertherm-hsd130-consumables",
+        "five_word_jaccard": 0.45
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/plasma/hypertherm-xpr170-xpr300-consumables",
+      "path": "/plasma/hypertherm-xpr170-xpr300-consumables",
+      "title": "XPR170 Compatible Plasma Consumables – Hypertherm | FLUTEX",
+      "main_words": 650,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/plasma/hypertherm-ht4001-ht4400-consumables",
+        "five_word_jaccard": 0.582
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/plasma/hypertherm-ht4001-ht4400-consumables",
+      "path": "/plasma/hypertherm-ht4001-ht4400-consumables",
+      "title": "HT4001 Compatible Plasma Consumables – Hypertherm | FLUTEX",
+      "main_words": 622,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/plasma/hypertherm-xpr170-xpr300-consumables",
+        "five_word_jaccard": 0.582
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/plasma/thermal-dynamics-sl60-sl100-consumables",
+      "path": "/plasma/thermal-dynamics-sl60-sl100-consumables",
+      "title": "SL60 Compatible Plasma Consumables – Thermal Dynamics | FLUTEX",
+      "main_words": 679,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/plasma/thermal-dynamics-sl40-consumables",
+        "five_word_jaccard": 0.65
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/plasma/thermal-dynamics-sl40-consumables",
+      "path": "/plasma/thermal-dynamics-sl40-consumables",
+      "title": "SL40 Compatible Plasma Consumables – Thermal Dynamics | FLUTEX",
+      "main_words": 637,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/plasma/thermal-dynamics-sl60-sl100-consumables",
+        "five_word_jaccard": 0.65
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/plasma/thermal-dynamics-pch-m-62-pch-m-102-consumables",
+      "path": "/plasma/thermal-dynamics-pch-m-62-pch-m-102-consumables",
+      "title": "PCH/M-62 Compatible Plasma Consumables – Thermal Dynamics | FLUTEX",
+      "main_words": 705,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/plasma/thermal-dynamics-xt301-consumables",
+        "five_word_jaccard": 0.608
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/plasma/thermal-dynamics-xt301-consumables",
+      "path": "/plasma/thermal-dynamics-xt301-consumables",
+      "title": "XT301 Compatible Plasma Consumables – Thermal Dynamics | FLUTEX",
+      "main_words": 654,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/plasma/thermal-dynamics-sl40-consumables",
+        "five_word_jaccard": 0.627
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/plasma/esab-pt-36-consumables",
+      "path": "/plasma/esab-pt-36-consumables",
+      "title": "PT-36 Compatible Plasma Consumables – ESAB | FLUTEX",
+      "main_words": 599,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/plasma/esab-pt-600-consumables",
+        "five_word_jaccard": 0.652
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/plasma/esab-pt-19xls-consumables",
+      "path": "/plasma/esab-pt-19xls-consumables",
+      "title": "PT-19XLS Compatible Plasma Consumables – ESAB | FLUTEX",
+      "main_words": 554,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/plasma/esab-pt-600-consumables",
+        "five_word_jaccard": 0.672
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/plasma/esab-pt-600-consumables",
+      "path": "/plasma/esab-pt-600-consumables",
+      "title": "PT-600 Compatible Plasma Consumables – ESAB | FLUTEX",
+      "main_words": 545,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/plasma/esab-pt-19xls-consumables",
+        "five_word_jaccard": 0.672
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/plasma/kjellberg-hifocus-160i-percut-160-consumables",
+      "path": "/plasma/kjellberg-hifocus-160i-percut-160-consumables",
+      "title": "HiFocus 160i Compatible Plasma Consumables – Kjellberg | FLUTEX",
+      "main_words": 909,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/plasma/kjellberg-hifocus-440i-pge-440-consumables",
+        "five_word_jaccard": 0.368
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/plasma/kjellberg-finefocus-800-finefocus-900-consumables",
+      "path": "/plasma/kjellberg-finefocus-800-finefocus-900-consumables",
+      "title": "FineFocus 800 Compatible Plasma Consumables – Kjellberg | FLUTEX",
+      "main_words": 842,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/plasma/kjellberg-pa-50-pa-s75-consumables",
+        "five_word_jaccard": 0.687
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/plasma/kjellberg-pa-50-pa-s75-consumables",
+      "path": "/plasma/kjellberg-pa-50-pa-s75-consumables",
+      "title": "PA-50 Compatible Plasma Consumables – Kjellberg | FLUTEX",
+      "main_words": 920,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/plasma/kjellberg-finefocus-800-finefocus-900-consumables",
+        "five_word_jaccard": 0.687
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/plasma/kjellberg-pa-s47cnc-finefocus-450-consumables",
+      "path": "/plasma/kjellberg-pa-s47cnc-finefocus-450-consumables",
+      "title": "PA-S47CNC Compatible Plasma Consumables – Kjellberg | FLUTEX",
+      "main_words": 1005,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/plasma/kjellberg-smart-focus-400-pge-300-consumables",
+        "five_word_jaccard": 0.484
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/plasma/kjellberg-smart-focus-400-pge-300-consumables",
+      "path": "/plasma/kjellberg-smart-focus-400-pge-300-consumables",
+      "title": "Smart Focus 400 Compatible Plasma Consumables – Kjellberg | FLUTEX",
+      "main_words": 982,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/plasma/kjellberg-pa-s47cnc-finefocus-450-consumables",
+        "five_word_jaccard": 0.484
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/plasma/kjellberg-hifocus-440i-pge-440-consumables",
+      "path": "/plasma/kjellberg-hifocus-440i-pge-440-consumables",
+      "title": "HiFocus 440i Compatible Plasma Consumables – Kjellberg | FLUTEX",
+      "main_words": 941,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/plasma/kjellberg-hifocus-280i-hifocus-360i-consumables",
+        "five_word_jaccard": 0.538
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/plasma/kjellberg-hifocus-280i-hifocus-360i-consumables",
+      "path": "/plasma/kjellberg-hifocus-280i-hifocus-360i-consumables",
+      "title": "HiFocus 280i Compatible Plasma Consumables – Kjellberg | FLUTEX",
+      "main_words": 974,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/plasma/kjellberg-hifocus-440i-pge-440-consumables",
+        "five_word_jaccard": 0.538
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/plasma/lincoln-tomahawk-1025-tomahawk-1538-consumables",
+      "path": "/plasma/lincoln-tomahawk-1025-tomahawk-1538-consumables",
+      "title": "Tomahawk 1025 Compatible Plasma Consumables – Lincoln | FLUTEX",
+      "main_words": 709,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/plasma/lincoln-tomahawk-1500-consumables",
+        "five_word_jaccard": 0.481
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/plasma/lincoln-flexcut-125-consumables",
+      "path": "/plasma/lincoln-flexcut-125-consumables",
+      "title": "FlexCut 125 Compatible Plasma Consumables – Lincoln | FLUTEX",
+      "main_words": 571,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/plasma/lincoln-tomahawk-1500-consumables",
+        "five_word_jaccard": 0.584
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/plasma/lincoln-tomahawk-1500-consumables",
+      "path": "/plasma/lincoln-tomahawk-1500-consumables",
+      "title": "Tomahawk 1500 Compatible Plasma Consumables – Lincoln | FLUTEX",
+      "main_words": 556,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/plasma/lincoln-flexcut-125-consumables",
+        "five_word_jaccard": 0.584
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/plasma/lincoln-spirit-150a-spirit-275a-consumables",
+      "path": "/plasma/lincoln-spirit-150a-spirit-275a-consumables",
+      "title": "Spirit 150A Compatible Plasma Consumables – Lincoln | FLUTEX",
+      "main_words": 686,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/plasma/ajan-hp260-hp260a-consumables",
+        "five_word_jaccard": 0.432
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/plasma/ajan-hp260-hp260a-consumables",
+      "path": "/plasma/ajan-hp260-hp260a-consumables",
+      "title": "HP260 Compatible Plasma Consumables – AJAN | FLUTEX",
+      "main_words": 571,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/plasma/lincoln-spirit-150a-spirit-275a-consumables",
+        "five_word_jaccard": 0.432
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/plasma/cebora-cp200-consumables",
+      "path": "/plasma/cebora-cp200-consumables",
+      "title": "CP200 Compatible Plasma Consumables – Cebora | FLUTEX",
+      "main_words": 539,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/plasma/cebora-cp161-consumables",
+        "five_word_jaccard": 0.663
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/plasma/cebora-cp161-consumables",
+      "path": "/plasma/cebora-cp161-consumables",
+      "title": "CP161 Compatible Plasma Consumables – Cebora | FLUTEX",
+      "main_words": 527,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/plasma/cebora-cp200-consumables",
+        "five_word_jaccard": 0.663
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/plasma/cebora-cp162c-consumables",
+      "path": "/plasma/cebora-cp162c-consumables",
+      "title": "CP162C Compatible Plasma Consumables – Cebora | FLUTEX",
+      "main_words": 518,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/plasma/cebora-cp161-consumables",
+        "five_word_jaccard": 0.649
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/plasma/cebora-cp251-cp251g-consumables",
+      "path": "/plasma/cebora-cp251-cp251g-consumables",
+      "title": "CP251 Compatible Plasma Consumables – Cebora | FLUTEX",
+      "main_words": 570,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/plasma/cebora-cp450-cp450g-consumables",
+        "five_word_jaccard": 0.69
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/plasma/cebora-cp450-cp450g-consumables",
+      "path": "/plasma/cebora-cp450-cp450g-consumables",
+      "title": "CP450 Compatible Plasma Consumables – Cebora | FLUTEX",
+      "main_words": 572,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/plasma/cebora-cp251-cp251g-consumables",
+        "five_word_jaccard": 0.69
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/plasma/koike-super-400-plus-consumables",
+      "path": "/plasma/koike-super-400-plus-consumables",
+      "title": "Super 400 Plus Compatible Plasma Consumables – Koike | FLUTEX",
+      "main_words": 557,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/plasma/cea-p80-sk125-consumables",
+        "five_word_jaccard": 0.444
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/plasma/cea-p80-sk125-consumables",
+      "path": "/plasma/cea-p80-sk125-consumables",
+      "title": "P80 Compatible Plasma Consumables – CEA | FLUTEX",
+      "main_words": 607,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/plasma/koike-super-400-plus-consumables",
+        "five_word_jaccard": 0.444
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/plasma/ipt-ipt60-pt60h-consumables",
+      "path": "/plasma/ipt-ipt60-pt60h-consumables",
+      "title": "IPT60 Compatible Plasma Consumables – IPT | FLUTEX",
+      "main_words": 553,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/plasma/ipt-ipt80-pt80-consumables",
+        "five_word_jaccard": 0.635
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/plasma/ipt-ipt80-pt80-consumables",
+      "path": "/plasma/ipt-ipt80-pt80-consumables",
+      "title": "IPT80 Compatible Plasma Consumables – IPT | FLUTEX",
+      "main_words": 542,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/plasma/ipt-ipt60-pt60h-consumables",
+        "five_word_jaccard": 0.635
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/plasma/hypertherm-compatible-consumables",
+      "path": "/plasma/hypertherm-compatible-consumables",
+      "title": "Hypertherm Compatible Plasma Consumables | FLUTEX Industrial",
+      "main_words": 622,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 1,
+      "nearest": {
+        "path": "/plasma/ipt-compatible-consumables",
+        "five_word_jaccard": 0.284
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/plasma/thermal-dynamics-compatible-consumables",
+      "path": "/plasma/thermal-dynamics-compatible-consumables",
+      "title": "Thermal Dynamics Compatible Plasma Consumables | FLUTEX Industrial",
+      "main_words": 445,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/plasma/koike-compatible-consumables",
+        "five_word_jaccard": 0.356
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/plasma/esab-compatible-consumables",
+      "path": "/plasma/esab-compatible-consumables",
+      "title": "ESAB Compatible Plasma Consumables | FLUTEX Industrial",
+      "main_words": 405,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/plasma/koike-compatible-consumables",
+        "five_word_jaccard": 0.389
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/plasma/kjellberg-compatible-consumables",
+      "path": "/plasma/kjellberg-compatible-consumables",
+      "title": "Kjellberg Compatible Plasma Consumables | FLUTEX Industrial",
+      "main_words": 623,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 1,
+      "nearest": {
+        "path": "/plasma/koike-compatible-consumables",
+        "five_word_jaccard": 0.301
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/plasma/lincoln-compatible-consumables",
+      "path": "/plasma/lincoln-compatible-consumables",
+      "title": "Lincoln Compatible Plasma Consumables | FLUTEX Industrial",
+      "main_words": 492,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/plasma/ipt-compatible-consumables",
+        "five_word_jaccard": 0.341
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/plasma/ajan-compatible-consumables",
+      "path": "/plasma/ajan-compatible-consumables",
+      "title": "AJAN Compatible Plasma Consumables | FLUTEX Industrial",
+      "main_words": 332,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/plasma/koike-compatible-consumables",
+        "five_word_jaccard": 0.489
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/plasma/cebora-compatible-consumables",
+      "path": "/plasma/cebora-compatible-consumables",
+      "title": "Cebora Compatible Plasma Consumables | FLUTEX Industrial",
+      "main_words": 409,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/plasma/koike-compatible-consumables",
+        "five_word_jaccard": 0.406
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/plasma/koike-compatible-consumables",
+      "path": "/plasma/koike-compatible-consumables",
+      "title": "Koike Compatible Plasma Consumables | FLUTEX Industrial",
+      "main_words": 329,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/plasma/cea-compatible-consumables",
+        "five_word_jaccard": 0.499
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/plasma/cea-compatible-consumables",
+      "path": "/plasma/cea-compatible-consumables",
+      "title": "CEA Compatible Plasma Consumables | FLUTEX Industrial",
+      "main_words": 344,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/plasma/koike-compatible-consumables",
+        "five_word_jaccard": 0.499
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/plasma/ipt-compatible-consumables",
+      "path": "/plasma/ipt-compatible-consumables",
+      "title": "IPT Compatible Plasma Consumables | FLUTEX Industrial",
+      "main_words": 365,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/plasma/koike-compatible-consumables",
+        "five_word_jaccard": 0.428
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/tools/general-purpose-carbide-end-mills",
+      "path": "/tools/general-purpose-carbide-end-mills",
+      "title": "General Purpose Carbide End Mills | FLUTEX Industrial",
+      "main_words": 329,
+      "errors": [],
+      "review": [
+        "Family specification and application checklist reviewed; exact SKU catalog evidence still required"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/tools/high-precision-carbide-end-mills",
+        "five_word_jaccard": 0.531
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/tools/high-precision-carbide-end-mills",
+      "path": "/tools/high-precision-carbide-end-mills",
+      "title": "High Precision Carbide End Mills | FLUTEX Industrial",
+      "main_words": 319,
+      "errors": [],
+      "review": [
+        "Family specification and application checklist reviewed; exact SKU catalog evidence still required"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/tools/general-purpose-carbide-end-mills",
+        "five_word_jaccard": 0.531
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/tools/high-hardness-carbide-end-mills",
+      "path": "/tools/high-hardness-carbide-end-mills",
+      "title": "High-Hardness Carbide End Mills | FLUTEX Industrial",
+      "main_words": 320,
+      "errors": [],
+      "review": [
+        "Family specification and application checklist reviewed; exact SKU catalog evidence still required"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/tools/high-precision-carbide-end-mills",
+        "five_word_jaccard": 0.495
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/tools/stainless-steel-carbide-end-mills",
+      "path": "/tools/stainless-steel-carbide-end-mills",
+      "title": "Stainless Steel Carbide End Mills | FLUTEX Industrial",
+      "main_words": 308,
+      "errors": [],
+      "review": [
+        "Family specification and application checklist reviewed; exact SKU catalog evidence still required"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/tools/high-precision-carbide-end-mills",
+        "five_word_jaccard": 0.517
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/tools/titanium-and-heat-resistant-alloy-end-mills",
+      "path": "/tools/titanium-and-heat-resistant-alloy-end-mills",
+      "title": "Titanium & Heat-Resistant Alloy End Mills | FLUTEX Industrial",
+      "main_words": 329,
+      "errors": [],
+      "review": [
+        "Family specification and application checklist reviewed; exact SKU catalog evidence still required"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/tools/stainless-steel-carbide-end-mills",
+        "five_word_jaccard": 0.497
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/tools/aluminum-high-efficiency-carbide-end-mills",
+      "path": "/tools/aluminum-high-efficiency-carbide-end-mills",
+      "title": "Aluminum High-Efficiency Carbide End Mills | FLUTEX Industrial",
+      "main_words": 319,
+      "errors": [],
+      "review": [
+        "Family specification and application checklist reviewed; exact SKU catalog evidence still required"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/tools/general-purpose-carbide-end-mills",
+        "five_word_jaccard": 0.48
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/tools/graphite-and-composite-diamond-coated-end-mills",
+      "path": "/tools/graphite-and-composite-diamond-coated-end-mills",
+      "title": "Graphite & Composite Diamond-Coated End Mills | FLUTEX Industrial",
+      "main_words": 321,
+      "errors": [],
+      "review": [
+        "Family specification and application checklist reviewed; exact SKU catalog evidence still required"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/tools/high-hardness-carbide-end-mills",
+        "five_word_jaccard": 0.479
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/tools/solid-carbide-drilling-tools",
+      "path": "/tools/solid-carbide-drilling-tools",
+      "title": "Solid Carbide Drilling Tools | FLUTEX Industrial",
+      "main_words": 322,
+      "errors": [],
+      "review": [
+        "Family specification and application checklist reviewed; exact SKU catalog evidence still required"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/tools/aluminum-high-efficiency-carbide-end-mills",
+        "five_word_jaccard": 0.37
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/tools/cbn-precision-finishing-end-mills",
+      "path": "/tools/cbn-precision-finishing-end-mills",
+      "title": "CBN Precision Finishing End Mills | FLUTEX Industrial",
+      "main_words": 321,
+      "errors": [],
+      "review": [
+        "Family specification and application checklist reviewed; exact SKU catalog evidence still required"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/tools/high-hardness-carbide-end-mills",
+        "five_word_jaccard": 0.467
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/tools/din-338-hss-straight-shank-twist-drills",
+      "path": "/tools/din-338-hss-straight-shank-twist-drills",
+      "title": "DIN 338 HSS Straight Shank Twist Drills | FLUTEX Industrial",
+      "main_words": 304,
+      "errors": [],
+      "review": [
+        "Family specification and application checklist reviewed; exact SKU catalog evidence still required"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/tools/din-1897-hss-stubby-drills",
+        "five_word_jaccard": 0.673
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/tools/asme-b94-11m-hss-jobber-length-straight-shank-twist-drills",
+      "path": "/tools/asme-b94-11m-hss-jobber-length-straight-shank-twist-drills",
+      "title": "ASME B94.11M HSS Jobber Length Straight Shank Twist Drills | FLUTEX Industrial",
+      "main_words": 322,
+      "errors": [],
+      "review": [
+        "Family specification and application checklist reviewed; exact SKU catalog evidence still required"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/tools/asme-b94-11m-hss-screw-machine-length-stubby-drills",
+        "five_word_jaccard": 0.705
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/tools/din-1897-hss-stubby-drills",
+      "path": "/tools/din-1897-hss-stubby-drills",
+      "title": "DIN 1897 HSS Stubby Drills | FLUTEX Industrial",
+      "main_words": 294,
+      "errors": [],
+      "review": [
+        "Family specification and application checklist reviewed; exact SKU catalog evidence still required"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/tools/din-338-hss-straight-shank-twist-drills",
+        "five_word_jaccard": 0.673
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/tools/asme-b94-11m-hss-screw-machine-length-stubby-drills",
+      "path": "/tools/asme-b94-11m-hss-screw-machine-length-stubby-drills",
+      "title": "ASME B94.11M HSS Screw Machine Length Stubby Drills | FLUTEX Industrial",
+      "main_words": 322,
+      "errors": [],
+      "review": [
+        "Family specification and application checklist reviewed; exact SKU catalog evidence still required"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/tools/asme-b94-11m-hss-jobber-length-straight-shank-twist-drills",
+        "five_word_jaccard": 0.705
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/tools/din-340-hss-long-length-straight-shank-twist-drills",
+      "path": "/tools/din-340-hss-long-length-straight-shank-twist-drills",
+      "title": "DIN 340 HSS Long Length Straight Shank Twist Drills | FLUTEX Industrial",
+      "main_words": 302,
+      "errors": [],
+      "review": [
+        "Family specification and application checklist reviewed; exact SKU catalog evidence still required"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/tools/din-338-hss-straight-shank-twist-drills",
+        "five_word_jaccard": 0.652
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/tools/asme-b94-11m-hss-taper-length-straight-shank-twist-drills",
+      "path": "/tools/asme-b94-11m-hss-taper-length-straight-shank-twist-drills",
+      "title": "ASME B94.11M HSS Taper Length Straight Shank Twist Drills | FLUTEX Industrial",
+      "main_words": 319,
+      "errors": [],
+      "review": [
+        "Family specification and application checklist reviewed; exact SKU catalog evidence still required"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/tools/asme-b94-11m-hss-jobber-length-straight-shank-twist-drills",
+        "five_word_jaccard": 0.703
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/tools/din-345-hss-taper-shank-twist-drills",
+      "path": "/tools/din-345-hss-taper-shank-twist-drills",
+      "title": "DIN 345 HSS Taper Shank Twist Drills | FLUTEX Industrial",
+      "main_words": 302,
+      "errors": [],
+      "review": [
+        "Family specification and application checklist reviewed; exact SKU catalog evidence still required"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/tools/din-341-hss-long-length-taper-shank-twist-drills",
+        "five_word_jaccard": 0.684
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/tools/din-341-hss-long-length-taper-shank-twist-drills",
+      "path": "/tools/din-341-hss-long-length-taper-shank-twist-drills",
+      "title": "DIN 341 HSS Long Length Taper Shank Twist Drills | FLUTEX Industrial",
+      "main_words": 308,
+      "errors": [],
+      "review": [
+        "Family specification and application checklist reviewed; exact SKU catalog evidence still required"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/tools/din-345-hss-taper-shank-twist-drills",
+        "five_word_jaccard": 0.684
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/tools/hss-double-ended-drills",
+      "path": "/tools/hss-double-ended-drills",
+      "title": "HSS Double Ended Drills | FLUTEX Industrial",
+      "main_words": 311,
+      "errors": [],
+      "review": [
+        "Family specification and application checklist reviewed; exact SKU catalog evidence still required"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/tools/hss-silver-and-deming-drills",
+        "five_word_jaccard": 0.582
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/tools/hss-silver-and-deming-drills",
+      "path": "/tools/hss-silver-and-deming-drills",
+      "title": "HSS Silver & Deming Drills | FLUTEX Industrial",
+      "main_words": 303,
+      "errors": [],
+      "review": [
+        "Family specification and application checklist reviewed; exact SKU catalog evidence still required"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/tools/hss-double-ended-drills",
+        "five_word_jaccard": 0.582
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/tools/hss-aircraft-extension-drills",
+      "path": "/tools/hss-aircraft-extension-drills",
+      "title": "HSS Aircraft Extension Drills | FLUTEX Industrial",
+      "main_words": 333,
+      "errors": [],
+      "review": [
+        "Family specification and application checklist reviewed; exact SKU catalog evidence still required"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/tools/asme-b94-11m-hss-screw-machine-length-stubby-drills",
+        "five_word_jaccard": 0.552
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/tools/modular-drill-internal-coolant-holder-3xd",
+      "path": "/tools/modular-drill-internal-coolant-holder-3xd",
+      "title": "Modular Drill Internal-Coolant Holder — 3×D | FLUTEX Industrial",
+      "main_words": 322,
+      "errors": [],
+      "review": [
+        "Family specification and application checklist reviewed; exact SKU catalog evidence still required"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/tools/modular-drill-internal-coolant-holder-5xd",
+        "five_word_jaccard": 0.729
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/tools/modular-drill-internal-coolant-holder-5xd",
+      "path": "/tools/modular-drill-internal-coolant-holder-5xd",
+      "title": "Modular Drill Internal-Coolant Holder — 5×D | FLUTEX Industrial",
+      "main_words": 320,
+      "errors": [],
+      "review": [
+        "Family specification and application checklist reviewed; exact SKU catalog evidence still required"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/tools/modular-drill-internal-coolant-holder-3xd",
+        "five_word_jaccard": 0.729
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/tools/modular-drill-internal-coolant-holder-8xd",
+      "path": "/tools/modular-drill-internal-coolant-holder-8xd",
+      "title": "Modular Drill Internal-Coolant Holder — 8×D | FLUTEX Industrial",
+      "main_words": 327,
+      "errors": [],
+      "review": [
+        "Family specification and application checklist reviewed; exact SKU catalog evidence still required"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/tools/modular-drill-internal-coolant-holder-5xd",
+        "five_word_jaccard": 0.637
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/tools/modular-drill-carbide-insert-general-steel",
+      "path": "/tools/modular-drill-carbide-insert-general-steel",
+      "title": "Modular Drill Carbide Insert — General Steel | FLUTEX Industrial",
+      "main_words": 316,
+      "errors": [],
+      "review": [
+        "Family specification and application checklist reviewed; exact SKU catalog evidence still required"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/tools/modular-drill-hss-insert-general-steel",
+        "five_word_jaccard": 0.665
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/tools/modular-drill-carbide-insert-mild-steel",
+      "path": "/tools/modular-drill-carbide-insert-mild-steel",
+      "title": "Modular Drill Carbide Insert — Mild Steel | FLUTEX Industrial",
+      "main_words": 323,
+      "errors": [],
+      "review": [
+        "Family specification and application checklist reviewed; exact SKU catalog evidence still required"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/tools/modular-drill-carbide-insert-general-steel",
+        "five_word_jaccard": 0.641
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/tools/modular-drill-carbide-insert-stainless-steel",
+      "path": "/tools/modular-drill-carbide-insert-stainless-steel",
+      "title": "Modular Drill Carbide Insert — Stainless Steel | FLUTEX Industrial",
+      "main_words": 311,
+      "errors": [],
+      "review": [
+        "Family specification and application checklist reviewed; exact SKU catalog evidence still required"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/tools/modular-drill-carbide-insert-general-steel",
+        "five_word_jaccard": 0.653
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/tools/modular-drill-carbide-insert-cast-iron",
+      "path": "/tools/modular-drill-carbide-insert-cast-iron",
+      "title": "Modular Drill Carbide Insert — Cast Iron | FLUTEX Industrial",
+      "main_words": 315,
+      "errors": [],
+      "review": [
+        "Family specification and application checklist reviewed; exact SKU catalog evidence still required"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/tools/modular-drill-carbide-insert-non-ferrous-metals",
+        "five_word_jaccard": 0.651
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/tools/modular-drill-carbide-insert-non-ferrous-metals",
+      "path": "/tools/modular-drill-carbide-insert-non-ferrous-metals",
+      "title": "Modular Drill Carbide Insert — Non-Ferrous Metals | FLUTEX Industrial",
+      "main_words": 325,
+      "errors": [],
+      "review": [
+        "Family specification and application checklist reviewed; exact SKU catalog evidence still required"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/tools/modular-drill-carbide-insert-cast-iron",
+        "five_word_jaccard": 0.651
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/tools/modular-drill-hss-insert-general-steel",
+      "path": "/tools/modular-drill-hss-insert-general-steel",
+      "title": "Modular Drill HSS Insert — General Steel | FLUTEX Industrial",
+      "main_words": 322,
+      "errors": [],
+      "review": [
+        "Family specification and application checklist reviewed; exact SKU catalog evidence still required"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/tools/modular-drill-carbide-insert-general-steel",
+        "five_word_jaccard": 0.665
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/tools/modular-drill-hss-insert-mild-steel",
+      "path": "/tools/modular-drill-hss-insert-mild-steel",
+      "title": "Modular Drill HSS Insert — Mild Steel | FLUTEX Industrial",
+      "main_words": 318,
+      "errors": [],
+      "review": [
+        "Family specification and application checklist reviewed; exact SKU catalog evidence still required"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/tools/modular-drill-carbide-insert-mild-steel",
+        "five_word_jaccard": 0.63
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/laser-consumables",
+      "path": "/laser-consumables",
+      "title": "Laser Cutting Consumables & Spare Parts | FLUTEX Saudi Arabia",
+      "main_words": 310,
+      "errors": [],
+      "review": [
+        "Automated structure/navigation checks passed; page purpose reviewed by category; no blanket rewrite"
+      ],
+      "depth": 1,
+      "nearest": {
+        "path": "/aluminum-saw-blades",
+        "five_word_jaccard": 0.141
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/carbide-end-mills",
+      "path": "/carbide-end-mills",
+      "title": "Carbide End Mills for Aluminum & CNC Machining | FLUTEX",
+      "main_words": 282,
+      "errors": [],
+      "review": [
+        "Automated structure/navigation checks passed; page purpose reviewed by category; no blanket rewrite"
+      ],
+      "depth": 1,
+      "nearest": {
+        "path": "/tool-holding",
+        "five_word_jaccard": 0.157
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/hss-drill-bits",
+      "path": "/hss-drill-bits",
+      "title": "HSS Drill Bits – DIN 338, DIN 345 & HSS-Co | FLUTEX",
+      "main_words": 273,
+      "errors": [],
+      "review": [
+        "Automated structure/navigation checks passed; page purpose reviewed by category; no blanket rewrite"
+      ],
+      "depth": 1,
+      "nearest": {
+        "path": "/aluminum-saw-blades",
+        "five_word_jaccard": 0.153
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/aluminum-saw-blades",
+      "path": "/aluminum-saw-blades",
+      "title": "Aluminum Saw Blades – TCT Industrial Blades | FLUTEX",
+      "main_words": 266,
+      "errors": [],
+      "review": [
+        "Automated structure/navigation checks passed; page purpose reviewed by category; no blanket rewrite"
+      ],
+      "depth": 1,
+      "nearest": {
+        "path": "/tool-holding",
+        "five_word_jaccard": 0.156
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/tool-holding",
+      "path": "/tool-holding",
+      "title": "ER Collets, Collet Chucks & CNC Tool Holders | FLUTEX",
+      "main_words": 264,
+      "errors": [],
+      "review": [
+        "Automated structure/navigation checks passed; page purpose reviewed by category; no blanket rewrite"
+      ],
+      "depth": 1,
+      "nearest": {
+        "path": "/carbide-end-mills",
+        "five_word_jaccard": 0.157
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/",
+      "path": "/ar/",
+      "title": "فلوتكس الصناعية | أدوات قطع وقطع غيار بلازما وليزر في السعودية",
+      "main_words": 409,
+      "errors": [],
+      "review": [
+        "Automated structure/navigation checks passed; page purpose reviewed by category; no blanket rewrite"
+      ],
+      "depth": 1,
+      "nearest": {
+        "path": "/ar/products",
+        "five_word_jaccard": 0.043
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/products",
+      "path": "/ar/products",
+      "title": "منتجات فلوتكس الصناعية | CNC، بلازما، ليزر، HSS وMQL",
+      "main_words": 247,
+      "errors": [],
+      "review": [
+        "Automated structure/navigation checks passed; page purpose reviewed by category; no blanket rewrite"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/ar/",
+        "five_word_jaccard": 0.043
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/plasma-consumables",
+      "path": "/ar/plasma-consumables",
+      "title": "قطع غيار ومستهلكات بلازما في السعودية | FLUTEX",
+      "main_words": 1378,
+      "errors": [],
+      "review": [
+        "Automated structure/navigation checks passed; page purpose reviewed by category; no blanket rewrite"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/ar/plasma/kjellberg-compatible-consumables",
+        "five_word_jaccard": 0.061
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/laser-consumables",
+      "path": "/ar/laser-consumables",
+      "title": "قطع غيار ومستهلكات ليزر في السعودية | FLUTEX",
+      "main_words": 156,
+      "errors": [],
+      "review": [
+        "Automated structure/navigation checks passed; page purpose reviewed by category; no blanket rewrite"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/ar/products",
+        "five_word_jaccard": 0.008
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/carbide-end-mills",
+      "path": "/ar/carbide-end-mills",
+      "title": "ريش كربيد وريش ألمنيوم CNC في السعودية | FLUTEX",
+      "main_words": 139,
+      "errors": [],
+      "review": [
+        "Automated structure/navigation checks passed; page purpose reviewed by category; no blanket rewrite"
+      ],
+      "depth": 2,
+      "nearest": null
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/hss-drill-bits",
+      "path": "/ar/hss-drill-bits",
+      "title": "ريش HSS وريش حفر حديد DIN 338 وDIN 345 | FLUTEX",
+      "main_words": 162,
+      "errors": [],
+      "review": [
+        "Automated structure/navigation checks passed; page purpose reviewed by category; no blanket rewrite"
+      ],
+      "depth": 2,
+      "nearest": null
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/aluminum-saw-blades",
+      "path": "/ar/aluminum-saw-blades",
+      "title": "دسكات وشفرات قص ألمنيوم TCT في السعودية | FLUTEX",
+      "main_words": 120,
+      "errors": [],
+      "review": [
+        "Automated structure/navigation checks passed; page purpose reviewed by category; no blanket rewrite"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/ar/products",
+        "five_word_jaccard": 0.003
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/tool-holding",
+      "path": "/ar/tool-holding",
+      "title": "ER Collet وحوامل أدوات CNC في السعودية | FLUTEX",
+      "main_words": 116,
+      "errors": [],
+      "review": [
+        "Automated structure/navigation checks passed; page purpose reviewed by category; no blanket rewrite"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/ar/",
+        "five_word_jaccard": 0.002
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/cutting-fluid",
+      "path": "/ar/cutting-fluid",
+      "title": "زيت MQL وسائل قطع للألمنيوم وCNC | FLUTEX",
+      "main_words": 280,
+      "errors": [],
+      "review": [
+        "Exact product TDS/SDS needed to substantiate published numerical and safety data"
+      ],
+      "depth": 2,
+      "nearest": null
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/cutting-tools",
+      "path": "/ar/cutting-tools",
+      "title": "أدوات قطع CNC وريش كربيد وHSS | FLUTEX",
+      "main_words": 417,
+      "errors": [],
+      "review": [
+        "Automated structure/navigation checks passed; page purpose reviewed by category; no blanket rewrite"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/ar/",
+        "five_word_jaccard": 0.004
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/cnc-tools",
+      "path": "/ar/cnc-tools",
+      "title": "أدوات وملحقات CNC ودسكات ألمنيوم وER Collets | FLUTEX",
+      "main_words": 164,
+      "errors": [],
+      "review": [
+        "Automated structure/navigation checks passed; page purpose reviewed by category; no blanket rewrite"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/ar/",
+        "five_word_jaccard": 0.007
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/welding-consumables",
+      "path": "/ar/welding-consumables",
+      "title": "مستهلكات لحام MIG وقطع تورش | FLUTEX",
+      "main_words": 153,
+      "errors": [],
+      "review": [
+        "Automated structure/navigation checks passed; page purpose reviewed by category; no blanket rewrite"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/ar/products",
+        "five_word_jaccard": 0.008
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/special-tools",
+      "path": "/ar/special-tools",
+      "title": "أدوات صناعية خاصة وملحقات إنتاج | FLUTEX",
+      "main_words": 195,
+      "errors": [],
+      "review": [
+        "Automated structure/navigation checks passed; page purpose reviewed by category; no blanket rewrite"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/ar/products",
+        "five_word_jaccard": 0.002
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/about",
+      "path": "/ar/about",
+      "title": "عن FLUTEX الصناعية | توريد أدوات ومستهلكات صناعية",
+      "main_words": 285,
+      "errors": [],
+      "review": [
+        "Company/policy page structure checked; legal claims not re-verified"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/ar/",
+        "five_word_jaccard": 0.006
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/contact",
+      "path": "/ar/contact",
+      "title": "طلب عرض سعر وتواصل | FLUTEX الصناعية",
+      "main_words": 158,
+      "errors": [],
+      "review": [
+        "Automated structure/navigation checks passed; page purpose reviewed by category; no blanket rewrite"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/ar/saudi-arabia-industrial-supply",
+        "five_word_jaccard": 0.003
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/saudi-arabia-industrial-supply",
+      "path": "/saudi-arabia-industrial-supply",
+      "title": "Industrial Cutting Tools & Consumables Supplier in Saudi Arabia | FLUTEX",
+      "main_words": 336,
+      "errors": [],
+      "review": [
+        "Automated structure/navigation checks passed; page purpose reviewed by category; no blanket rewrite"
+      ],
+      "depth": 2,
+      "nearest": {
+        "path": "/products",
+        "five_word_jaccard": 0.039
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/saudi-arabia-industrial-supply",
+      "path": "/ar/saudi-arabia-industrial-supply",
+      "title": "مورد أدوات وقطع غيار صناعية في السعودية | FLUTEX",
+      "main_words": 180,
+      "errors": [],
+      "review": [
+        "Automated structure/navigation checks passed; page purpose reviewed by category; no blanket rewrite"
+      ],
+      "depth": 3,
+      "nearest": {
+        "path": "/ar/",
+        "five_word_jaccard": 0.034
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/plasma/ajan-compatible-consumables",
+      "path": "/ar/plasma/ajan-compatible-consumables",
+      "title": "مستهلكات بلازما AJAN متوافقة في السعودية | FLUTEX",
+      "main_words": 150,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 3,
+      "nearest": {
+        "path": "/ar/plasma/koike-compatible-consumables",
+        "five_word_jaccard": 0.346
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/plasma/ajan-hp260-hp260a-consumables",
+      "path": "/ar/plasma/ajan-hp260-hp260a-consumables",
+      "title": "مستهلكات بلازما HP260 / HP260A متوافقة – AJAN | FLUTEX",
+      "main_words": 478,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 3,
+      "nearest": {
+        "path": "/ar/plasma/lincoln-spirit-150a-spirit-275a-consumables",
+        "five_word_jaccard": 0.439
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/plasma/cea-compatible-consumables",
+      "path": "/ar/plasma/cea-compatible-consumables",
+      "title": "مستهلكات بلازما CEA متوافقة في السعودية | FLUTEX",
+      "main_words": 157,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 3,
+      "nearest": {
+        "path": "/ar/plasma/koike-compatible-consumables",
+        "five_word_jaccard": 0.412
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/plasma/cea-p80-sk125-consumables",
+      "path": "/ar/plasma/cea-p80-sk125-consumables",
+      "title": "مستهلكات بلازما P80 / SK125 / SK125M / SK165 / SK165M متوافقة – CEA | FLUTEX",
+      "main_words": 519,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 3,
+      "nearest": {
+        "path": "/ar/plasma/koike-super-400-plus-consumables",
+        "five_word_jaccard": 0.439
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/plasma/cebora-compatible-consumables",
+      "path": "/ar/plasma/cebora-compatible-consumables",
+      "title": "مستهلكات بلازما Cebora متوافقة في السعودية | FLUTEX",
+      "main_words": 168,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 3,
+      "nearest": {
+        "path": "/ar/plasma/ipt-compatible-consumables",
+        "five_word_jaccard": 0.309
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/plasma/cebora-cp161-consumables",
+      "path": "/ar/plasma/cebora-cp161-consumables",
+      "title": "مستهلكات بلازما CP161 متوافقة – Cebora | FLUTEX",
+      "main_words": 442,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 3,
+      "nearest": {
+        "path": "/ar/plasma/cebora-cp200-consumables",
+        "five_word_jaccard": 0.629
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/plasma/cebora-cp162c-consumables",
+      "path": "/ar/plasma/cebora-cp162c-consumables",
+      "title": "مستهلكات بلازما CP162C متوافقة – Cebora | FLUTEX",
+      "main_words": 433,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 3,
+      "nearest": {
+        "path": "/ar/plasma/cebora-cp161-consumables",
+        "five_word_jaccard": 0.619
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/plasma/cebora-cp200-consumables",
+      "path": "/ar/plasma/cebora-cp200-consumables",
+      "title": "مستهلكات بلازما CP200 متوافقة – Cebora | FLUTEX",
+      "main_words": 454,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 3,
+      "nearest": {
+        "path": "/ar/plasma/cebora-cp161-consumables",
+        "five_word_jaccard": 0.629
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/plasma/cebora-cp251-cp251g-consumables",
+      "path": "/ar/plasma/cebora-cp251-cp251g-consumables",
+      "title": "مستهلكات بلازما CP251 / CP251G متوافقة – Cebora | FLUTEX",
+      "main_words": 483,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 3,
+      "nearest": {
+        "path": "/ar/plasma/cebora-cp450-cp450g-consumables",
+        "five_word_jaccard": 0.697
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/plasma/cebora-cp450-cp450g-consumables",
+      "path": "/ar/plasma/cebora-cp450-cp450g-consumables",
+      "title": "مستهلكات بلازما CP450 / CP450G متوافقة – Cebora | FLUTEX",
+      "main_words": 483,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 3,
+      "nearest": {
+        "path": "/ar/plasma/cebora-cp251-cp251g-consumables",
+        "five_word_jaccard": 0.697
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/plasma/esab-compatible-consumables",
+      "path": "/ar/plasma/esab-compatible-consumables",
+      "title": "مستهلكات بلازما ESAB متوافقة في السعودية | FLUTEX",
+      "main_words": 170,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 3,
+      "nearest": {
+        "path": "/ar/plasma/ajan-compatible-consumables",
+        "five_word_jaccard": 0.289
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/plasma/esab-pt-19xls-consumables",
+      "path": "/ar/plasma/esab-pt-19xls-consumables",
+      "title": "مستهلكات بلازما PT-19XLS متوافقة – ESAB | FLUTEX",
+      "main_words": 462,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 3,
+      "nearest": {
+        "path": "/ar/plasma/esab-pt-600-consumables",
+        "five_word_jaccard": 0.678
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/plasma/esab-pt-36-consumables",
+      "path": "/ar/plasma/esab-pt-36-consumables",
+      "title": "مستهلكات بلازما PT-36 متوافقة – ESAB | FLUTEX",
+      "main_words": 492,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 3,
+      "nearest": {
+        "path": "/ar/plasma/esab-pt-600-consumables",
+        "five_word_jaccard": 0.656
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/plasma/esab-pt-600-consumables",
+      "path": "/ar/plasma/esab-pt-600-consumables",
+      "title": "مستهلكات بلازما PT-600 متوافقة – ESAB | FLUTEX",
+      "main_words": 453,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 3,
+      "nearest": {
+        "path": "/ar/plasma/esab-pt-19xls-consumables",
+        "five_word_jaccard": 0.678
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/plasma/hypertherm-compatible-consumables",
+      "path": "/ar/plasma/hypertherm-compatible-consumables",
+      "title": "مستهلكات بلازما Hypertherm متوافقة في السعودية | FLUTEX",
+      "main_words": 221,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 3,
+      "nearest": {
+        "path": "/ar/plasma/cebora-compatible-consumables",
+        "five_word_jaccard": 0.293
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/plasma/hypertherm-hpr130-hpr260-consumables",
+      "path": "/ar/plasma/hypertherm-hpr130-hpr260-consumables",
+      "title": "مستهلكات بلازما HPR130 / HPR260 / HPR130XD / HPR260XD / HPR400XD / HPR800XD متوافقة – Hypertherm | FLUTEX",
+      "main_words": 679,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 3,
+      "nearest": {
+        "path": "/ar/plasma/hypertherm-hsd130-consumables",
+        "five_word_jaccard": 0.418
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/plasma/hypertherm-hsd130-consumables",
+      "path": "/ar/plasma/hypertherm-hsd130-consumables",
+      "title": "مستهلكات بلازما HSD130 متوافقة – Hypertherm | FLUTEX",
+      "main_words": 528,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 3,
+      "nearest": {
+        "path": "/ar/plasma/hypertherm-maxpro200-consumables",
+        "five_word_jaccard": 0.447
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/plasma/hypertherm-ht4001-ht4400-consumables",
+      "path": "/ar/plasma/hypertherm-ht4001-ht4400-consumables",
+      "title": "مستهلكات بلازما HT4001 / HT4400 متوافقة – Hypertherm | FLUTEX",
+      "main_words": 525,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 3,
+      "nearest": {
+        "path": "/ar/plasma/hypertherm-xpr170-xpr300-consumables",
+        "five_word_jaccard": 0.568
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/plasma/hypertherm-max200-ht2000-consumables",
+      "path": "/ar/plasma/hypertherm-max200-ht2000-consumables",
+      "title": "مستهلكات بلازما MAX200 / HT2000 / HySpeed HT2000 متوافقة – Hypertherm | FLUTEX",
+      "main_words": 557,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 3,
+      "nearest": {
+        "path": "/ar/plasma/hypertherm-maxpro200-consumables",
+        "five_word_jaccard": 0.597
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/plasma/hypertherm-maxpro200-consumables",
+      "path": "/ar/plasma/hypertherm-maxpro200-consumables",
+      "title": "مستهلكات بلازما MAXPRO200 متوافقة – Hypertherm | FLUTEX",
+      "main_words": 537,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 3,
+      "nearest": {
+        "path": "/ar/plasma/hypertherm-max200-ht2000-consumables",
+        "five_word_jaccard": 0.597
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/plasma/hypertherm-powermax-105-consumables",
+      "path": "/ar/plasma/hypertherm-powermax-105-consumables",
+      "title": "مستهلكات بلازما Powermax 105 متوافقة – Hypertherm | FLUTEX",
+      "main_words": 528,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 3,
+      "nearest": {
+        "path": "/ar/plasma/hypertherm-powermax-45-consumables",
+        "five_word_jaccard": 0.592
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/plasma/hypertherm-powermax-125-consumables",
+      "path": "/ar/plasma/hypertherm-powermax-125-consumables",
+      "title": "مستهلكات بلازما Powermax 125 متوافقة – Hypertherm | FLUTEX",
+      "main_words": 511,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 3,
+      "nearest": {
+        "path": "/ar/plasma/hypertherm-powermax-45-consumables",
+        "five_word_jaccard": 0.528
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/plasma/hypertherm-powermax-1250-powermax-1650-consumables",
+      "path": "/ar/plasma/hypertherm-powermax-1250-powermax-1650-consumables",
+      "title": "مستهلكات بلازما Powermax 1250 / Powermax 1650 متوافقة – Hypertherm | FLUTEX",
+      "main_words": 542,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 3,
+      "nearest": {
+        "path": "/ar/plasma/hypertherm-powermax-45-consumables",
+        "five_word_jaccard": 0.539
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/plasma/hypertherm-powermax-30-powermax-30xp-consumables",
+      "path": "/ar/plasma/hypertherm-powermax-30-powermax-30xp-consumables",
+      "title": "مستهلكات بلازما Powermax 30 / Powermax 30XP / Powermax 30 Air متوافقة – Hypertherm | FLUTEX",
+      "main_words": 555,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 3,
+      "nearest": {
+        "path": "/ar/plasma/hypertherm-powermax-1250-powermax-1650-consumables",
+        "five_word_jaccard": 0.515
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/plasma/hypertherm-powermax-45-consumables",
+      "path": "/ar/plasma/hypertherm-powermax-45-consumables",
+      "title": "مستهلكات بلازما Powermax 45 متوافقة – Hypertherm | FLUTEX",
+      "main_words": 502,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 3,
+      "nearest": {
+        "path": "/ar/plasma/hypertherm-powermax-105-consumables",
+        "five_word_jaccard": 0.592
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/plasma/hypertherm-xpr170-xpr300-consumables",
+      "path": "/ar/plasma/hypertherm-xpr170-xpr300-consumables",
+      "title": "مستهلكات بلازما XPR170 / XPR300 متوافقة – Hypertherm | FLUTEX",
+      "main_words": 564,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 3,
+      "nearest": {
+        "path": "/ar/plasma/hypertherm-ht4001-ht4400-consumables",
+        "five_word_jaccard": 0.568
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/plasma/ipt-compatible-consumables",
+      "path": "/ar/plasma/ipt-compatible-consumables",
+      "title": "مستهلكات بلازما IPT متوافقة في السعودية | FLUTEX",
+      "main_words": 159,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 3,
+      "nearest": {
+        "path": "/ar/plasma/cebora-compatible-consumables",
+        "five_word_jaccard": 0.309
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/plasma/ipt-ipt60-pt60h-consumables",
+      "path": "/ar/plasma/ipt-ipt60-pt60h-consumables",
+      "title": "مستهلكات بلازما IPT60 / PT60H / PT60M متوافقة – IPT | FLUTEX",
+      "main_words": 467,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 3,
+      "nearest": {
+        "path": "/ar/plasma/ipt-ipt80-pt80-consumables",
+        "five_word_jaccard": 0.626
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/plasma/ipt-ipt80-pt80-consumables",
+      "path": "/ar/plasma/ipt-ipt80-pt80-consumables",
+      "title": "مستهلكات بلازما IPT80 / PT80 متوافقة – IPT | FLUTEX",
+      "main_words": 458,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 3,
+      "nearest": {
+        "path": "/ar/plasma/ipt-ipt60-pt60h-consumables",
+        "five_word_jaccard": 0.626
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/plasma/kjellberg-compatible-consumables",
+      "path": "/ar/plasma/kjellberg-compatible-consumables",
+      "title": "مستهلكات بلازما Kjellberg متوافقة في السعودية | FLUTEX",
+      "main_words": 297,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 3,
+      "nearest": {
+        "path": "/ar/plasma/ajan-compatible-consumables",
+        "five_word_jaccard": 0.239
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/plasma/kjellberg-finefocus-800-finefocus-900-consumables",
+      "path": "/ar/plasma/kjellberg-finefocus-800-finefocus-900-consumables",
+      "title": "مستهلكات بلازما FineFocus 800 / FineFocus 900 / FineFocus 1600 متوافقة – Kjellberg | FLUTEX",
+      "main_words": 755,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 3,
+      "nearest": {
+        "path": "/ar/plasma/kjellberg-pa-50-pa-s75-consumables",
+        "five_word_jaccard": 0.698
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/plasma/kjellberg-hifocus-160i-percut-160-consumables",
+      "path": "/ar/plasma/kjellberg-hifocus-160i-percut-160-consumables",
+      "title": "مستهلكات بلازما HiFocus 160i / PerCut 160 / PerCut 170 متوافقة – Kjellberg | FLUTEX",
+      "main_words": 823,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 3,
+      "nearest": {
+        "path": "/ar/plasma/kjellberg-hifocus-440i-pge-440-consumables",
+        "five_word_jaccard": 0.335
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/plasma/kjellberg-hifocus-280i-hifocus-360i-consumables",
+      "path": "/ar/plasma/kjellberg-hifocus-280i-hifocus-360i-consumables",
+      "title": "مستهلكات بلازما HiFocus 280i / HiFocus 360i / HiFocus 440i / PerCut 210M متوافقة – Kjellberg | FLUTEX",
+      "main_words": 874,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 3,
+      "nearest": {
+        "path": "/ar/plasma/kjellberg-hifocus-440i-pge-440-consumables",
+        "five_word_jaccard": 0.529
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/plasma/kjellberg-hifocus-440i-pge-440-consumables",
+      "path": "/ar/plasma/kjellberg-hifocus-440i-pge-440-consumables",
+      "title": "مستهلكات بلازما HiFocus 440i / PGE-440 / PerCut 440 / PerCut 450 متوافقة – Kjellberg | FLUTEX",
+      "main_words": 847,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 3,
+      "nearest": {
+        "path": "/ar/plasma/kjellberg-hifocus-280i-hifocus-360i-consumables",
+        "five_word_jaccard": 0.529
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/plasma/kjellberg-pa-50-pa-s75-consumables",
+      "path": "/ar/plasma/kjellberg-pa-50-pa-s75-consumables",
+      "title": "مستهلكات بلازما PA-50 / PA-S75 / PB-S75 / PA-S76 / PB-S77 / PB-S80 متوافقة – Kjellberg | FLUTEX",
+      "main_words": 825,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 3,
+      "nearest": {
+        "path": "/ar/plasma/kjellberg-finefocus-800-finefocus-900-consumables",
+        "five_word_jaccard": 0.698
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/plasma/kjellberg-pa-s47cnc-finefocus-450-consumables",
+      "path": "/ar/plasma/kjellberg-pa-s47cnc-finefocus-450-consumables",
+      "title": "مستهلكات بلازما PA-S47CNC / FineFocus 450 / PB-S20W/WH / PB-S25W/WH / PB-S40W/WH / PB-S45W/WH / PB-S45W/WH-1 / PZ-S45W متوافقة – Kjellberg | FLUTEX",
+      "main_words": 903,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 3,
+      "nearest": {
+        "path": "/ar/plasma/kjellberg-smart-focus-400-pge-300-consumables",
+        "five_word_jaccard": 0.472
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/plasma/kjellberg-smart-focus-400-pge-300-consumables",
+      "path": "/ar/plasma/kjellberg-smart-focus-400-pge-300-consumables",
+      "title": "مستهلكات بلازما Smart Focus 400 / PGE-300 / PerCut 4000 متوافقة – Kjellberg | FLUTEX",
+      "main_words": 883,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 3,
+      "nearest": {
+        "path": "/ar/plasma/kjellberg-pa-s47cnc-finefocus-450-consumables",
+        "five_word_jaccard": 0.472
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/plasma/koike-compatible-consumables",
+      "path": "/ar/plasma/koike-compatible-consumables",
+      "title": "مستهلكات بلازما Koike متوافقة في السعودية | FLUTEX",
+      "main_words": 150,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 3,
+      "nearest": {
+        "path": "/ar/plasma/cea-compatible-consumables",
+        "five_word_jaccard": 0.412
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/plasma/koike-super-400-plus-consumables",
+      "path": "/ar/plasma/koike-super-400-plus-consumables",
+      "title": "مستهلكات بلازما Super 400 Plus متوافقة – Koike | FLUTEX",
+      "main_words": 464,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 3,
+      "nearest": {
+        "path": "/ar/plasma/cea-p80-sk125-consumables",
+        "five_word_jaccard": 0.439
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/plasma/lincoln-compatible-consumables",
+      "path": "/ar/plasma/lincoln-compatible-consumables",
+      "title": "مستهلكات بلازما Lincoln متوافقة في السعودية | FLUTEX",
+      "main_words": 210,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 3,
+      "nearest": {
+        "path": "/ar/plasma/cebora-compatible-consumables",
+        "five_word_jaccard": 0.287
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/plasma/lincoln-flexcut-125-consumables",
+      "path": "/ar/plasma/lincoln-flexcut-125-consumables",
+      "title": "مستهلكات بلازما FlexCut 125 متوافقة – Lincoln | FLUTEX",
+      "main_words": 481,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 3,
+      "nearest": {
+        "path": "/ar/plasma/lincoln-tomahawk-1500-consumables",
+        "five_word_jaccard": 0.561
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/plasma/lincoln-spirit-150a-spirit-275a-consumables",
+      "path": "/ar/plasma/lincoln-spirit-150a-spirit-275a-consumables",
+      "title": "مستهلكات بلازما Spirit 150A / Spirit 275A / Spirit 400A متوافقة – Lincoln | FLUTEX",
+      "main_words": 576,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 3,
+      "nearest": {
+        "path": "/ar/plasma/ajan-hp260-hp260a-consumables",
+        "five_word_jaccard": 0.439
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/plasma/lincoln-tomahawk-1025-tomahawk-1538-consumables",
+      "path": "/ar/plasma/lincoln-tomahawk-1025-tomahawk-1538-consumables",
+      "title": "مستهلكات بلازما Tomahawk 1025 / Tomahawk 1538 / LC105 / LC105M / LC105M Gear Rack متوافقة – Lincoln | FLUTEX",
+      "main_words": 616,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 3,
+      "nearest": {
+        "path": "/ar/plasma/lincoln-tomahawk-1500-consumables",
+        "five_word_jaccard": 0.436
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/plasma/lincoln-tomahawk-1500-consumables",
+      "path": "/ar/plasma/lincoln-tomahawk-1500-consumables",
+      "title": "مستهلكات بلازما Tomahawk 1500 متوافقة – Lincoln | FLUTEX",
+      "main_words": 466,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 3,
+      "nearest": {
+        "path": "/ar/plasma/lincoln-flexcut-125-consumables",
+        "five_word_jaccard": 0.561
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/plasma/thermal-dynamics-compatible-consumables",
+      "path": "/ar/plasma/thermal-dynamics-compatible-consumables",
+      "title": "مستهلكات بلازما Thermal Dynamics متوافقة في السعودية | FLUTEX",
+      "main_words": 184,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 3,
+      "nearest": {
+        "path": "/ar/plasma/ipt-compatible-consumables",
+        "five_word_jaccard": 0.279
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/plasma/thermal-dynamics-pch-m-62-pch-m-102-consumables",
+      "path": "/ar/plasma/thermal-dynamics-pch-m-62-pch-m-102-consumables",
+      "title": "مستهلكات بلازما PCH/M-62 / PCH/M-102 متوافقة – Thermal Dynamics | FLUTEX",
+      "main_words": 600,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 3,
+      "nearest": {
+        "path": "/ar/plasma/thermal-dynamics-xt301-consumables",
+        "five_word_jaccard": 0.606
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/plasma/thermal-dynamics-sl40-consumables",
+      "path": "/ar/plasma/thermal-dynamics-sl40-consumables",
+      "title": "مستهلكات بلازما SL40 متوافقة – Thermal Dynamics | FLUTEX",
+      "main_words": 549,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 3,
+      "nearest": {
+        "path": "/ar/plasma/thermal-dynamics-sl60-sl100-consumables",
+        "five_word_jaccard": 0.65
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/plasma/thermal-dynamics-sl60-sl100-consumables",
+      "path": "/ar/plasma/thermal-dynamics-sl60-sl100-consumables",
+      "title": "مستهلكات بلازما SL60 / SL100 متوافقة – Thermal Dynamics | FLUTEX",
+      "main_words": 575,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 3,
+      "nearest": {
+        "path": "/ar/plasma/thermal-dynamics-sl40-consumables",
+        "five_word_jaccard": 0.65
+      }
+    },
+    {
+      "url": "https://flutexindustrial.com/ar/plasma/thermal-dynamics-xt301-consumables",
+      "path": "/ar/plasma/thermal-dynamics-xt301-consumables",
+      "title": "مستهلكات بلازما XT301 متوافقة – Thermal Dynamics | FLUTEX",
+      "main_words": 555,
+      "errors": [],
+      "review": [
+        "Supplier/OEM evidence needed for system-to-reference compatibility; template overlap reviewed"
+      ],
+      "depth": 3,
+      "nearest": {
+        "path": "/ar/plasma/thermal-dynamics-sl40-consumables",
+        "five_word_jaccard": 0.63
+      }
+    }
+  ],
+  "identical_reference_lists": [
+    {
+      "brand": "Hypertherm",
+      "reference_count": 67,
+      "systems": [
+        "MAX200 / HT2000 / HySpeed HT2000",
+        "MAXPRO200"
+      ]
+    },
+    {
+      "brand": "Hypertherm",
+      "reference_count": 72,
+      "systems": [
+        "XPR170 / XPR300",
+        "HT4001 / HT4400"
+      ]
+    },
+    {
+      "brand": "Thermal Dynamics",
+      "reference_count": 56,
+      "systems": [
+        "SL60 / SL100",
+        "SL40",
+        "PCH/M-62 / PCH/M-102",
+        "XT301"
+      ]
+    },
+    {
+      "brand": "ESAB",
+      "reference_count": 45,
+      "systems": [
+        "PT-36",
+        "PT-19XLS",
+        "PT-600"
+      ]
+    },
+    {
+      "brand": "Kjellberg",
+      "reference_count": 47,
+      "systems": [
+        "FineFocus 800 / FineFocus 900 / FineFocus 1600",
+        "PA-50 / PA-S75 / PB-S75 / PA-S76 / PB-S77 / PB-S80"
+      ]
+    },
+    {
+      "brand": "Lincoln",
+      "reference_count": 15,
+      "systems": [
+        "FlexCut 125",
+        "Tomahawk 1500"
+      ]
+    },
+    {
+      "brand": "Cebora",
+      "reference_count": 21,
+      "systems": [
+        "CP200",
+        "CP161",
+        "CP162C"
+      ]
+    },
+    {
+      "brand": "Cebora",
+      "reference_count": 50,
+      "systems": [
+        "CP251 / CP251G",
+        "CP450 / CP450G"
+      ]
+    },
+    {
+      "brand": "IPT",
+      "reference_count": 13,
+      "systems": [
+        "IPT60 / PT60H / PT60M",
+        "IPT80 / PT80"
+      ]
+    }
+  ],
+  "duplicate_titles": [],
+  "duplicate_descriptions": []
+}
