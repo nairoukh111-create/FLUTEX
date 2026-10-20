@@ -70,8 +70,8 @@ def faq_for_system(it):
     qa.append((
         f"What information is needed to quote {sysname} consumables?",
         f"Send the original reference number, the system model ({sysname}), the operating "
-        f"amperage, the process ({joinlist([a.lower() for a in apps], 'or')}) and the required "
-        f"quantity. That is enough for FLUTEX to match the part and return price and lead time."
+        f"amperage, the torch configuration and application ({joinlist([a.lower() for a in apps], 'or')}) and the required "
+        f"quantity. Include the installed torch model; additional identification may be required before compatibility, price and lead time can be confirmed."
     ))
     qa.append((
         f"Can FLUTEX supply {sysname} plasma consumables in Saudi Arabia?",
