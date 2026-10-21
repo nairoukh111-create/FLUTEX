@@ -259,7 +259,7 @@ def brand_page(brand, items, en_slug):
     cards = "".join(
         f'<li><a href="/ar/plasma/{SLUG[keyof(i)]}">{E(" / ".join(i["systems"]))} '
         f'<span>←</span></a></li>' for i in items)
-    intro = (f"مستهلكات بديلة لـ{len(items)} عائلات أنظمة {brand}. "
+    intro = (f"مستهلكات بديلة لـ{len(items)} {'عائلة من أنظمة' if len(items) > 10 else 'عائلات أنظمة'} {brand}. "
              "تُدار استفسارات التوريد داخل السعودية من عملياتنا في الرياض؛ أرسل رقم المرجع الأصلي لتحديد القطعة."
              if local_priority else f"{len(items)} عائلة نظام و{total} رقم مرجع أصلي فريد مغطى.")
     rfq = urllib.parse.quote(f"Plasma - {brand}")
