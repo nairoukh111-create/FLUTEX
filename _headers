@@ -53,3 +53,6 @@
 # Source fragments are rendered into pages, not standalone search results.
 /components/*
   X-Robots-Tag: noindex
+
+/assets/css/*.v23.css
+  Cache-Control: public, max-age=31536000, immutable
