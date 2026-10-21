@@ -101,7 +101,7 @@ def page(title, desc, ar_url, en_url, body, lds):
         '<link rel="icon" type="image/png" href="/assets/favicon.png"/>'
         '<link rel="apple-touch-icon" href="/assets/favicon.png"/>'
         '<link rel="manifest" href="/site.webmanifest"/>'
-        '<link rel="stylesheet" href="/assets/css/styles.v18.css"/>'
+        '<link rel="stylesheet" href="/assets/css/styles.v23.css"/>'
         '<link rel="stylesheet" href="/assets/css/supply-coverage.v1.css"/>'
         + ld(*lds) + "</head>" + h + body + foot
     )
