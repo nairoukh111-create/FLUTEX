@@ -236,9 +236,16 @@ def brand_page(brand, items, en_slug):
     en_url = f"{BASE}/plasma/{en_slug}"
     total = len({r for i in items for r in i["references"]})
     comps = sorted({ar_comp(c) for i in items for c in i["components"]})
-    title = f"مستهلكات بلازما {brand} متوافقة في السعودية | FLUTEX"
+    local_priority = brand in {"Kjellberg", "Hypertherm"}
+    title = (f"مستهلكات بلازما متوافقة مع {brand} في السعودية | FLUTEX" if local_priority
+             else f"مستهلكات بلازما {brand} متوافقة في السعودية | FLUTEX")
+    heading = (f"مستهلكات بلازما متوافقة مع {brand} في السعودية" if local_priority
+               else f"مستهلكات {brand} المتوافقة")
     desc = (f"قطع غيار بلازما متوافقة لأنظمة {brand}: {arjoin(comps[:5])}. "
             f"{len(items)} عائلة نظام و{total} رقم مرجع أصلي فريد. عروض أسعار للسعودية والخليج.")
+    if local_priority:
+        desc = (f"مستهلكات بلازما متوافقة مع {brand} للمصانع في السعودية. "
+                "دعم طلبات عروض الأسعار من الرياض للإلكترودات والنوزلات والشيلدات وقطع التورش.")
     qa = [
         (f"ما أنظمة {brand} التي تغطيها FLUTEX؟",
          f"تغطي FLUTEX {len(items)} عائلة أنظمة من {brand}: "
@@ -252,6 +259,9 @@ def brand_page(brand, items, en_slug):
     cards = "".join(
         f'<li><a href="/ar/plasma/{SLUG[keyof(i)]}">{E(" / ".join(i["systems"]))} '
         f'<span>←</span></a></li>' for i in items)
+    intro = (f"مستهلكات بديلة لـ{len(items)} عائلات أنظمة {brand}. "
+             "تُدار استفسارات التوريد داخل السعودية من عملياتنا في الرياض؛ أرسل رقم المرجع الأصلي لتحديد القطعة."
+             if local_priority else f"{len(items)} عائلة نظام و{total} رقم مرجع أصلي فريد مغطى.")
     rfq = urllib.parse.quote(f"Plasma - {brand}")
     body = (
         f'<section class="product-category-hero seo-hero" style="background-image:url(\'/assets/catalog/plasma-cover.webp\')">'
@@ -260,8 +270,8 @@ def brand_page(brand, items, en_slug):
         '<a href="/ar/plasma-consumables">مستهلكات البلازما</a><span>←</span>'
         f'<strong>{E(brand)}</strong></div>'
         '<div class="eyebrow">تغطية التوافق</div>'
-        f'<h1>مستهلكات {E(brand)} المتوافقة</h1>'
-        f'<p>{len(items)} عائلة نظام و{total} رقم مرجع أصلي فريد مغطى.</p></div></section>'
+        f'<h1>{E(heading)}</h1>'
+        f'<p>{E(intro)}</p></div></section>'
         '<section class="seo-section"><div class="container">'
         f'<h2>أنظمة {E(brand)} المدعومة</h2>'
         f'<p class="seo-lead">اختر النظام لعرض أرقام المرجع الأصلية المغطاة والمكوّنات المتوفرة.</p>'
