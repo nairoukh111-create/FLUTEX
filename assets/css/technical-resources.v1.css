@@ -1,0 +1,11 @@
+.resource-copy { max-width: 960px; }
+.resource-copy h2 { font-size: clamp(26px, 3.4vw, 40px); line-height: 1.2; }
+.resource-copy p { color: var(--muted); }
+.calculator-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.calculator-card { border: 1px solid var(--line); border-radius: 16px; padding: 28px; background: var(--paper); min-width: 0; }
+.calculator-card h2 { font-size: 26px; margin-top: 0; }
+.calculator-card .field { margin: 16px 0; }
+.calculator-card output { display: block; min-height: 36px; margin-top: 22px; font-weight: 800; font-size: 22px; overflow-wrap: anywhere; }
+.formula { display: block; direction: ltr; text-align: start; padding: 16px; margin: 16px 0; background: var(--paper-2); font-size: 18px; white-space: normal; }
+.resource-copy a { text-decoration: underline; text-underline-offset: 3px; }
+@media(max-width: 760px) { .calculator-grid { grid-template-columns: 1fr; } .calculator-card { padding: 22px; } }

@@ -1,0 +1,4 @@
+.geo-breadcrumbs { padding: 15px 0; font-size: 13px; color: var(--muted); }
+.geo-breadcrumbs ol { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; list-style: none; margin: 0; padding: 0; }
+.geo-breadcrumbs li + li::before { content: '/'; margin-inline-end: 10px; color: var(--muted); }
+.geo-breadcrumbs a { text-decoration: underline; text-underline-offset: 3px; }
