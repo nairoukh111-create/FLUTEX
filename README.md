@@ -23,8 +23,37 @@ In the Pages project, add a Service Binding with:
 
 The website remains fully usable without the binding, but RFQ form submission returns a clear temporary-unavailable message until it is configured. Email and WhatsApp links continue to work.
 
+The English and Arabic forms now prepare an email draft while the secure service is unavailable. Draft preparation is **not** an email delivery or a completed RFQ. Attachments must be added in the email client; the website does not upload them in draft mode. Customers can also copy the enquiry details or use the existing direct email/WhatsApp links.
+
+To enable online submissions, provision the verified RFQ Worker, bind it as `RFQ_SERVICE`, and set the public `PUBLIC_TURNSTILE_SITE_KEY` in Pages. The Worker must validate Turnstile and handle attachment validation, spam protection and delivery. `GET /api/rfq` exposes only readiness and the public site key, never secrets. Do not mark delivery as verified until an authorised end-to-end test has succeeded.
+
 ## Shared supply coverage map
 
 The localized section before each footer uses `components/supply-coverage.en.html` and `.ar.html`, `assets/css/supply-coverage.v1.css`, and a shared, lazy-loaded WebP basemap. Three SVG paths connect the UK marker to distinct Türkiye, Saudi Arabia and UAE markers. UAE is labelled as a supply market.
 
 After editing either component or generating pages, run `python scripts/supply_coverage.py`. Run `python scripts/supply_coverage.py --check` to verify all pages match. The component is statically rendered and works without JavaScript; mobile shows readable country labels below the map.
+
+## Search and technical resources
+
+- `/parameters` and `/ar/parameters` contain sourced metric milling formulas and a calculator. No default machining settings are recommended; values must come from the tool/application documentation.
+- `scripts/prerender_tool_finders.py` renders the existing 30 tool families into HTML, with links to the existing detail pages. Its `--check` mode detects drift. JavaScript filters continue to enhance this content.
+- `scripts/build_search_index.py` indexes every sitemap page into `search-index.v18.js`, retaining the prior catalog terms/reference data without inventing product records. Rebuild after content or sitemap changes; use `--check` in validation.
+- `global-search.v16.js` normalizes Arabic search and prefers the matching site language for equivalent pages.
+- The Saudi operator is represented as a local business using the FLUTEX brand, without asserting UK parent-company ownership.
+
+## Validation and discovery notifications
+
+Development scripts require Python with `lxml` (and Pillow for tool images), plus Node.js for the focused tests. They are not production build dependencies.
+
+```sh
+python scripts/prerender_tool_finders.py --check
+python scripts/build_search_index.py --check
+python scripts/supply_coverage.py --check
+python scripts/audit_site.py --output /tmp/flutex-source-audit.json
+node --test tests/*.test.cjs
+python scripts/crawl_live.py --output /tmp/flutex-live-audit.json
+```
+
+The root hexadecimal `.txt` file is a **public IndexNow verification key**, not a secret. After deploying changed canonical URLs, prepare a JSON array of those URLs and use `scripts/notify_indexnow.py --urls /path/to/changed-urls.json --dry-run`. Remove `--dry-run` to notify IndexNow only after verifying the deployed changes. HTTP 200/202 acknowledges receipt; it does not establish Bing or Google indexing. Do not repeatedly notify unchanged URLs.
+
+Cloudflare Web Analytics was enabled in the existing Pages project on 22 October 2026. Pages injects its beacon on subsequent deployments. Page views/referrals and intent clicks are not qualified RFQs; conversion/CRM measurements require a separately configured destination.

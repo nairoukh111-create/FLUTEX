@@ -34,6 +34,14 @@ export async function onRequestPost(context) {
 }
 
 export function onRequest(context) {
+  if (context.request.method === "GET") {
+    // The site key is public by design. Never expose secret bindings or tokens.
+    const turnstileSiteKey = context.env.PUBLIC_TURNSTILE_SITE_KEY || "";
+    return json({
+      available: Boolean(context.env.RFQ_SERVICE && turnstileSiteKey),
+      turnstileSiteKey,
+    });
+  }
   if (context.request.method === "POST") {
     return onRequestPost(context);
   }

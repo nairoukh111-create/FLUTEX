@@ -4,7 +4,7 @@ FLUTEX SEO enrichment.
 
 1. Adds a visible, page-specific FAQ section + matching FAQPage JSON-LD
    to the 39 plasma system pages and the 10 plasma brand hub pages.
-2. Adds ItemList JSON-LD covering the original reference numbers.
+2. Adds ItemList JSON-LD only on system pages with visible reference numbers.
 3. Pre-renders the Plasma System Finder results into static HTML so the
    crawler no longer receives "0 matching system families".
 
@@ -223,9 +223,9 @@ def main():
             if not items:
                 continue
             qa = faq_for_brand(brand, items)
-            refs = sorted({r for i in items for r in i["references"]})
-            lds = [faq_ld(qa),
-                   itemlist_ld(f"{brand} original reference numbers covered", refs, url)]
+            # Brand hubs link to system pages; their individual reference lists
+            # are not visible here and must not be added as hidden schema.
+            lds = [faq_ld(qa)]
             if inject(f, faq_html(qa, f"{brand} compatible consumables — frequently asked questions"), lds):
                 done_brand += 1
 
