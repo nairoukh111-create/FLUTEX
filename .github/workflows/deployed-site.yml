@@ -17,18 +17,27 @@ jobs:
         run: |
           python3 -m venv /tmp/flutex-live
           /tmp/flutex-live/bin/python -m pip install --disable-pip-version-check lxml
-      - name: Wait for the deployed sitemap URL set
+      - name: Wait for deployed sitemap and changed assets
         run: |
           python3 - <<'PY'
           import subprocess,time,xml.etree.ElementTree as ET
           def urls(raw):
               return {n.text for n in ET.fromstring(raw).iter() if n.tag.endswith('loc')}
           expected=urls(open('sitemap.xml').read())
+          from pathlib import Path
+          changed=subprocess.check_output(['git','diff','--name-only','HEAD^1','HEAD','--','assets/js','assets/css'],text=True).splitlines()
+          assets=[Path(p) for p in changed if Path(p).is_file() and Path(p).suffix in {'.js','.css'}]
+          def assets_ready():
+              for path in assets:
+                  r=subprocess.run(['curl','-fLsS','--max-time','15','https://flutexindustrial.com/'+path.as_posix()],capture_output=True)
+                  if r.returncode or r.stdout != path.read_bytes():
+                      return False
+              return True
           for attempt in range(12):
               r=subprocess.run(['curl','-fLsS','--max-time','15','https://flutexindustrial.com/sitemap.xml'],capture_output=True,text=True)
               try:
-                  if r.returncode == 0 and urls(r.stdout) == expected:
-                      print(f'Production sitemap matches {len(expected)} canonical URLs')
+                  if r.returncode == 0 and urls(r.stdout) == expected and assets_ready():
+                      print(f'Production sitemap matches {len(expected)} canonical URLs; {len(assets)} changed assets match checkout')
                       break
               except ET.ParseError:
                   pass
@@ -41,10 +50,16 @@ jobs:
       - name: Notify only changed canonical HTML pages
         run: |
           /tmp/flutex-live/bin/python - <<'PY'
-          import json,subprocess
+          import json,subprocess,xml.etree.ElementTree as ET
           from pathlib import Path
           from lxml import html
           changed=subprocess.check_output(['git','diff','--name-only','HEAD^1','HEAD','--','*.html'],text=True).splitlines()
+          def lastmods(raw):
+              ns={'s':'http://www.sitemaps.org/schemas/sitemap/0.9'}
+              return {n.findtext('s:loc',namespaces=ns):n.findtext('s:lastmod',namespaces=ns) for n in ET.fromstring(raw)}
+          old=lastmods(subprocess.check_output(['git','show','HEAD^1:sitemap.xml']))
+          current=lastmods(Path('sitemap.xml').read_text())
+          substantive={url for url,date in current.items() if url not in old or date != old[url]}
           urls=[]
           for name in changed:
               path=Path(name)
@@ -53,12 +68,13 @@ jobs:
               doc=html.fromstring(path.read_text())
               canonical=doc.xpath('//link[@rel="canonical"]/@href')
               if len(canonical)==1 and canonical[0].startswith('https://flutexindustrial.com/'):
-                  urls.append(canonical[0])
+                  if canonical[0] in substantive:
+                      urls.append(canonical[0])
           urls=sorted(set(urls))
           if urls:
               out=Path('/tmp/flutex-changed-urls.json')
               out.write_text(json.dumps(urls))
               subprocess.run(['python3','scripts/notify_indexnow.py','--urls',str(out)],check=True)
           else:
-              print('No changed canonical HTML pages; no notification sent.')
+              print('No canonical content lastmod changes; no notification sent for shared-asset-only edits.')
           PY

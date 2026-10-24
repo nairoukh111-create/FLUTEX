@@ -1,6 +1,6 @@
 const {test} = require('node:test');
 const assert = require('node:assert/strict');
-const {emailDraft, enquiryText} = require('../assets/js/rfq.v16.js');
+const {emailDraft, enquiryText} = require('../assets/js/rfq.v17.js');
 test('email preparation preserves Arabic text, quantities and references', () => {
   const values = {name:'محمد',company:'Factory',email:'buyer@example.test',partNumber:'420249',quantity:'50',message:'طلب & مقاسات + صورة'};
   const url = emailDraft('sales@flutexindustrial.com', values);

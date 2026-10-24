@@ -57,3 +57,11 @@ python scripts/crawl_live.py --output /tmp/flutex-live-audit.json
 The root hexadecimal `.txt` file is a **public IndexNow verification key**, not a secret. After deploying changed canonical URLs, prepare a JSON array of those URLs and use `scripts/notify_indexnow.py --urls /path/to/changed-urls.json --dry-run`. Remove `--dry-run` to notify IndexNow only after verifying the deployed changes. HTTP 200/202 acknowledges receipt; it does not establish Bing or Google indexing. Do not repeatedly notify unchanged URLs.
 
 Cloudflare Web Analytics was enabled in the existing Pages project on 22 October 2026. Pages injects its beacon on subsequent deployments. Page views/referrals and intent clicks are not qualified RFQs; conversion/CRM measurements require a separately configured destination.
+
+## Optional Google Analytics
+
+`analytics.v16.js` uses the public measurement ID for the existing FLUTEX website stream. The Google tag only loads after permission, only on the production hostname. The bilingual choice can be reopened from the footer; declining disables collection and removes the first-party GA cookies. Enhanced measurement is off in the stream to prevent automatic collection of form/search/link contents. Advertising storage, Google signals and ad personalization are disabled.
+
+Events: `contact_click` with a fixed WhatsApp/email/phone method, `rfq_draft_prepared`, `rfq_details_copied`, and `rfq_service_accepted`. No form values, outbound URLs, search terms, URL queries/fragments or referrer paths are included in configured events. These events are intent or service acceptance signals, not qualified leads, verified delivery or sales. No synthetic RFQ is submitted for analytics validation. Preview hosts never send production events.
+
+The live deployment check also compares changed JS/CSS assets with the checkout before accepting a deployment. IndexNow notifications require a new URL or changed sitemap lastmod as well as changed HTML; shared analytics asset references do not cause all existing pages to be notified again.
