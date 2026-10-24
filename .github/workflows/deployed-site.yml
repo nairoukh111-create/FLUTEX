@@ -1,0 +1,64 @@
+name: Verify deployed pages and notify IndexNow
+on:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+          fetch-depth: 2
+      - name: Install delivered-HTML audit dependency
+        run: |
+          python3 -m venv /tmp/flutex-live
+          /tmp/flutex-live/bin/python -m pip install --disable-pip-version-check lxml
+      - name: Wait for the deployed sitemap URL set
+        run: |
+          python3 - <<'PY'
+          import subprocess,time,xml.etree.ElementTree as ET
+          def urls(raw):
+              return {n.text for n in ET.fromstring(raw).iter() if n.tag.endswith('loc')}
+          expected=urls(open('sitemap.xml').read())
+          for attempt in range(12):
+              r=subprocess.run(['curl','-fLsS','--max-time','15','https://flutexindustrial.com/sitemap.xml'],capture_output=True,text=True)
+              try:
+                  if r.returncode == 0 and urls(r.stdout) == expected:
+                      print(f'Production sitemap matches {len(expected)} canonical URLs')
+                      break
+              except ET.ParseError:
+                  pass
+              time.sleep(5)
+          else:
+              raise SystemExit('Production sitemap has not matched this checkout; do not notify URLs yet.')
+          PY
+      - name: Verify every delivered canonical page
+        run: /tmp/flutex-live/bin/python scripts/crawl_live.py --output /tmp/flutex-live-audit.json --workers 6
+      - name: Notify only changed canonical HTML pages
+        run: |
+          /tmp/flutex-live/bin/python - <<'PY'
+          import json,subprocess
+          from pathlib import Path
+          from lxml import html
+          changed=subprocess.check_output(['git','diff','--name-only','HEAD^1','HEAD','--','*.html'],text=True).splitlines()
+          urls=[]
+          for name in changed:
+              path=Path(name)
+              if not path.is_file():
+                  continue
+              doc=html.fromstring(path.read_text())
+              canonical=doc.xpath('//link[@rel="canonical"]/@href')
+              if len(canonical)==1 and canonical[0].startswith('https://flutexindustrial.com/'):
+                  urls.append(canonical[0])
+          urls=sorted(set(urls))
+          if urls:
+              out=Path('/tmp/flutex-changed-urls.json')
+              out.write_text(json.dumps(urls))
+              subprocess.run(['python3','scripts/notify_indexnow.py','--urls',str(out)],check=True)
+          else:
+              print('No changed canonical HTML pages; no notification sent.')
+          PY
