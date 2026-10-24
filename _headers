@@ -56,3 +56,7 @@
 
 /assets/css/*.v23.css
   Cache-Control: public, max-age=31536000, immutable
+
+# Generated canonical-page index must revalidate as content is added.
+/assets/js/search-index.v18.js
+  Cache-Control: no-cache
