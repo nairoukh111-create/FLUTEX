@@ -1,0 +1,30 @@
+name: Site quality
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6.1.0
+        with:
+          persist-credentials: false
+      - name: Install source-audit dependencies
+        run: |
+          python3 -m venv /tmp/flutex-qa
+          /tmp/flutex-qa/bin/python -m pip install --disable-pip-version-check lxml Pillow
+      - name: Check static tool families
+        run: /tmp/flutex-qa/bin/python scripts/prerender_tool_finders.py --check
+      - name: Check canonical-page search index
+        run: /tmp/flutex-qa/bin/python scripts/build_search_index.py --check
+      - name: Check shared supply coverage
+        run: /tmp/flutex-qa/bin/python scripts/supply_coverage.py --check
+      - name: Audit canonical pages and local links
+        run: /tmp/flutex-qa/bin/python scripts/audit_site.py --output /tmp/flutex-source-audit.json
+      - name: Test search, RFQ draft and machining formulas
+        run: node --test tests/*.test.cjs
