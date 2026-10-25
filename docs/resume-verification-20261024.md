@@ -14,6 +14,6 @@ The older PR #7 overlaps later plasma improvements. Only its missing parts are c
 
 ## Account and delivery limits
 
-Bing Webmaster still requires account sign-in. The public RFQ readiness endpoint returned unavailable, so email draft preparation remains the active fallback. No enquiry was submitted, no sending-service subscription was purchased, and no unverified delivery is presented as successful. New content still requires search-engine crawling and indexing; notification receipt or sitemap submission is not proof of indexing.
+Follow-up: Bing Webmaster ownership was verified on 24 October through the public homepage meta tag in PR #24, and the sitemap was submitted. The public RFQ readiness endpoint returned unavailable, so email draft preparation remains the active fallback. No enquiry was submitted, no sending-service subscription was purchased, and no unverified delivery is presented as successful. New content still requires search-engine crawling and indexing; notification receipt or sitemap submission is not proof of indexing.
 
 ![Production analytics choices](qa/analytics-choice-20261024.jpg)
