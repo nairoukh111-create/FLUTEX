@@ -8,6 +8,7 @@ import tempfile
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from lxml import html
+from audit_site import analytics_errors
 
 ROOT = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser(description=__doc__)
@@ -31,6 +32,8 @@ def fetch(url):
         raw=body.read_text(errors='replace')
         try:
             doc=html.fromstring(raw)
+            row['errors'].extend(analytics_errors(doc))
+            row['analytics_wrapper']=doc.xpath('//script[contains(@src,"/assets/js/analytics.")]/@src')
             row['title']=doc.xpath('string(//title)')
             row['canonical']=doc.xpath('//link[@rel="canonical"]/@href')
             if row['canonical']!=[url]:row['errors'].append('Delivered canonical mismatch')
