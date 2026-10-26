@@ -46,7 +46,7 @@ test('permission starts exactly one tag with sanitized page and referrer context
 });
 test('contact and draft events discard link queries and arbitrary RFQ details', () => {
   const page=setup('accepted');
-  page.listeners.click({target:{closest:()=>({getAttribute:()=> 'https://wa.me/966531699987?text=private@example.test'})}});
+  page.listeners.click({target:{closest:()=>({getAttribute:()=> 'https://wa.me/966559696226?text=private@example.test'})}});
   page.listeners.rfq_draft_prepared({detail:{email:'private@example.test',message:'secret'}});
   const events=page.calls().filter(c=>c[0]==='event');
   assert.equal(events.at(-2)[1],'contact_click');assert.equal(events.at(-2)[2].contact_method,'whatsapp');
@@ -86,7 +86,7 @@ test('ambiguous, overlong and recognizable sensitive campaign values are rejecte
     '?utm_source=google&utm_source=chatgpt.com',
     '?utm_source=%0D%0Aprivate',
     '?utm_source=https%3A%2F%2Fexample.test%2Fprivate',
-    '?utm_source=966531699987',
+    '?utm_source=966559696226',
     '?utm_source='+ 'x'.repeat(101),
     '?utm_source=eyJhbGciOiJIUzI1NiJ9.test.signature'
   ]) {
@@ -136,9 +136,9 @@ test('Arabic and English contact methods and product RFQ intent use identical ev
       search:'?utm_source=linkedin&utm_medium=social&utm_campaign=%D8%A8%D9%84%D8%A7%D8%B2%D9%85%D8%A7'});
     assert.equal(page.calls().find(c=>c[0]==='config')[2].campaign_name,'بلازما');
     for (const [href,method] of [
-      ['https://wa.me/966531699987?text=private@example.test','whatsapp'],
+      ['https://wa.me/966559696226?text=private@example.test','whatsapp'],
       ['mailto:sales@flutexindustrial.com?body=private@example.test','email'],
-      ['tel:+966531699987','phone']
+      ['tel:+966559696226','phone']
     ]) {
       page.listeners.click({target:{closest:()=>({getAttribute:()=>href})}});
       const event=page.calls().at(-1);
