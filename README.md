@@ -60,8 +60,10 @@ Cloudflare Web Analytics was enabled in the existing Pages project on 22 October
 
 ## Optional Google Analytics
 
-`analytics.v16.js` uses the public measurement ID for the existing FLUTEX website stream. The Google tag only loads after permission, only on the production hostname. The bilingual choice can be reopened from the footer; declining disables collection and removes the first-party GA cookies. Enhanced measurement is off in the stream to prevent automatic collection of form/search/link contents. Advertising storage, Google signals and ad personalization are disabled.
+`analytics.v17.js` uses the public measurement ID for the existing FLUTEX website stream. The Google tag only loads after permission, only on the production hostname. The bilingual choice can be reopened from the footer; declining disables collection and removes the first-party GA cookies. Enhanced measurement is off in the stream to prevent automatic collection of form/search/link contents. Advertising storage, Google signals and ad personalization are disabled.
 
 Events: `contact_click` with a fixed WhatsApp/email/phone method, `rfq_draft_prepared`, `rfq_details_copied`, and `rfq_service_accepted`. No form values, outbound URLs, search terms, URL queries/fragments or referrer paths are included in configured events. These events are intent or service acceptance signals, not qualified leads, verified delivery or sales. No synthetic RFQ is submitted for analytics validation. Preview hosts never send production events.
 
 The live deployment check also compares changed JS/CSS assets with the checkout before accepting a deployment. IndexNow notifications require a new URL or changed sitemap lastmod as well as changed HTML; shared analytics asset references do not cause all existing pages to be notified again.
+
+Campaign attribution and B2B event semantics are documented in [docs/traffic-attribution.md](docs/traffic-attribution.md). The source and production crawls require exactly one current consent wrapper per canonical page.

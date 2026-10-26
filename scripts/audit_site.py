@@ -13,6 +13,19 @@ from lxml import html
 ROOT = Path(__file__).resolve().parents[1]
 BASE = 'https://flutexindustrial.com'
 
+def analytics_errors(doc):
+    scripts = doc.xpath('//script[@src]/@src')
+    local_tags = [src for src in scripts if re.search(r'/assets/js/analytics\.v\d+\.js', src)]
+    errors = []
+    if local_tags != ['/assets/js/analytics.v17.js']:
+        errors.append('Expected exactly one current analytics wrapper')
+    if any('googletagmanager.com' in src or 'google-analytics.com' in src for src in scripts):
+        errors.append('Static Google tag bypasses the consent wrapper')
+    inline = '\n'.join(doc.xpath('//script[not(@src) and not(@type="application/ld+json")]/text()'))
+    if re.search(r'\bgtag\s*\(|G-NHDB1BF095|GTM-[A-Z0-9]+', inline):
+        errors.append('Conflicting inline Google tracking implementation')
+    return errors
+
 
 def local(url):
     path = urlsplit(url).path
@@ -36,6 +49,7 @@ def audit():
             row['errors'].append('Missing sitemap file')
             continue
         doc = html.fromstring(file.read_text())
+        row['errors'].extend(analytics_errors(doc))
         trees[urlsplit(url).path] = doc
         row['title'] = doc.xpath('string(//title)')
         titles[row['title']].append(url)
