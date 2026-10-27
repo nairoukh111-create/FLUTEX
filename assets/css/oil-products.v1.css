@@ -1,0 +1,38 @@
+
+/* FLUTEX oil catalogue: isolated styles; global site typography and navigation remain unchanged. */
+.flutex-oil-section{padding:66px 0;background:#f5f6f7}
+.flutex-oil-intro{max-width:790px;margin:0 0 28px}
+.flutex-oil-intro h2,.flutex-oil-detail h2{font-size:clamp(1.7rem,3vw,2.55rem);letter-spacing:-.03em;line-height:1.15;margin:10px 0}
+.flutex-oil-intro p,.flutex-oil-detail p{line-height:1.75;color:#424a50}
+.flutex-oil-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.flutex-oil-card{border-radius:18px;background:white;box-shadow:0 11px 36px #15202b0d;border:1px solid #e5e9ed;padding:27px;display:flex;flex-direction:column;gap:14px}
+.flutex-oil-card .oil-series,.oil-series{color:#7c6a00;text-transform:uppercase;font-size:.76rem;letter-spacing:.14em;font-weight:800}
+.flutex-oil-card h3{margin:0;font-size:1.6rem;letter-spacing:-.02em}
+.flutex-oil-card p{margin:0;color:#535d66;line-height:1.65}
+.flutex-oil-kpis{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:8px 0}
+.flutex-oil-kpis div{background:#f4f6f7;border-radius:9px;padding:13px 14px;min-width:0}
+.flutex-oil-kpis small{display:block;font-size:.74rem;line-height:1.4;color:#687079}
+.flutex-oil-kpis strong{display:block;font-size:.97rem;margin-top:4px;overflow-wrap:anywhere}
+.flutex-oil-actions{margin-top:auto;display:flex;gap:10px;flex-wrap:wrap}
+.flutex-oil-actions a{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:9px;font-weight:750;text-decoration:none;line-height:1.3}
+.flutex-oil-actions .oil-primary{background:#fbe12a;color:#131719}
+.flutex-oil-actions .oil-secondary{border:1px solid #171d22;color:#171d22;background:white}
+.flutex-oil-note{margin-top:18px;background:white;padding:15px 17px;border-inline-start:4px solid #f2cf00;border-radius:8px;color:#3a4650}
+.flutex-oil-hero{background:#171d22;color:white;padding:62px 0 56px;border-top:5px solid #fbe12a}
+.flutex-oil-hero .oil-series{color:#fbe12a}
+.flutex-oil-hero h1{margin:13px 0;font-size:clamp(2.2rem,5vw,4.1rem);line-height:1.05;letter-spacing:-.045em;color:white}
+.flutex-oil-hero p{max-width:850px;color:#e0e4e7;font-size:1.07rem;line-height:1.7}
+.flutex-oil-hero .product-breadcrumb,.flutex-oil-hero .product-breadcrumb a{color:#dae0e4}
+.flutex-oil-hero .flutex-oil-actions .oil-secondary{border-color:#c3c8ca;color:white;background:transparent}
+.flutex-oil-detail{padding:54px 0;background:white}
+.flutex-oil-panel{background:#f5f6f7;padding:26px;border-radius:15px;margin:22px 0}
+.flutex-oil-panel ul{margin:14px 0 0;padding-inline-start:22px;line-height:1.9}
+.flutex-oil-tblwrap{overflow-x:auto;border:1px solid #e3e7e9;border-radius:12px;margin-top:20px}
+.flutex-oil-table{border-collapse:collapse;width:100%;font-size:.97rem;min-width:600px;text-align:start}
+.flutex-oil-table th{background:#171d22;color:#fff;padding:15px;text-align:start}
+.flutex-oil-table td{padding:13px 15px;border-bottom:1px solid #e7e8e9}
+.flutex-oil-table tr:nth-child(even){background:#f7f8f9}
+.flutex-oil-company{border-top:3px solid #fbe12a;background:#f7f8f9;padding:22px;border-radius:9px;margin-top:26px}
+.flutex-oil-company strong{display:block;margin-bottom:7px}
+.flutex-oil-company a{color:#222}
+@media(max-width:760px){.flutex-oil-grid{grid-template-columns:1fr}.flutex-oil-section{padding:42px 0}.flutex-oil-card{padding:20px}.flutex-oil-hero{padding:42px 0}.flutex-oil-panel{padding:19px}}
