@@ -33,6 +33,10 @@ def build():
             item['type'] = 'Tool family'
         if 'parameters' in path:
             item['terms'] = 'rpm feed rate cutting speed chip load feed per tooth aluminum 6063 حساب دوران تغذية سرعة قطع ألمنيوم معادلات'
+        if 'ball-transfer-units' in path:
+            item['type'] = 'مكونات صناعية' if ar else 'Industrial components'
+            item['terms'] = ('ball transfer units وحدات نقل كروية كرسي كروي مناولة مواد فلنجة قلاوظ السعودية' if ar else
+                             'ball transfer unit bearing ball roller ball caster flange stud press fit heavy duty transfer table Saudi Arabia')
         items.append(item)
     return 'window.FLUTEX_SEARCH_INDEX=' + json.dumps(items, ensure_ascii=False, separators=(',', ':')) + ';\n'
 
