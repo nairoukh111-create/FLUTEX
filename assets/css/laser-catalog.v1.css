@@ -1,0 +1,69 @@
+/* FLUTEX Fiber Laser technical catalog — scoped, bilingual, responsive */
+.laser-hero{background:linear-gradient(115deg,#0a101a,#12283c);color:#fff;overflow:hidden}
+.laser-hero-inner{display:grid;grid-template-columns:1.1fr .72fr;gap:6%;align-items:center;padding-top:70px;padding-bottom:72px}
+.laser-eyebrow{display:inline-block;color:#fbe12a;font-size:11px;letter-spacing:.22em;font-weight:800;margin-bottom:18px}
+.laser-hero h1{font-size:clamp(43px,5vw,72px);letter-spacing:-.045em;line-height:1.06;margin:0 0 22px;max-width:720px}
+.laser-hero p{font-size:17px;line-height:1.75;color:rgba(255,255,255,.75);max-width:680px}
+.laser-hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0 30px}
+.laser-hero-proof{display:flex;flex-wrap:wrap;gap:10px}
+.laser-hero-proof span{border:1px solid rgba(255,255,255,.17);padding:8px 12px;border-radius:100px;font-size:11px;font-weight:700;color:#e0e8ed}
+.laser-hero-image{aspect-ratio:4/5;border:1px solid rgba(255,255,255,.1);border-radius:22px;overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,.24)}
+.laser-hero-image img{width:100%;height:100%;object-fit:cover;display:block}
+.laser-catalog{scroll-margin-top:90px;padding-top:82px}
+.laser-catalog-intro{display:grid;grid-template-columns:1fr .72fr;align-items:end;gap:36px;margin-bottom:26px}
+.laser-catalog-intro h2{font-size:clamp(32px,4vw,50px);line-height:1.08;letter-spacing:-.035em;margin:8px 0 0}
+.laser-catalog-intro p{font-size:14px;line-height:1.8;color:#69717c;margin:0}
+.laser-searchbar{background:#f5f7f9;border:1px solid #e5e8eb;border-radius:20px;padding:23px}
+.laser-searchbar>label{display:block;font-size:12px;font-weight:850;margin-bottom:8px}
+.laser-search-row{display:flex;gap:10px}
+.laser-search-row input{flex:1;min-width:0;background:#fff;border:1px solid #cdd5dc;border-radius:12px;padding:15px 17px;color:#111;font-size:16px}
+.laser-search-row input:focus{outline:3px solid rgba(251,225,42,.65);outline-offset:1px}
+.laser-search-row button{border:1px solid #d3d8dd;background:white;border-radius:12px;padding:0 20px;cursor:pointer;font-weight:750}
+.laser-select-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+.laser-select-row label{font-size:11px;color:#535b63;font-weight:700}
+.laser-select-row select{margin-top:7px;display:block;width:100%;background:#fff;border:1px solid #d3d8dd;border-radius:10px;padding:12px;color:#111;font-size:13px}
+.laser-result-count{font-size:12px;font-weight:700;margin-top:12px;color:#5a6370}
+.laser-filter-list{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 32px}
+.laser-chip{display:inline-flex;align-items:center;gap:8px;border:1px solid #dce2e7;background:#fff;color:#151a1f;border-radius:50px;padding:10px 13px;font-size:11px;font-weight:800;cursor:pointer;text-align:start}
+.laser-chip span{font-size:10px;color:#6c747d;font-variant-numeric:tabular-nums}
+.laser-chip:is(:hover,:focus-visible){border-color:#ad9d10}
+.laser-chip.is-active{background:#fbe12a;border-color:#fbe12a}
+.laser-family{margin-bottom:48px;scroll-margin-top:108px}
+.laser-family-head{display:flex;justify-content:space-between;align-items:center;gap:22px;margin:0 0 16px;padding:0 0 18px;border-bottom:1px solid #dce1e5}
+.laser-family-heading{display:flex;align-items:center;gap:18px}
+.laser-family-heading>span{font-size:22px;letter-spacing:-.04em;color:#c4a900;font-weight:900}
+.laser-family-heading h3{font-size:clamp(23px,3vw,32px);line-height:1.15;margin:0 0 5px}
+.laser-family-heading p{color:#6c747c;font-size:13px;margin:0}
+.laser-family-head>b{font-size:11px;border:1px solid #e3e7ea;border-radius:30px;padding:7px 10px;color:#5a626c;white-space:nowrap}
+.laser-items{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.laser-item{display:flex;flex-direction:column;background:#fff;border:1px solid #e1e5e9;border-radius:16px;padding:20px;min-width:0;transition:border-color .2s,box-shadow .2s}
+.laser-item:hover{border-color:#cab600;box-shadow:0 10px 25px rgba(0,0,0,.045)}
+.laser-item-top{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:14px}
+.laser-item-index{font-size:10px;color:#a0a8ad;letter-spacing:.12em;font-weight:750}
+.laser-item-type{font-size:10px;font-weight:800;border-radius:7px;padding:5px 7px;background:rgba(251,225,42,.24);color:#5a4e00;line-height:1.3}
+.laser-item h4{font-size:16px;line-height:1.35;margin:0 0 14px;color:#15181b;overflow-wrap:anywhere}
+.laser-item-compat,.laser-item-spec{font-size:12px;color:#69717a;line-height:1.65;margin:0 0 6px;overflow-wrap:anywhere}
+.laser-item-compat strong,.laser-item-spec strong{color:#404951}
+.laser-item-bottom{margin-top:auto;padding-top:17px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.laser-item-bottom>span{font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:#828a91}
+.laser-item-bottom a{font-size:11px;font-weight:850;color:#111;border-bottom:2px solid #fbe12a}
+.laser-item-bottom a:hover{color:#8c7300}
+.laser-empty{padding:50px 24px;border-radius:20px;background:#f5f6f7;text-align:center}
+.laser-empty[hidden],.laser-family[hidden],.laser-item[hidden]{display:none!important}
+.laser-empty h3{margin:0 0 8px}
+.laser-empty p{color:#687078}
+.laser-empty a{font-weight:800;text-decoration:underline;text-underline-offset:4px}
+.laser-assurance{padding:70px 0}
+.laser-assurance-grid{display:grid;grid-template-columns:1fr .75fr;gap:9%;align-items:center}
+.laser-assurance h2{font-size:36px;line-height:1.1;margin:12px 0}
+.laser-assurance p{font-size:14px;line-height:1.75;color:#67717a}
+.laser-assurance ol{list-style:none;padding:0;margin:0}
+.laser-assurance li{padding:16px 0;border-bottom:1px solid #e0e4e8;font-weight:750}
+.laser-assurance li b{display:inline-grid;place-items:center;background:#fbe12a;color:#111;border-radius:8px;height:34px;width:34px;margin-inline-end:14px;font-size:12px}
+.laser-faq-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.laser-faq-grid>div{border:1px solid #e2e7ea;border-radius:16px;padding:22px}
+.laser-faq-grid h3{font-size:17px;line-height:1.3;margin:0 0 10px}
+.laser-faq-grid p{font-size:13px;line-height:1.75;margin:0;color:#69727a}
+[dir=rtl] .laser-hero h1{letter-spacing:0}
+@media(max-width:950px){.laser-hero-inner{grid-template-columns:1fr .68fr;gap:30px}.laser-items{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:680px){.laser-hero-inner{grid-template-columns:1fr;padding-top:48px;padding-bottom:42px}.laser-hero-image{max-width:460px}.laser-hero h1{font-size:43px}.laser-catalog-intro,.laser-assurance-grid{grid-template-columns:1fr}.laser-catalog{padding-top:50px}.laser-searchbar{padding:17px}.laser-select-row{grid-template-columns:1fr}.laser-family-head{align-items:flex-start;flex-direction:column;gap:11px}.laser-items,.laser-faq-grid{grid-template-columns:1fr}.laser-search-row button{padding:0 12px;font-size:11px}.laser-chip{font-size:10px}.laser-assurance h2{font-size:30px}}
