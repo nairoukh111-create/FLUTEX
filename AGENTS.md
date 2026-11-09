@@ -4,6 +4,6 @@
 
 Never re-add **Special Tools** (Arabic **أدوات صناعية خاصة**) to the public FLUTEX website without a new explicit owner instruction. It must not appear as a category card, navigation entry, catalog section, destination page, search-index result, or sitemap URL. Do not reuse archived templates to restore it. Keep /special-tools and /ar/special-tools permanently redirected to /products and /ar/products respectively, with their HTML files absent.
 
-There are exactly six public product-family portrait cards, in English and Arabic, on both home and products pages. **Ball Transfer Units is 06 / 06**.
+There are exactly seven active public product-family portrait cards on both home and products pages, in English and Arabic. The added Laser Consumables & Spare Parts card is 03 / 07, and Ball Transfer Units is 07 / 07. This does not restore Special Tools.
 
 This applies to all future website changes. Run `node --test tests/*.test.cjs` before deploying; the retired-category test is a mandatory regression check.
