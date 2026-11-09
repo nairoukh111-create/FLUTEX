@@ -67,3 +67,7 @@ Events: `contact_click` with a fixed WhatsApp/email/phone method, `rfq_draft_pre
 The live deployment check also compares changed JS/CSS assets with the checkout before accepting a deployment. IndexNow notifications require a new URL or changed sitemap lastmod as well as changed HTML; shared analytics asset references do not cause all existing pages to be notified again.
 
 Campaign attribution and B2B event semantics are documented in [docs/traffic-attribution.md](docs/traffic-attribution.md). The source and production crawls require exactly one current consent wrapper per canonical page.
+
+## Retired catalog categories (owner decision, 2026-11-09)
+
+**Special Tools / أدوات صناعية خاصة is permanently removed** from FLUTEX's public product catalog. Do not reintroduce its card, page, navigation links, sitemap URL, or search result in future work unless the owner explicitly changes this decision. The public family count is **six**. The last card, Ball Transfer Units, is **06 / 06** in English and Arabic. Old routes remain permanently redirected to the corresponding product listings, not resurrected as pages. Run `node --test tests/*.test.cjs` to verify the category remains absent.
