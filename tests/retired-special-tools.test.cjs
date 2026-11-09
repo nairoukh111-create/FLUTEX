@@ -9,7 +9,7 @@ test('Retired Special Tools does not reappear in catalog cards', () => {
   for (const filename of ['index.html', 'products.html', 'ar/index.html', 'ar/products.html']) {
     const html = read(filename);
     assert.equal((html.match(/class="catalog-home-card"/g) || []).length, 7, filename);
-    assert.deepEqual([...html.matchAll(/class="category-no">(\d{2}) \/ 06/g)].map(x => x[1]), ['01', '02', '03', '04', '05', '06', '07'], filename);
+    assert.deepEqual([...html.matchAll(/class="category-no">(\d{2}) \/ 07/g)].map(x => x[1]), ['01', '02', '03', '04', '05', '06', '07'], filename);
     assert.doesNotMatch(html, /special-tools|Special Tools|أدوات صناعية خاصة|impact-bits\.webp|icon-special\.png/i, filename);
   }
 });
