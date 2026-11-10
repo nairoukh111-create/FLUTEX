@@ -9,7 +9,7 @@ test('Industrial saw blades catalog includes 35 families and interactive control
  const h=read(file);
  assert.equal((h.match(/class="saw-item"/g)||[]).length,35,file);
  assert.equal((h.match(/class="saw-family"/g)||[]).length,6,file);
- for(const id of ['saw-search','saw-material','saw-tech','saw-form','saw-diameter','saw-bore','saw-kerf','saw-teeth'])assert.ok(h.includes('id="'+id+'"'),file+':'+id);
+ for(const id of ['saw-search','saw-material','saw-tech','saw-form','saw-diameter','saw-bore','saw-kerf','saw-teeth','saw-body','saw-pinhole','saw-tooth','saw-material','saw-rpm'])assert.ok(h.includes('id="'+id+'"'),file+':'+id);
  assert.match(h,/industrial-saw-blades-card\.v1\.webp/);
  assert.doesNotMatch(h,/source-company-name|supplier-logo|supplier-model-series/i);
  }
@@ -24,4 +24,14 @@ test('Saw category adds seventh card while retired groups remain removed',()=>{
  assert.doesNotMatch(h,/href="\/(?:ar\/)?cnc-tools"|href="\/(?:ar\/)?special-tools"/);
  }
  for(const url of ['/industrial-saw-blades','/ar/industrial-saw-blades'])assert.ok(read('sitemap.xml').includes('<loc>https://flutexindustrial.com'+url+'</loc>'));
+});
+
+test('Saw blade inquiry captures mechanical fit and speed requirements',()=>{
+ const js=read('assets/js/industrial-saw-blades.v1.js');
+ for(const id of ['saw-body','saw-pinhole','saw-tooth','saw-material','saw-rpm'])assert.ok(js.includes(id),id);
+ for(const file of ['industrial-saw-blades.html','ar/industrial-saw-blades.html']){
+   const html=read(file);
+   for(const id of ['saw-body','saw-pinhole','saw-tooth','saw-material','saw-rpm'])assert.ok(html.includes('id="'+id+'"'),file+' '+id);
+   assert.doesNotMatch(html, /property="og:image:width"|property="og:image:height"/);
+ }
 });
