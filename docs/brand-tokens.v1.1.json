@@ -1,0 +1,77 @@
+{
+  "schema": "FLUTEX_BRAND_OPERATIONS/1.1",
+  "version": "1.1.0",
+  "date": "2026-11-10",
+  "revision": {
+    "supersedes": "1.0.0",
+    "change": "Owner explicitly rejected existing website category cards as part of brand identity",
+    "public_website_modified": false
+  },
+  "evidence": {
+    "primary_logo": "owner-supplied image / assets/flutex-logo-web.v2.png",
+    "colors": "assets/css/styles.v23.css values only; not component templates"
+  },
+  "core_brand_identity": {
+    "wordmark": "FLUTEX",
+    "public_label": "FLUTEX Industrial",
+    "primary_logo_path": "assets/flutex-logo-web.v2.png",
+    "colors": {
+      "yellow": "#FBE12A",
+      "black": "#0B0D0F",
+      "white": "#FFFFFF"
+    },
+    "official_print_values_verified": false,
+    "registered_wordmark_status_verified": false
+  },
+  "supporting_site_values_not_brand_rules": {
+    "yellowStrong": "#E6CA00",
+    "inkSecondary": "#15191D",
+    "offWhite": "#F5F6F7",
+    "muted": "#687078",
+    "divider": "#E5E8EB"
+  },
+  "typography_current_website_observation": {
+    "en": "Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif",
+    "ar": "Segoe UI, Tahoma, Arial, sans-serif",
+    "corporate_font_approved": false
+  },
+  "owner_directives": {
+    "exclude_current_category_cards_from_brand": true,
+    "do_not_copy_card_visuals": true,
+    "retired_families": [
+      "special-tools",
+      "cnc-tools"
+    ],
+    "active_families": [
+      "cutting-tools",
+      "plasma-consumables",
+      "laser-consumables",
+      "cutting-fluid",
+      "welding-consumables",
+      "ball-transfer-units"
+    ],
+    "laser_public_supplier_hidden": true,
+    "no_unverified_product_claims": true
+  },
+  "explicitly_not_brand_rules": [
+    "Existing category card photos or photographic mood",
+    "Existing card yellow icon tile or white information panel",
+    "Existing category-card ratio 4:5",
+    "Existing card background, layout, grid, radius, shadows, spacing and typography",
+    "Any fixed 60/30/10 color proportion",
+    "Any mandatory steel/blue-gray photography backdrop"
+  ],
+  "imagery_guidance": {
+    "principle": "Truthful technical geometry, verified product photographs for actual SKUs; creative direction independently chosen for each task",
+    "fixed_background": false,
+    "fixed_crop": false,
+    "fixed_lighting": false,
+    "fixed_card_ratio": false
+  },
+  "use_in_future": "Use original FLUTEX logo and core colors. Treat existing website category cards as explicitly rejected references and choose new visual direction per brief. v1.0 reference is superseded.",
+  "references": [
+    "docs/brand-identity.v1.1.md",
+    "AGENTS.md",
+    "assets/css/styles.v23.css [color value source only]"
+  ]
+}

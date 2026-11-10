@@ -22,4 +22,12 @@ This does **not** retire independent product and informational pages for **Alumi
 
 ## Brand identity reference (2026-11-10)
 
-Before editing FLUTEX public website graphics, logos, visual style, product-family cards, or marketing documents, read `docs/brand-identity.v1.md` and `docs/brand-tokens.v1.json`. They distinguish current website evidence and owner's explicit directives from design proposals. Do not adopt proposed image/font/print specs as owner approvals without further instruction. Preserve all category retirement and laser confidentiality rules above. If the live website or latest approved owner asset differs from this dated snapshot, verify and record a new revision; do not silently overwrite the brand reference.
+Before editing FLUTEX public website graphics, logos, visual style, product-family cards, or marketing documents, read `docs/brand-identity.v1.1.md` and `docs/brand-tokens.v1.1.json`. They distinguish current website evidence and owner's explicit directives from design proposals. Do not adopt proposed image/font/print specs as owner approvals without further instruction. Preserve all category retirement and laser confidentiality rules above. If the live website or latest approved owner asset differs from this dated snapshot, verify and record a new revision; do not silently overwrite the brand reference.
+
+## Explicit brand-reference correction (owner decision, 2026-11-10 — v1.1)
+
+**The existing website category cards are NOT part of FLUTEX's visual brand identity.** The owner expressly rejected their visual styling, colors, presentation and imagery as brand reference material. Do not copy, recommend, or treat current category-card layouts as brand standards in subsequent designs.
+
+This excludes current card photo art direction, card background and information panels, yellow icon tiles, image aspect ratio, cropping, grid and column counts, shadows, border radius, spacing and photographic backgrounds from the reusable brand reference. Those remain implementation details of the live website until redesigned separately; **this decision does not change the live website's UI**. Do not use `assets/css/category-portraits.v1.css` or old product-card screenshots as brand-identity references.
+
+For future FLUTEX identity/design work, use the original FLUTEX wordmark and the primary core palette: signature yellow `#FBE12A`, near-black `#0B0D0F`, white `#FFFFFF`. Treat other current site palette values as supporting implementation tokens, not an approved universal layout. Select image composition/background/lighting per new brief, not from the existing site card designs. Refer to the revised **v1.1** documents; v1.0 has been retired as an identity source.
