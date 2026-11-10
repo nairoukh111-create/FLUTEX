@@ -70,8 +70,12 @@ Campaign attribution and B2B event semantics are documented in [docs/traffic-att
 
 ## Retired catalog categories (owner decision, 2026-11-09)
 
-**Special Tools / أدوات صناعية خاصة is permanently removed** from FLUTEX's public product catalog. Do not reintroduce its card, page, navigation links, sitemap URL, or search result in future work unless the owner explicitly changes this decision. The public family count is **six** after removing the independent CNC Tools family. The last card, Ball Transfer Units, is **06 / 06**. Both Special Tools and CNC Tools remain permanently retired. Old routes remain permanently redirected to the corresponding product listings, not resurrected as pages. Run `node --test tests/*.test.cjs` to verify the category remains absent.
+**Special Tools / أدوات صناعية خاصة is permanently removed** from FLUTEX's public product catalog. Do not reintroduce its card, page, navigation links, sitemap URL, or search result in future work unless the owner explicitly changes this decision. The public family count is **seven** following the new Industrial Saw Blades group, distinct from the retired CNC Tools category. The last card, Ball Transfer Units, is **07 / 07**. Both Special Tools and CNC Tools remain permanently retired. Old routes remain permanently redirected to the corresponding product listings, not resurrected as pages. Run `node --test tests/*.test.cjs` to verify the category remains absent.
 
 ## CNC Tools retirement (10 November 2026)
 
 The owner permanently removed the **CNC Tools / أدوات وملحقات CNC** top-level catalog family. Its English and Arabic category pages are deleted, cards removed and numbering set to 01–06. Existing deep links receive 301 redirects to the appropriate Products page. Do not reinstate this family without explicit owner direction. Dedicated Aluminum Saw Blades, Tool Holding and CNC Cutting & Cooling Fluid pages remain available separately. See `AGENTS.md` and `tests/retired-cnc-tools.test.cjs`.
+
+## Industrial Saw Blades (2026-11-10)
+
+A distinct bilingual industrial saw blade section has 35 application-based product families across six technical groups, material and technology filters, and a specification-focused RFQ builder. The owner's photo is served locally. No source-supplier-identifying company names, private documents, model codes or supplier URLs are published. No live-stock or automatic compatibility claims are implied. Neither previously retired category is restored.

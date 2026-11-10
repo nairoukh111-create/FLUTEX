@@ -8,8 +8,8 @@ const read = p => fs.readFileSync(path.join(root,p), 'utf8');
 test('CNC Tools top-level family stays retired', () => {
   for(const file of ['index.html','products.html','ar/index.html','ar/products.html']){
     const html=read(file);
-    assert.equal((html.match(/class="catalog-home-card"/g)||[]).length,6,file);
-    assert.deepEqual([...html.matchAll(/class="category-no">(\d{2}) \/ 06/g)].map(x=>x[1]),['01','02','03','04','05','06'],file);
+    assert.equal((html.match(/class="catalog-home-card"/g)||[]).length,7,file);
+    assert.deepEqual([...html.matchAll(/class="category-no">(\d{2}) \/ 07/g)].map(x=>x[1]),['01','02','03','04','05','06','07'],file);
     assert.doesNotMatch(html,/href="\/(?:ar\/)?cnc-tools"|<h3>CNC Tools<\/h3>|<h3>أدوات وملحقات CNC<\/h3>/i,file);
     assert.match(html,/href="\/(?:ar\/)?laser-consumables"/,file);
     assert.match(html,/href="\/(?:ar\/)?cutting-fluid"/,file);
