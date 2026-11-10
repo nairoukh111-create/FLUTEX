@@ -70,4 +70,8 @@ Campaign attribution and B2B event semantics are documented in [docs/traffic-att
 
 ## Retired catalog categories (owner decision, 2026-11-09)
 
-**Special Tools / أدوات صناعية خاصة is permanently removed** from FLUTEX's public product catalog. Do not reintroduce its card, page, navigation links, sitemap URL, or search result in future work unless the owner explicitly changes this decision. The public family count is **seven** after the new Laser Consumables section. The last card, Ball Transfer Units, is **07 / 07**. Special Tools remains permanently retired. Old routes remain permanently redirected to the corresponding product listings, not resurrected as pages. Run `node --test tests/*.test.cjs` to verify the category remains absent.
+**Special Tools / أدوات صناعية خاصة is permanently removed** from FLUTEX's public product catalog. Do not reintroduce its card, page, navigation links, sitemap URL, or search result in future work unless the owner explicitly changes this decision. The public family count is **six** after removing the independent CNC Tools family. The last card, Ball Transfer Units, is **06 / 06**. Both Special Tools and CNC Tools remain permanently retired. Old routes remain permanently redirected to the corresponding product listings, not resurrected as pages. Run `node --test tests/*.test.cjs` to verify the category remains absent.
+
+## CNC Tools retirement (10 November 2026)
+
+The owner permanently removed the **CNC Tools / أدوات وملحقات CNC** top-level catalog family. Its English and Arabic category pages are deleted, cards removed and numbering set to 01–06. Existing deep links receive 301 redirects to the appropriate Products page. Do not reinstate this family without explicit owner direction. Dedicated Aluminum Saw Blades, Tool Holding and CNC Cutting & Cooling Fluid pages remain available separately. See `AGENTS.md` and `tests/retired-cnc-tools.test.cjs`.
