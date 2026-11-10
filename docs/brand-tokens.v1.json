@@ -1,0 +1,79 @@
+{
+  "schema": "FLUTEX_BRAND_OPERATIONS/1.0",
+  "date": "2026-11-10",
+  "status": "verified_current_with_owner_directives_and_proposals",
+  "official_current": {
+    "brand": "FLUTEX",
+    "public_label": "FLUTEX Industrial",
+    "colors": {
+      "yellow": "#FBE12A",
+      "yellowStrong": "#E6CA00",
+      "ink": "#0B0D0F",
+      "inkSecondary": "#15191D",
+      "white": "#FFFFFF",
+      "offWhite": "#F5F6F7",
+      "muted": "#687078",
+      "divider": "#E5E8EB"
+    },
+    "primary_logo_path": "assets/flutex-logo-web.v2.png",
+    "fontStacks": {
+      "en": "Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif",
+      "ar": "Segoe UI, Tahoma, Arial, sans-serif"
+    },
+    "web": {
+      "maxWidthPx": 1180,
+      "radiusPx": 18,
+      "categoryCardImageRatio": "4:5",
+      "categoryCardBody": "#FFFFFF",
+      "categoryGridGapPx": 22
+    },
+    "contrast": {
+      "blackOnYellow": 14.74,
+      "whiteOnYellow": 1.32,
+      "blackOnWhite": 19.47
+    }
+  },
+  "owner_directives": {
+    "oneDistinctImagePerFamily": true,
+    "whiteCategoryInformationPanel": true,
+    "activeFamilySlugs": [
+      "cutting-tools",
+      "plasma-consumables",
+      "laser-consumables",
+      "cutting-fluid",
+      "welding-consumables",
+      "ball-transfer-units"
+    ],
+    "retiredFamilySlugs": [
+      "special-tools",
+      "cnc-tools"
+    ],
+    "keepIndependentPages": [
+      "tool-holding",
+      "aluminum-saw-blades",
+      "cutting-fluid"
+    ],
+    "laserSupplierBrandInPublicMetadataOrCatalog": false,
+    "noInventedStockGradesOEMStatusOrLeadTimes": true
+  },
+  "proposed_standards": {
+    "clearSpace": "0.5 of wordmark capital height",
+    "minDigitalLogoWidthPx": 140,
+    "minPrintLogoWidthMm": 30,
+    "categoryCardExportPx": [
+      1200,
+      1500
+    ],
+    "heroSourcePx": [
+      1920,
+      1080
+    ],
+    "visualStyle": "premium photorealistic industrial, true component geometry, varied cool steel/blue-gray environments"
+  },
+  "references": [
+    "AGENTS.md",
+    "docs/brand-identity.v1.md",
+    "assets/css/styles.v23.css",
+    "assets/css/category-portraits.v1.css"
+  ]
+}
