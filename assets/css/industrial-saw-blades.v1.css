@@ -3,3 +3,5 @@
 .saw-extra-fields{display:grid;grid-template-columns:1fr 1fr;gap:0 10px}
 .saw-extra-fields label:nth-child(2){grid-column:span 2}
 @media(max-width:700px){.saw-extra-fields{grid-template-columns:1fr}.saw-extra-fields label:nth-child(2){grid-column:auto}}
+
+.saw-crosslink{margin:0 0 20px;font-size:13px;line-height:1.6;color:#687078}.saw-crosslink a{font-weight:850;color:#0b0d0f;text-decoration:underline;text-decoration-color:#e6ca00;text-underline-offset:4px}
