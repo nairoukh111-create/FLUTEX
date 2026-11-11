@@ -47,3 +47,7 @@ Keep bidirectional customer navigation between the comprehensive Industrial Saw 
 ## Cutting Tools category card image (owner instruction, 2026-11-11)
 
 The currently selected image for Cutting Tools product-family cards on both Home and Products (English and Arabic) is `assets/catalog/cutting-tools-card-zoom-2026-11.avif`, supplied by the owner. Keep the image unchanged and consistently referenced in those four card locations until the owner requests another image. This is an asset selection for the current website, **not** an addition to FLUTEX's core visual brand identity or a design-system style reference. Do not change the separate Cutting Tools detail-page imagery based on this card-only instruction.
+
+## Plasma Consumables category image (owner-approved, 2026-11-11)
+
+Use the owner-provided CNC plasma cutting photograph at `assets/catalog/plasma-cutting-action-card-2026-11.avif` as the Plasma Consumables category-card image on the main and products pages in English and Arabic. It supersedes the former category-card illustration; preserve other plasma product content and layouts. Do not substitute the old `plasma-home-card-v3.webp` or `plasma-cover.webp` for those category cards in future design changes unless directly instructed.
