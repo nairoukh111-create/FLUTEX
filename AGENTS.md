@@ -43,3 +43,7 @@ The owner added **Industrial Saw Blades & PCD Tooling** at `/industrial-saw-blad
 Keep the selected saw family, machine model, workpiece material, outside diameter, bore, kerf, plate/body thickness, pinhole/mounting pattern, tooth count, tooth grind, RPM and quantity available in the enquiry builder. Product group filter results identify families, **not verified stock-keeping SKUs or confirmed dimensional fit**. Email is drafted via `mailto:` and is NOT sent by the website. All supplier material is private; do not publish catalog extracts or images from supplier documents.
 
 Keep bidirectional customer navigation between the comprehensive Industrial Saw Blades catalog and the specialized Aluminum Saw Blades technical page; they have different scopes and should not be treated as interchangeable or duplicate URLs.
+
+## Cutting Tools category card image (owner instruction, 2026-11-11)
+
+The currently selected image for Cutting Tools product-family cards on both Home and Products (English and Arabic) is `assets/catalog/cutting-tools-card-zoom-2026-11.avif`, supplied by the owner. Keep the image unchanged and consistently referenced in those four card locations until the owner requests another image. This is an asset selection for the current website, **not** an addition to FLUTEX's core visual brand identity or a design-system style reference. Do not change the separate Cutting Tools detail-page imagery based on this card-only instruction.
