@@ -12,7 +12,7 @@ This applies to all future website changes. Run `node --test tests/*.test.cjs` b
 
 The fiber laser consumables and spare-parts catalog must remain in both English and Arabic, with searchable part references, compatible machine/head names, and customer RFQ links. **Never display the source supplier's company name or house-brand prefixes in public product titles, card labels, category text, SEO data or visible catalog content.** Independently documented OEM-compatible head names may be shown only as compatibility identifiers, not claimed authorization. Do not invent prices, stock quantities, delivery promises, material grades or verified equivalence.
 
-Keep the owner's supplied copper nozzle/protective optics photograph at `assets/catalog/flutex-laser-home.avif` on the home/products laser cards and as the catalog hero. Maintain the category filter, free-text search and English/Arabic parity. Run the laser catalog regression test before future changes. The product list consists of individually checked published references; it is not a claim to cover every possible catalog variant.
+Keep `assets/catalog/flutex-laser-home.avif` as the laser catalog detail-page hero only; for the home/products laser card use `assets/catalog/flutex-laser-card-2026-11-12.webp`. Do not conflate the hero image with the category card. Maintain the category filter, free-text search and English/Arabic parity. Run the laser catalog regression test before future changes. The product list consists of individually checked published references; it is not a claim to cover every possible catalog variant.
 
 ## Permanently retired CNC Tools category (owner decision, 2026-11-10)
 
@@ -50,4 +50,18 @@ The currently selected image for Cutting Tools product-family cards on both Home
 
 ## Plasma Consumables category image (owner-approved, 2026-11-11)
 
-Use the owner-provided CNC plasma cutting photograph at `assets/catalog/plasma-cutting-action-card-2026-11.avif` as the Plasma Consumables category-card image on the main and products pages in English and Arabic. It supersedes the former category-card illustration; preserve other plasma product content and layouts. Do not substitute the old `plasma-home-card-v3.webp` or `plasma-cover.webp` for those category cards in future design changes unless directly instructed.
+Use the newer owner-provided photograph `assets/catalog/flutex-plasma-card-2026-11-12.webp` as the Plasma Consumables category-card image on the main and products pages in English and Arabic. The previous `plasma-cutting-action-card-2026-11.avif` is superseded for cards. It supersedes the former category-card illustration; preserve other plasma product content and layouts. Do not substitute the old `plasma-home-card-v3.webp` or `plasma-cover.webp` for those category cards in future design changes unless directly instructed.
+
+## Category image master mapping — approved 2026-11-12
+
+Owner-uploaded category-card photos (all original WebP files, 1122 × 1402 pixels) **must be used for cards on Home and Products in both English and Arabic**, with the following exact mapping:
+
+- Welding Consumables: `assets/catalog/flutex-welding-card-2026-11-12.webp`
+- Ball Transfer Units: `assets/catalog/flutex-ball-transfer-card-2026-11-12.webp`
+- Laser Consumables & Spare Parts: `assets/catalog/flutex-laser-card-2026-11-12.webp`
+- CNC Cutting & Cooling Fluid: `assets/catalog/flutex-cnc-fluid-card-2026-11-12.webp`
+- Plasma Consumables: `assets/catalog/flutex-plasma-card-2026-11-12.webp`
+
+Preserve original full-resolution, user-uploaded photos without replacing them with low-resolution AVIF, 160-pixel previews, supplier thumbnails or externally hosted links. Keep card image intrinsic dimensions 1122 × 1402; CSS handles responsive sizing. Cutting Tools and Industrial Saw Blades category images are **not** part of this batch and remain unchanged. This selection is specific to the live website and is **not** an identity rule, consistent with the v1.1 branding decision. Do not alter the page hero imagery for any family based on this card-only request.
+
+Do not inadvertently revert these five card photos during unrelated website changes. Run `node --test tests/*.test.cjs` and verify all 20 placements.

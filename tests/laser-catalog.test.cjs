@@ -4,7 +4,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const root = path.join(__dirname, '..');
 const text = file => fs.readFileSync(path.join(root, file), 'utf8');
-const img = '/assets/catalog/flutex-laser-home.avif';
+const img = '/assets/catalog/flutex-laser-card-2026-11-12.webp';
 
 test('Bilingual laser catalog preserves visible part coverage, filtering and supplier anonymity', () => {
   for (const file of ['laser-consumables.html', 'ar/laser-consumables.html']) {
@@ -24,7 +24,7 @@ test('Bilingual laser catalog preserves visible part coverage, filtering and sup
   assert.ok(fs.statSync(path.join(root, img.slice(1))).size > 3000);
 });
 
-test('Laser home-category artwork is present in every localized catalog entry', () => {
+test('Owner-approved laser card artwork is present in every localized catalog entry', () => {
   for (const file of ['index.html','products.html','ar/index.html','ar/products.html']) {
     const html=text(file);
     const card=html.match(/<a class="catalog-home-card" href="\/(?:ar\/)?laser-consumables">[\s\S]*?<\/a>/);
