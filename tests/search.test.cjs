@@ -16,3 +16,8 @@ test('the actual Arabic tool page and the new calculator can be discovered', () 
   assert.equal(norm('أَلْمِنْيُوم ٤٢٠٢٤٩'), 'المنيوم 420249');
   assert.equal(search(entries, 'zzunmatchedtestzz').length, 0);
 });
+
+test('Published laser head models and optic dimensions resolve to the bilingual laser catalog', () => {
+  assert.equal(search(entries, 'BOCI BLT421', 'en')[0].url, '/laser-consumables');
+  assert.equal(search(entries, '34×5', 'ar')[0].url, '/ar/laser-consumables');
+});

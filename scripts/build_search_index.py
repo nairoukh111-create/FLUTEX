@@ -35,8 +35,22 @@ def build():
             item['terms'] = 'rpm feed rate cutting speed chip load feed per tooth aluminum 6063 حساب دوران تغذية سرعة قطع ألمنيوم معادلات'
         if 'ball-transfer-units' in path:
             item['type'] = 'مكونات صناعية' if ar else 'Industrial components'
-            item['terms'] = ('ball transfer units وحدات نقل كروية كرسي كروي مناولة مواد فلنجة قلاوظ السعودية' if ar else
-                             'ball transfer unit bearing ball roller ball caster flange stud press fit heavy duty transfer table Saudi Arabia')
+            item['terms'] = ('ball transfer units وحدات نقل كروية كرسي كروي مناولة مواد فلنجة قلاوظ الخليج' if ar else
+                             'ball transfer unit bearing ball roller ball caster flange stud press fit heavy duty transfer table GCC')
+        if base == '/laser-consumables':
+            # Index only the cleaned, published catalog, never upstream source material.
+            item['terms'] = ' '.join(' '.join(node.text_content().split()) for node in
+                doc.xpath('//*[@data-laser-item]//h4 | //*[@data-laser-item]//p'))
+        if base == '/industrial-saw-blades':
+            item['terms'] = ' '.join(' '.join(node.text_content().split()) for node in
+                doc.xpath('//*[@data-saw-item]//h4 | //*[@data-saw-item]//h3 | //*[@data-saw-item]//p'))
+        aliases = {
+            '/cutting-tools': 'CNC cutting tools carbide end mills HSS modular drilling أدوات قطع ريش كربيد حفر',
+            '/welding-consumables': 'MIG welding wire contact tips gas nozzles torch liners diffusers أسلاك لحام كونتاكت تيب نوزلات تورش لاينر',
+            '/cutting-fluid': 'MQL CNC cutting oil fluid machining lubricant ester FLUTEX ESTERION 35 FERRUM EP 23 زيوت قطع تبريد تزييت',
+        }
+        if base in aliases:
+            item['terms'] = aliases[base]
         items.append(item)
     return 'window.FLUTEX_SEARCH_INDEX=' + json.dumps(items, ensure_ascii=False, separators=(',', ':')) + ';\n'
 

@@ -45,3 +45,13 @@
 
 ## 3. Quality gate
 `node --test tests/*.test.cjs` plus `python scripts/audit_site.py --help` where available; validate deployed canonical, sitemap, hreflang pair reciprocity, 200 status, layout on desktop/mobile, and Search Console indexing/Performance after Google recrawls. A successful GitHub deployment does not prove Google indexing or UAE rankings.
+
+## 4. Category-wide implementation update — 2026-11-12
+
+All seven category pairs now contain a product-specific GCC enquiry checklist, with different technical fields for tools, blades, plasma, laser, fluids, welding and ball transfers. Titles/descriptions and corresponding Open Graph descriptions describe actual products and the GCC enquiry scope; the Saudi plasma title and real Riyadh support remain. These are buyer workflows, not promises of stock or delivery in another country.
+
+Category-level regional links must lead to relevant technical support content instead of pointing every product family only to the UAE plasma page. Keep the shared six-country hub available from each checklist. No new country-name-swapped pages were created.
+
+The generated site search reads laser model/dimension terms and saw-family terms from the cleaned public HTML. Never restore upstream source labels to improve search coverage. Run the confidentiality gate in AGENTS.md before regenerating or committing the index. New index content must be fetched from the main entry pages using the current revision query key, so existing browser caches cannot hide the update.
+
+Search Console performance is now readable through the connected OpenSEO project; historical notes that it has no connection are superseded. Store account performance extracts and query-level analysis in private owner reports, not this public repository. Lack of impressions for a new family in a historical window is not proof of an indexing defect.
