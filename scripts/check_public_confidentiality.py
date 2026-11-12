@@ -19,6 +19,8 @@ RULES = [
         r'sourced\s+from\s+our|manufactured\s+by\s+our\s+supplier|'
         r'third[- ]party\s+supplier\s+catalog|our\s+sourcing\s+partners|'
         r'we\s+purchase\s+from\s+other\s+factories|supplier\s+specifications|'
+        r'supplier\s+documentation|review\s+sourcing|specification-led\s+sourcing|'
+        r'sourced\s+(?:on\s+request|to\s+order)|source\s+geometry\s+specifies|'
         r'موردنا\s+الصيني|مواصفات\s+المورد|شركاؤنا\s+في\s+التوريد', re.I)),
     ('manufacturing-claim-review', re.compile(
         r'FLUTEX\s+(?:is\s+(?:an?\s+|the\s+)?(?:original\s+)?)'
