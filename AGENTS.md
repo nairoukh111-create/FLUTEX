@@ -65,3 +65,9 @@ Owner-uploaded category-card photos (all original WebP files, 1122 × 1402 pixel
 Preserve original full-resolution, user-uploaded photos without replacing them with low-resolution AVIF, 160-pixel previews, supplier thumbnails or externally hosted links. Keep card image intrinsic dimensions 1122 × 1402; CSS handles responsive sizing. Cutting Tools and Industrial Saw Blades category images are **not** part of this batch and remain unchanged. This selection is specific to the live website and is **not** an identity rule, consistent with the v1.1 branding decision. Do not alter the page hero imagery for any family based on this card-only request.
 
 Do not inadvertently revert these five card photos during unrelated website changes. Run `node --test tests/*.test.cjs` and verify all 20 placements.
+
+## GCC SEO/GEO program — owner directive 2026-11-12
+
+Read `docs/gcc-seo-geo-strategy-2026-11.md` before editing country metadata, regional content, structured data or adding locale routes. The owner wants FLUTEX search visibility across SA, AE, KW, QA, BH and OM in Arabic and English. **Never use IP/location to auto-change the same URL's <title>, canonical, H1 or crawlable region content**. Google's locale-adaptive crawling cannot reliably find such variants; use stable URLs and reciprocal hreflang for genuine variants. Do not mass-produce doorway pages with only swapped country names.
+
+The Saudi-focused plasma main pages remain valid for Riyadh operations; do not rewrite verified Saudi operational addresses as UAE addresses. New original UAE plasma buyer guides and a GCC hub must be maintained as technically useful regional RFQ pages. No assertion of local UAE branches, UAE stock, guaranteed freight/lead time or OEM authorization is made. All seven current active product families, the two permanently retired categories (Special Tools/CNC Tools), validated source images and hidden supplier identity restrictions continue unchanged.
