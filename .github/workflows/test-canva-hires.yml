@@ -1,0 +1,21 @@
+name: Inspect high resolution media access
+on:
+  push:
+    branches: [test/canva-hires-card-images-20261112]
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Probe media variants
+        shell: bash
+        env:
+          THUMB_URL: "https://media.canva.com/v2/image-resize/format:PNG/height:200/quality:100/uri:ifs%3A%2F%2FM%2Feefbe2ce-a4b3-4f83-8b08-72c5199738cd/watermark:F/width:160?csig=AAAAAAAAAAAAAAAAAAAAAMTScc7MG6Uq__M9mb9kEJ7voGftwkvyM9_25Rb2OOtL&exp=1794486005&osig=AAAAAAAAAAAAAAAAAAAAAOUWnk6KOgWjM57V2JndcuQdOGWFTsw7GTouRuBpEeJo&signer=media-rpc&token=AAIAAU0AJGVlZmJlMmNlLWE0YjMtNGY4My04YjA4LTcyYzUxOTk3MzhjZAAAAAABoc-zbQh9iqtDYqOkFGItUGhdLCgd1iIVYwB9G9uDxlIkaiBsFg&x-canva-quality=thumbnail"
+          HI_URL: "https://media.canva.com/v2/image-resize/format:PNG/height:1402/quality:100/uri:ifs%3A%2F%2FM%2Feefbe2ce-a4b3-4f83-8b08-72c5199738cd/watermark:F/width:1122?csig=AAAAAAAAAAAAAAAAAAAAAMTScc7MG6Uq__M9mb9kEJ7voGftwkvyM9_25Rb2OOtL&exp=1794486005&osig=AAAAAAAAAAAAAAAAAAAAAOUWnk6KOgWjM57V2JndcuQdOGWFTsw7GTouRuBpEeJo&signer=media-rpc&token=AAIAAU0AJGVlZmJlMmNlLWE0YjMtNGY4My04YjA4LTcyYzUxOTk3MzhjZAAAAAABoc-zbQh9iqtDYqOkFGItUGhdLCgd1iIVYwB9G9uDxlIkaiBsFg&x-canva-quality=thumbnail"
+          RAW_URL: "https://media.canva.com/v2/image-resize/format:PNG/height:1402/quality:100/uri:ifs%3A%2F%2FM%2Feefbe2ce-a4b3-4f83-8b08-72c5199738cd/watermark:F/width:1122"
+        run: |
+          set +e
+          for v in THUMB_URL HI_URL RAW_URL; do
+            echo "TEST $v"
+            curl -Ls --max-time 15 -o /tmp/$v.png -w '%{http_code} size=%{size_download}\n' "${!v}"
+            file /tmp/$v.png
+          done
