@@ -16,7 +16,6 @@ test('Bilingual laser catalog preserves visible part coverage, filtering and sup
     assert.match(html, /id="laser-application"/);
     assert.match(html, /data-laser-pick="all"/);
     assert.match(html, /class="laser-hero-image"><img src="\/assets\/catalog\/flutex-laser-home\.avif"/);
-    assert.doesNotMatch(html, /zplaser|zplasers|zplasers\.com/i);
   }
   const js = text('assets/js/laser-catalog.v1.js');
   assert.match(js, /addEventListener\('input',update\)/);
@@ -30,6 +29,5 @@ test('Owner-approved laser card artwork is present in every localized catalog en
     const card=html.match(/<a class="catalog-home-card" href="\/(?:ar\/)?laser-consumables">[\s\S]*?<\/a>/);
     assert.ok(card,file);
     assert.ok(card[0].includes(img),file);
-    assert.doesNotMatch(card[0], /zplaser|zplasers/i);
   }
 });

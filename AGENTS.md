@@ -1,5 +1,44 @@
 # FLUTEX site — standing owner decisions
 
+## Supplier confidentiality and brand representation — permanent owner policy (2026-11-12)
+
+This policy applies to **all seven active product categories, all six GCC markets, Arabic and English, and every future website, SEO, GEO, catalog and commercial-document task**. It extends the narrower laser and saw rules below. Treat any suspected disclosure as a publication blocker.
+
+### Never publish upstream sourcing information
+
+Do not expose private supplier/factory/company identities, house brands, logos, employee names or contact details, source websites, source catalogs, document titles, distinctive private model/series/grade codes, internal part numbers, purchase prices, agreements, procurement methods or other identifying supply-chain information. Do not copy these into comments, examples, tests, audit reports, source maps or filenames. **A negative test containing a real supplier name still publishes that name.** Use fictional test fixtures only.
+
+The restriction covers visible and hidden content: HTML, CSS, JavaScript, JSON, JSON-LD/structured data, SEO metadata, Open Graph, alt text, image EXIF/XMP/text metadata, PDFs and their properties/links/attachments, sitemap, search indexes, URLs, asset filenames, public GitHub files, commit messages, pull requests, CI logs and AI/GEO content. Encoding, minifying, hashing or hiding an identity is not an acceptable way to publish it.
+
+Keep source catalogs, identity lists, source-to-FLUTEX mappings, supplier correspondence and internal verification notes **outside this public repository and outside public web roots**. Never commit a private denylist or quote confidential matching text in logs or reports. Do not upload private sourcing records to an external SEO/AI service.
+
+### Present FLUTEX as the customer's direct industrial supply partner
+
+FLUTEX is the commercial supplier responsible for its offered products, quotations, technical information, branding, contact and customer relationship. Preferred wording includes **FLUTEX Industrial Consumables**, **FLUTEX Industrial Cutting Tools**, **Supplied by FLUTEX**, **Available for quotation through FLUTEX**, **FLUTEX Product Range** and **FLUTEX Technical Specifications**.
+
+Customer copy must not describe internal purchasing, upstream factories, sourcing partners or specifications as belonging to an undisclosed supplier. Do not claim FLUTEX is the original manufacturer, owns production technology, holds OEM authorization, or has a certification/test result without evidence supporting that exact claim. Do not conceal legally required safety/manufacturer information by fabricating or relabeling regulated documents; resolve any such document privately before publication.
+
+### Preserve verified customer-facing technical information
+
+Use confirmed technical specifications under FLUTEX product names. Keep the evidence and commercial crosswalk private. Omit unconfirmed claims and request internal verification; do not put internal doubts or source notes in customer documents.
+
+Global technical standards, established dimensions/material terms and original OEM references needed for identification may remain. For example, a Hypertherm reference is a **compatibility reference**, not evidence of original manufacture or authorized distribution. Do not remove useful legitimate compatibility information merely because it names an independent global product/system. Distinguish a global technical identifier from a confidential upstream house code before publishing it; if unclear, stop that item for internal review.
+
+### SEO/GEO uses FLUTEX, product intent and verified technical facts
+
+Use FLUTEX, the actual product categories, international technical terminology, industrial applications, verified specifications, necessary compatibility references and the six GCC markets. Never use secret source names/codes as keywords, citations, structured-data manufacturer/supplier fields or AI-search bait. Technical citations must not disclose FLUTEX's confidential commercial sources.
+
+### Mandatory gate before every commit and deployment
+
+1. Review **every changed and generated file**, plus renamed/deleted asset references, for visible/hidden sourcing data and unsupported manufacturing/authorization/certification claims.
+2. Check filenames, URLs, comments, metadata/OG/alt, structured data, search indexes and sitemap. Regenerate derived assets using the existing generators.
+3. Inspect image/document metadata and external links; visually review new/replaced graphics and PDFs for logos, watermarks, identifying drawings and private codes. Check PDF properties, annotations and attachments too.
+4. Run `python3 scripts/check_public_confidentiality.py`. For known identities, run it with `--private-identifiers /absolute/path/outside/repository/identifiers.json`; the file is a private JSON array of literal identifiers and must never enter Git, PR text or logs. The generic CI check does **not** know undisclosed identities and does **not** replace this review.
+5. Run `node --test tests/*.test.cjs` and the existing source/generator checks. If a leak or unverified commercial claim remains, **do not commit or deploy it**. Report the issue privately without repeating identifying material in public artifacts.
+6. A passing scanner is bounded evidence, not a claim of absolute anonymity. Existing Git history, forks, old deployments and caches are separate exposure surfaces: removing current content does not erase them. Do not rewrite public Git history without a separately reviewed, explicit owner instruction.
+
+Apply this policy permanently. Preserve the seven active categories, retired-category decisions, approved imagery, bilingual functionality and truthful product compatibility.
+
 ## Permanently retired category (2026-11-09)
 
 Never re-add **Special Tools** (Arabic **أدوات صناعية خاصة**) to the public FLUTEX website without a new explicit owner instruction. It must not appear as a category card, navigation entry, catalog section, destination page, search-index result, or sitemap URL. Do not reuse archived templates to restore it. Keep /special-tools and /ar/special-tools permanently redirected to /products and /ar/products respectively, with their HTML files absent.
