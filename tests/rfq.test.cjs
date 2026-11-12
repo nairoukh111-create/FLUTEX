@@ -24,3 +24,17 @@ test('public service status exposes only readiness and the public site key', asy
   const post = await api.onRequestPost({request:new Request('https://example.test/api/rfq',{method:'POST'}),env:{}});
   assert.equal(post.status, 503);
 });
+
+test('GCC destination country and city persist in an email enquiry',()=>{
+ const values={company:'Factory',destinationCountry:'United Arab Emirates',destinationCity:'Dubai',message:'Plasma nozzles'};
+ const url=new URL(emailDraft('sales@flutexindustrial.com',values));
+ const body=url.searchParams.get('body');
+ assert.match(body,/Destination country: United Arab Emirates/);
+ assert.match(body,/Destination city: Dubai/);
+ for(const file of ['contact.html','ar/contact.html']){
+   const text=require('node:fs').readFileSync(require('node:path').join(__dirname,'..',file),'utf8');
+   assert.match(text,/name="destinationCountry"/);
+   assert.match(text,/name="destinationCity"/);
+   for(const country of ['Saudi Arabia','United Arab Emirates','Kuwait','Qatar','Bahrain','Oman'])assert.ok(text.includes('value="'+country+'"'),file+' '+country);
+ }
+});

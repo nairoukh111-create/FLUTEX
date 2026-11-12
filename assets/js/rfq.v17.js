@@ -4,7 +4,9 @@
     return ['Name: ' + (values.name || ''), 'Company: ' + (values.company || ''),
       'Email: ' + (values.email || ''), 'Phone: ' + (values.phone || ''),
       'Reference: ' + (values.partNumber || ''), 'Quantity: ' + (values.quantity || ''),
-      'Category: ' + (values.category || ''), '', values.message || ''].join('\n');
+      'Category: ' + (values.category || ''),
+      'Destination country: ' + (values.destinationCountry || ''),
+      'Destination city: ' + (values.destinationCity || ''), '', values.message || ''].join('\n');
   }
   function emailDraft(email, values) {
     const subject = ('FLUTEX RFQ - ' + (values.partNumber || values.company || 'Industrial enquiry')).replace(/[\r\n]+/g, ' ');
