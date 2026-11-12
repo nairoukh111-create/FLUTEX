@@ -17,7 +17,9 @@ jobs:
       - name: Install source-audit dependencies
         run: |
           python3 -m venv /tmp/flutex-qa
-          /tmp/flutex-qa/bin/python -m pip install --disable-pip-version-check lxml Pillow
+          /tmp/flutex-qa/bin/python -m pip install --disable-pip-version-check lxml Pillow pypdf
+      - name: Check public confidentiality and commercial claims
+        run: /tmp/flutex-qa/bin/python scripts/check_public_confidentiality.py
       - name: Check static tool families
         run: /tmp/flutex-qa/bin/python scripts/prerender_tool_finders.py --check
       - name: Check canonical-page search index
@@ -27,4 +29,6 @@ jobs:
       - name: Audit canonical pages and local links
         run: /tmp/flutex-qa/bin/python scripts/audit_site.py --output /tmp/flutex-source-audit.json
       - name: Test search, RFQ draft and machining formulas
+        env:
+          FLUTEX_AUDIT_PYTHON: /tmp/flutex-qa/bin/python
         run: node --test tests/*.test.cjs
