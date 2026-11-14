@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """Index actual canonical pages; retain existing catalog reference terms."""
 import argparse
+import hashlib
 import json
+import re
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from lxml import html
@@ -65,4 +67,18 @@ if __name__ == '__main__':
         assert target.read_text() == result, 'Run build_search_index.py'
     else:
         target.write_text(result)
-    print('Search index includes every sitemap page.')
+    # Old browser caches may retain earlier asset response headers. A content
+    # revision also ensures returning visitors request each newly built index.
+    revision = hashlib.sha256(result.encode('utf-8')).hexdigest()[:12]
+    script_url = '/assets/js/search-index.v18.js?v=' + revision
+    for page in ROOT.rglob('*.html'):
+        if '.git' in page.parts:
+            continue
+        original = page.read_text()
+        revised = re.sub(r'(?<=src=")/assets/js/search-index\.v18\.js(?:\?[^"<>]*)?',
+                         script_url, original)
+        if args.check:
+            assert revised == original, 'Run build_search_index.py to update script revisions'
+        elif revised != original:
+            page.write_text(revised)
+    print('Search index includes every sitemap page; script revisions match its content.')

@@ -21,3 +21,14 @@ test('Published laser head models and optic dimensions resolve to the bilingual 
   assert.equal(search(entries, 'BOCI BLT421', 'en')[0].url, '/laser-consumables');
   assert.equal(search(entries, '34×5', 'ar')[0].url, '/ar/laser-consumables');
 });
+
+test('the new matching guides are the first result for specific buyer queries', () => {
+  for (const [query, language, url] of [
+    ['ball transfer unit selection', 'en', '/guides/ball-transfer-unit-selection'],
+    ['laser consumables matching', 'en', '/guides/laser-consumables-matching-checklist'],
+    ['MIG consumables matching', 'en', '/guides/mig-consumables-matching-checklist'],
+    ['اختيار وحدات النقل الكروية', 'ar', '/ar/guides/ball-transfer-unit-selection'],
+    ['دليل مطابقة مستهلكات الليزر', 'ar', '/ar/guides/laser-consumables-matching-checklist'],
+    ['دليل مطابقة مستهلكات MIG', 'ar', '/ar/guides/mig-consumables-matching-checklist'],
+  ]) assert.equal(search(entries, query, language)[0].url, url, query);
+});
