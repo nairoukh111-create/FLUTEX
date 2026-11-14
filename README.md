@@ -25,7 +25,7 @@ The website remains fully usable without the binding, but RFQ form submission re
 
 The English and Arabic forms now prepare an email draft while the secure service is unavailable. Draft preparation is **not** an email delivery or a completed RFQ. Attachments must be added in the email client; the website does not upload them in draft mode. Customers can also copy the enquiry details or use the existing direct email/WhatsApp links.
 
-To enable online submissions, provision the verified RFQ Worker, bind it as `RFQ_SERVICE`, and set the public `PUBLIC_TURNSTILE_SITE_KEY` in Pages. The Worker must validate Turnstile and handle attachment validation, spam protection and delivery. `GET /api/rfq` exposes only readiness and the public site key, never secrets. Do not mark delivery as verified until an authorised end-to-end test has succeeded.
+The implemented Worker is in `workers/rfq/`, with Microsoft 365 delivery restricted to the sales address. Configure its scoped authorization, secrets, rate binding and Turnstile widget, then bind it as `RFQ_SERVICE` and set `PUBLIC_TURNSTILE_SITE_KEY` in production Pages. `RFQ_ENABLED=true` is a separate explicit activation gate; leave it unset during provisioning. `GET /api/rfq` checks Worker health and exposes only readiness and the public site key. See [RFQ delivery setup](docs/rfq-delivery.md). Mocked tests do not prove delivery; an owner-authorized inbox test is required.
 
 ## Shared supply coverage map
 

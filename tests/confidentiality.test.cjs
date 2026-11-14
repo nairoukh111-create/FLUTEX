@@ -27,6 +27,16 @@ test('Confidentiality guard catches encoded hidden identifiers without echoing t
   assert.doesNotMatch(result.stdout, /Fictional-Private-Example/);
 }));
 
+test('Confidentiality guard includes Worker modules and deployment configuration', () => fixture(({root, scan}) => {
+  for (const name of ['service.mjs', 'wrangler.jsonc', 'worker.toml']) {
+    fs.writeFileSync(path.join(root, name), 'Fictional-Private-Example');
+  }
+  const result = scan();
+  assert.equal(result.status, 1);
+  for (const name of ['service.mjs', 'wrangler.jsonc', 'worker.toml']) assert.ok(result.stdout.includes(name + ': private-identifier'));
+  assert.doesNotMatch(result.stdout, /Fictional-Private-Example/);
+}));
+
 test('Confidentiality guard checks filenames, retains OEM references and rejects a public denylist', () => fixture(({root, secret, scan}) => {
   fs.writeFileSync(path.join(root, 'page.html'), 'FLUTEX compatible nozzle, OEM reference 420252, M35, DLC.');
   assert.equal(scan().status, 0);

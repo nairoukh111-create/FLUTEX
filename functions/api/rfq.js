@@ -10,7 +10,7 @@ function json(body, status = 200) {
 export async function onRequestPost(context) {
   const { request, env } = context;
 
-  if (!env.RFQ_SERVICE || typeof env.RFQ_SERVICE.fetch !== "function") {
+  if (env.RFQ_ENABLED !== "true" || !env.RFQ_SERVICE || typeof env.RFQ_SERVICE.fetch !== "function") {
     return json(
       { error: "RFQ service is not configured yet. Please use email or WhatsApp." },
       503,
@@ -24,8 +24,7 @@ export async function onRequestPost(context) {
 
   try {
     return await env.RFQ_SERVICE.fetch(request);
-  } catch (error) {
-    console.error("RFQ service request failed", error);
+  } catch (_) {
     return json(
       { error: "Unable to submit RFQ right now. Please use email or WhatsApp." },
       502,
@@ -33,14 +32,20 @@ export async function onRequestPost(context) {
   }
 }
 
-export function onRequest(context) {
+export async function onRequest(context) {
   if (context.request.method === "GET") {
     // The site key is public by design. Never expose secret bindings or tokens.
     const turnstileSiteKey = context.env.PUBLIC_TURNSTILE_SITE_KEY || "";
-    return json({
-      available: Boolean(context.env.RFQ_SERVICE && turnstileSiteKey),
-      turnstileSiteKey,
-    });
+    let available = false;
+    if (context.env.RFQ_ENABLED === "true" && turnstileSiteKey &&
+        ["flutexindustrial.com", "www.flutexindustrial.com"].includes(new URL(context.request.url).hostname) &&
+        typeof context.env.RFQ_SERVICE?.fetch === "function") {
+      try {
+        const health = await context.env.RFQ_SERVICE.fetch(new Request("https://rfq.internal/health"));
+        available = health.ok && (await health.json()).available === true;
+      } catch (_) {}
+    }
+    return json({available, turnstileSiteKey: available ? turnstileSiteKey : ""});
   }
   if (context.request.method === "POST") {
     return onRequestPost(context);
