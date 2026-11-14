@@ -10,7 +10,7 @@ import unicodedata
 from pathlib import Path
 from urllib.parse import unquote
 
-TEXT = {'.html', '.css', '.js', '.cjs', '.json', '.jsonld', '.xml', '.svg',
+TEXT = {'.html', '.css', '.js', '.cjs', '.mjs', '.json', '.jsonc', '.toml', '.jsonld', '.xml', '.svg',
         '.txt', '.md', '.py', '.yml', '.yaml', '.webmanifest', '.map', ''}
 IMAGES = {'.png', '.jpg', '.jpeg', '.webp', '.avif', '.tif', '.tiff'}
 CUSTOMER_TEXT = {'.html', '.css', '.js', '.json', '.jsonld', '.xml', '.svg'}
