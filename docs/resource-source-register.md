@@ -61,3 +61,31 @@ AR: /ar/guides/aluminum-saw-blade-vibration-checklist
 - Freud — LU4B01 application example: https://www.freudtools.com/products/LU4B01
 
 Grade sheets identify tool steel rather than certify a finished FLUTEX product. Coating examples belong to the named manufacturer; no life multiplier, numeric coating property or manufacturer partnership is transferred to FLUTEX. Saw checks are diagnostic information requests, not operating settings or approval to use damaged tools. Source access checked 25 October 2026.
+
+## 14 November 2026 matching guides
+
+Original FLUTEX RFQ checklists in English and Arabic. General technical references below are not evidence of FLUTEX certification, manufacture, authorization or commercial relationships. No universal laser operating settings, transfer-table capacity formula or welding parameters are supplied.
+
+### Laser consumables matching: windows, nozzles and head parts
+
+EN: /guides/laser-consumables-matching-checklist
+AR: /ar/guides/laser-consumables-matching-checklist
+
+- Precitec — protective windows: https://shop.precitec.com/en/All-products/Products-by-part-type/Protective-glasses/
+- Precitec — optics manual: https://shop.precitec.com/media/0f/3c/ef/1741683061/TD_Optik-HB_EN.pdf
+
+### Ball transfer unit selection: load, mounting and spacing
+
+EN: /guides/ball-transfer-unit-selection
+AR: /ar/guides/ball-transfer-unit-selection
+
+- Elesa+Ganter — ball transfer technical instructions: https://www.elesa-ganter.com/siteassets/technical_annex/Ball_Transfer_Units_Technical.pdf
+- Alwayse — ball transfer questions: https://alwayse.co.uk/information-hub/frequently-asked-questions/
+
+### MIG consumables matching: contact tips, nozzles and liners
+
+EN: /guides/mig-consumables-matching-checklist
+AR: /ar/guides/mig-consumables-matching-checklist
+
+- ABICOR BINZEL — contact tip selection: https://www.binzel-abicor.com/DE/eng/products/manual/migmag-torches/wear-parts/contact-tips/
+- ABICOR BINZEL — MIG gun maintenance: https://www.binzel-abicor.com/US/eng/media/ebooks/mig-gun-maintenance-guide/
