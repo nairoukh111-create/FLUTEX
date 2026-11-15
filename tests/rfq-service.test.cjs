@@ -2,6 +2,7 @@ const {test}=require('node:test');
 const assert=require('node:assert/strict');
 const {File}=require('node:buffer');
 const fs=require('node:fs');
+const vm=require('node:vm');
 const {acceptedServiceReply,serviceFailureDiagnostic,MAX_ATTACHMENT_BYTES}=require('../assets/js/rfq.v18.js');
 const api=async()=>import('data:text/javascript;base64,'+Buffer.from(fs.readFileSync(require.resolve('../functions/api/rfq.js'),'utf8')).toString('base64'));
 const worker=()=>import('../workers/rfq/service.mjs');
@@ -15,6 +16,30 @@ test('failure diagnostics exclude arbitrary server content, form details and tok
     assert.doesNotMatch(JSON.stringify(result),/private/);
   }
   assert.deepEqual(serviceFailureDiagnostic({status:'private-fixture'},data),{status:0,code:'verification-failed'});
+});
+
+test('the browser failure log remains readable through text-only capture without exposing response details',async()=>{
+  let submit,script,requests=0,resets=0;
+  const logs=[],status={},button={},note={};
+  const form={reportValidity:()=>true,reset:()=>{resets++;},addEventListener:(event,fn)=>{if(event==='submit')submit=fn;},
+    querySelector:selector=>selector==='[data-rfq-status]'?status:selector==='.rfq-submit'?button:
+      selector==='[data-rfq-note]'?note:selector==='#attachments'?{files:[]}:null};
+  class Payload extends FormData {constructor(){super();this.set('cf-turnstile-response','fictional-token');}}
+  const document={documentElement:{lang:'en'},querySelector:()=>form,
+    createElement:()=>{script={};return script;},head:{appendChild:()=>script.onload()},dispatchEvent:()=>{}};
+  const context={document,FormData:Payload,CustomEvent:class{},console:{warn:(...args)=>logs.push(args.join(' '))},
+    window:{turnstile:{render:()=>1,reset:()=>{}}},fetch:async()=>++requests===1?
+      Response.json({available:true,turnstileSiteKey:'public-fixture'}):
+      Response.json({error:'service-unavailable',email:'private@example.test',token:'private-token',details:'private-body'},{status:503})};
+  vm.runInNewContext(fs.readFileSync(require.resolve('../assets/js/rfq.v18.js'),'utf8'),context);
+  await new Promise(setImmediate);
+  assert.equal(button.textContent,'Submit RFQ →');
+  await submit({preventDefault:()=>{}});
+  assert.equal(requests,2);assert.equal(logs.length,1);
+  assert.match(logs[0],/"status":503/);assert.match(logs[0],/"code":"service-unavailable"/);
+  assert.doesNotMatch(logs[0],/private|fictional-token|\[object Object\]/);
+  assert.equal(resets,0);assert.equal(button.disabled,false);
+  assert.match(status.textContent,/Sending could not be confirmed/);
 });
 const env=()=>({M365_TENANT_ID:'11111111-1111-4111-8111-111111111111',
   M365_CLIENT_ID:'22222222-2222-4222-8222-222222222222',M365_CLIENT_SECRET:'fictional-test-only',

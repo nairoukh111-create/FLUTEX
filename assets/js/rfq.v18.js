@@ -111,7 +111,7 @@
       const result = await response.json();
       if (!acceptedServiceReply(response, result)) {
         // Only fixed operational codes; never log the response body or form values.
-        console.warn('FLUTEX RFQ response', serviceFailureDiagnostic(response, result));
+        console.warn('FLUTEX RFQ response ' + JSON.stringify(serviceFailureDiagnostic(response, result)));
         throw new Error('Submission not confirmed');
       }
       set((ar ? 'قُبل طلبك للإرسال. رقم المتابعة: ' : 'Your enquiry was accepted for sending. Reference: ') + result.reference, 'success');
