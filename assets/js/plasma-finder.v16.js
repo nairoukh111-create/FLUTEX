@@ -2809,11 +2809,17 @@
     return true;
   };
 
+  const detailPages = {"ajan-hp260":"/plasma/ajan-hp260-hp260a-consumables","cea-p80":"/plasma/cea-p80-sk125-consumables","cebora-cp161":"/plasma/cebora-cp161-consumables","cebora-cp162c":"/plasma/cebora-cp162c-consumables","cebora-cp200":"/plasma/cebora-cp200-consumables","cebora-cp251g":"/plasma/cebora-cp251-cp251g-consumables","cebora-cp450g":"/plasma/cebora-cp450-cp450g-consumables","esab-pt19":"/plasma/esab-pt-19xls-consumables","esab-pt36":"/plasma/esab-pt-36-consumables","esab-pt600":"/plasma/esab-pt-600-consumables","hyp-hpr":"/plasma/hypertherm-hpr130-hpr260-consumables","hyp-hsd130":"/plasma/hypertherm-hsd130-consumables","hyp-ht4001-4400":"/plasma/hypertherm-ht4001-ht4400-consumables","hyp-max200-ht2000":"/plasma/hypertherm-max200-ht2000-consumables","hyp-maxpro200":"/plasma/hypertherm-maxpro200-consumables","hyp-powermax-105":"/plasma/hypertherm-powermax-105-consumables","hyp-powermax-125":"/plasma/hypertherm-powermax-125-consumables","hyp-powermax-1250-1650":"/plasma/hypertherm-powermax-1250-powermax-1650-consumables","hyp-powermax-30":"/plasma/hypertherm-powermax-30-powermax-30xp-consumables","hyp-powermax-45":"/plasma/hypertherm-powermax-45-consumables","hyp-xpr":"/plasma/hypertherm-xpr170-xpr300-consumables","ipt-60":"/plasma/ipt-ipt60-pt60h-consumables","ipt-80":"/plasma/ipt-ipt80-pt80-consumables","kj-finefocus":"/plasma/kjellberg-finefocus-800-finefocus-900-consumables","kj-160":"/plasma/kjellberg-hifocus-160i-percut-160-consumables","kj-hifocus280-440":"/plasma/kjellberg-hifocus-280i-hifocus-360i-consumables","kj-hifocus440":"/plasma/kjellberg-hifocus-440i-pge-440-consumables","kj-pa-pb":"/plasma/kjellberg-pa-50-pa-s75-consumables","kj-legacy-small":"/plasma/kjellberg-pa-s47cnc-finefocus-450-consumables","kj-smartfocus400":"/plasma/kjellberg-smart-focus-400-pge-300-consumables","koike-super400":"/plasma/koike-super-400-plus-consumables","lincoln-flexcut125":"/plasma/lincoln-flexcut-125-consumables","lincoln-spirit":"/plasma/lincoln-spirit-150a-spirit-275a-consumables","lincoln-lc105":"/plasma/lincoln-tomahawk-1025-tomahawk-1538-consumables","lincoln-tomahawk1500":"/plasma/lincoln-tomahawk-1500-consumables","td-pch":"/plasma/thermal-dynamics-pch-m-62-pch-m-102-consumables","td-sl40":"/plasma/thermal-dynamics-sl40-consumables","td-sl60-100":"/plasma/thermal-dynamics-sl60-sl100-consumables","td-xt301":"/plasma/thermal-dynamics-xt301-consumables","lincoln-lc65":"/plasma/lincoln-compatible-consumables"};
+  const detailHeading = item => {
+    const prefix = document.documentElement.lang === "ar" ? "/ar" : "";
+    return `<a href="${esc(prefix + detailPages[item.id])}">${esc(item.systems.join(" / "))}</a>`;
+  };
+
   const card = item => `
     <article class="finder-card plasma-card">
       <div class="plasma-card-head"><span class="finder-standard">Compatible with ${esc(item.brand)}</span><span class="plasma-family">${esc(item.family)}</span></div>
       <div class="finder-card-body">
-        <h5>${esc(item.systems.join(' / '))}</h5><p>${esc(item.summary)}</p>
+        <h5>${detailHeading(item)}</h5><p>${esc(item.summary)}</p>
         <div class="finder-card-chips">${item.components.slice(0,5).map(x=>`<span>${esc(x)}</span>`).join('')}${item.components.length>5?`<span>+${item.components.length-5} more</span>`:''}</div>
         <div class="plasma-applications">${item.applications.map(x=>`<span>${esc(x)}</span>`).join('')}</div>
         <div class="finder-card-actions"><button class="text-link finder-spec-btn" type="button" data-open-plasma="${esc(item.id)}">View coverage <span>→</span></button><a class="finder-rfq" href="/contact?product=${encodeURIComponent('Plasma - '+item.brand+' - '+item.systems.join(' / '))}">RFQ</a></div>

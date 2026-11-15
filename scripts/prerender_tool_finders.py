@@ -32,7 +32,7 @@ def render():
                 raise ValueError(f'No unambiguous existing page for {item["id"]}')
             url = matches[0]['url']
             width, height = Image.open(ROOT / item['image'].lstrip('/')).size
-            cards.append(f'''<article class="finder-card"><div class="finder-card-media"><img src="{E(item['image'])}" alt="{E(item['name'])}" width="{width}" height="{height}" loading="lazy" decoding="async"/></div><div class="finder-card-body"><h5>{E(item['name'])}</h5><p>{E(item['summary'])}</p><div class="finder-card-actions"><a class="text-link finder-spec-btn" href="{E(url)}">View family details →</a><a class="finder-rfq" href="/contact?product={E(item['id'])}">RFQ</a></div></div></article>''')
+            cards.append(f'''<article class="finder-card"><div class="finder-card-media"><img src="{E(item['image'])}" alt="{E(item['name'])}" width="{width}" height="{height}" loading="lazy" decoding="async"/></div><div class="finder-card-body"><h5><a href="{E(url)}">{E(item['name'])}</a></h5><p>{E(item['summary'])}</p><div class="finder-card-actions"><a class="text-link finder-spec-btn" href="{E(url)}">View family details →</a><a class="finder-rfq" href="/contact?product={E(item['id'])}">RFQ</a></div></div></article>''')
         marker = f'<!--static-{name}-families-->'
         body = marker + ''.join(cards) + f'<!--/static-{name}-families-->'
         if marker in source:

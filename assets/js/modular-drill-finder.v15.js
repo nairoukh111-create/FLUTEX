@@ -46,12 +46,15 @@
     return true;
   };
 
+  const detailPages = {"mod-holder-3d":"/tools/modular-drill-internal-coolant-holder-3xd","mod-holder-5d":"/tools/modular-drill-internal-coolant-holder-5xd","mod-holder-8d":"/tools/modular-drill-internal-coolant-holder-8xd","mod-insert-steel":"/tools/modular-drill-carbide-insert-general-steel","mod-insert-mild":"/tools/modular-drill-carbide-insert-mild-steel","mod-insert-stainless":"/tools/modular-drill-carbide-insert-stainless-steel","mod-insert-cast":"/tools/modular-drill-carbide-insert-cast-iron","mod-insert-nonferrous":"/tools/modular-drill-carbide-insert-non-ferrous-metals","mod-insert-hss-steel":"/tools/modular-drill-hss-insert-general-steel","mod-insert-hss-mild":"/tools/modular-drill-hss-insert-mild-steel"};
+  const detailHeading = item => `<a href="${esc(detailPages[item.id])}">${esc(item.name)}</a>`;
+
   const card = item => `
     <article class="finder-card modular-card">
       <div class="finder-card-media"><img src="${esc(item.image)}" alt="${esc(item.name)}"></div>
       <div class="finder-card-body">
         <div class="finder-card-top"><span class="finder-standard">${esc(item.type)}</span><span class="finder-range">Ø ${item.min.toFixed(1)}–${item.max.toFixed(2)} mm</span></div>
-        <h5>${esc(item.name)}</h5><p>${esc(item.summary)}</p>
+        <h5>${detailHeading(item)}</h5><p>${esc(item.summary)}</p>
         <div class="finder-card-chips"><span>${esc(item.insertMaterial)}</span><span>${esc(item.depths.join(' / '))}</span><span>${esc(item.accuracy)}</span></div>
         <div class="finder-card-actions"><button class="text-link finder-spec-btn" type="button" data-open-modular="${esc(item.id)}">View specifications <span>→</span></button><a class="finder-rfq" href="/contact?product=${encodeURIComponent(item.name)}">RFQ</a></div>
       </div>

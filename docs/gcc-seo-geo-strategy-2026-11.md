@@ -55,3 +55,21 @@ Category-level regional links must lead to relevant technical support content in
 The generated site search reads laser model/dimension terms and saw-family terms from the cleaned public HTML. Never restore upstream source labels to improve search coverage. Run the confidentiality gate in AGENTS.md before regenerating or committing the index. New index content must be fetched from the main entry pages using the current revision query key, so existing browser caches cannot hide the update.
 
 Search Console performance is now readable through the connected OpenSEO project; historical notes that it has no connection are superseded. Store account performance extracts and query-level analysis in private owner reports, not this public repository. Lack of impressions for a new family in a historical window is not proof of an indexing defect.
+
+## 5. Product intent and page map — implementation 2026-11-15
+
+Use the existing pages below for relevant purchasing language. These are content targets, not claims of measured demand or rankings. The GCC hub links all seven families with descriptive component names. Finder headings retain real detail-page links when JavaScript filters render, alongside the existing specification dialogs and RFQ actions.
+
+| Family | English product intent | Arabic product intent | Existing destination |
+| --- | --- | --- | --- |
+| Cutting Tools | carbide end mills; HSS drill bits; modular drills; ER collets and tool holders | ريش تفريز كربيد؛ ريش حفر HSS؛ حفر برؤوس قابلة للاستبدال؛ كوليت وحوامل أدوات | `/cutting-tools`, `/carbide-end-mills`, `/hss-drill-bits`, `/tool-holding` and served tool-family pages |
+| Industrial Saw Blades | industrial circular saw blades; aluminium saw blades; TCT, HSS and PCD tooling | صواني منشار صناعية؛ صواني ألمنيوم؛ أدوات TCT وHSS وPCD | `/industrial-saw-blades`, `/aluminum-saw-blades` and the blade inspection guide |
+| Plasma Consumables | compatible plasma nozzles, electrodes, shields; XPR/HPR original references | نوزلات وإلكترودات وشيلدات بلازما متوافقة؛ مراجع XPR وHPR الأصلية | `/plasma-consumables`, existing `/plasma/` system and brand pages |
+| Laser Consumables | fiber laser nozzles; protective windows; focusing/collimating optics; ceramic rings | نوزلات فايبر ليزر؛ زجاج حماية؛ عدسات تركيز وكوليميشن؛ حلقات سيراميك | `/laser-consumables` and `/guides/laser-consumables-matching-checklist` |
+| Cutting Fluids | CNC cutting oil; MQL oil and machining lubricants | زيت قطع وتشغيل CNC؛ زيوت تزييت MQL | `/cutting-fluid`, the two published `/oils/` products and MQL selection guide |
+| Welding Consumables | MIG welding wire; contact tips; gas nozzles; liners and diffusers | أسلاك لحام MIG؛ كونتاكت تيب؛ نوزلات غاز؛ لاينر وديفيوزر | `/welding-consumables` and `/guides/mig-consumables-matching-checklist` |
+| Ball Transfer Units | ball transfer bearings; industrial ball rollers; flange, stud and press-fit mounting | وحدات نقل كروية؛ بكرات كروية صناعية؛ تثبيت فلنجة وقلاوظ وكبس | `/ball-transfer-units` and `/guides/ball-transfer-unit-selection` |
+
+Use each page's existing `/ar/` counterpart for Arabic readers. Workpiece, machine/head model, standard, dimensions and compatibility references belong on the relevant product page only when documented. Do not add unverified sizes, performance or applications to fill a keyword gap.
+
+For Saudi Arabia, UAE, Kuwait, Qatar, Bahrain and Oman, combine the actual product need with the destination in a useful enquiry workflow. Keep the shared GCC hub and existing substantive regional pages; do not duplicate the table into country-name-swapped pages, put hidden keyword lists in code, or claim a local branch or stock. Update sitemap `lastmod` only for substantive page changes. A submitted sitemap or accepted indexing request is not evidence that Google has indexed the page.
