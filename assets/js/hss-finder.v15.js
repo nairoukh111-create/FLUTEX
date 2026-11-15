@@ -62,12 +62,15 @@
     ['Size systems', item.units.join(' / ')]
   ];
 
+  const detailPages = {"din338":"/tools/din-338-hss-straight-shank-twist-drills","asme-jobber":"/tools/asme-b94-11m-hss-jobber-length-straight-shank-twist-drills","din1897":"/tools/din-1897-hss-stubby-drills","asme-stubby":"/tools/asme-b94-11m-hss-screw-machine-length-stubby-drills","din340":"/tools/din-340-hss-long-length-straight-shank-twist-drills","asme-taper":"/tools/asme-b94-11m-hss-taper-length-straight-shank-twist-drills","din345":"/tools/din-345-hss-taper-shank-twist-drills","din341":"/tools/din-341-hss-long-length-taper-shank-twist-drills","double-ended":"/tools/hss-double-ended-drills","silver-deming":"/tools/hss-silver-and-deming-drills","aircraft-extension":"/tools/hss-aircraft-extension-drills"};
+  const detailHeading = item => `<a href="${esc(detailPages[item.id])}">${esc(item.name)}</a>`;
+
   const card = item => `
     <article class="finder-card">
       <div class="finder-card-media"><img src="${esc(item.image)}" alt="${esc(item.name)}"></div>
       <div class="finder-card-body">
         <div class="finder-card-top"><span class="finder-standard">${esc(item.standard)}</span><span class="finder-range">${esc(item.size)}</span></div>
-        <h5>${esc(item.name)}</h5>
+        <h5>${detailHeading(item)}</h5>
         <p>${esc(item.summary)}</p>
         <div class="finder-card-chips"><span>${esc(item.shank)}</span><span>${esc(item.length)}</span><span>${esc(item.grades.join(' / '))}</span></div>
         <div class="finder-card-actions"><button class="text-link finder-spec-btn" type="button" data-open-spec="${esc(item.id)}">View specifications <span>→</span></button><a class="finder-rfq" href="/contact?product=${encodeURIComponent(item.name)}">RFQ</a></div>

@@ -41,12 +41,15 @@
     return true;
   };
 
+  const detailPages = {"carbide-general":"/tools/general-purpose-carbide-end-mills","carbide-precision":"/tools/high-precision-carbide-end-mills","carbide-hardened":"/tools/high-hardness-carbide-end-mills","carbide-stainless":"/tools/stainless-steel-carbide-end-mills","carbide-titanium":"/tools/titanium-and-heat-resistant-alloy-end-mills","carbide-aluminum":"/tools/aluminum-high-efficiency-carbide-end-mills","carbide-graphite":"/tools/graphite-and-composite-diamond-coated-end-mills","carbide-drilling":"/tools/solid-carbide-drilling-tools","cbn-precision":"/tools/cbn-precision-finishing-end-mills"};
+  const detailHeading = item => `<a href="${esc(detailPages[item.id])}">${esc(item.name)}</a>`;
+
   const card = item => `
     <article class="finder-card carbide-card">
       <div class="finder-card-media"><img src="${esc(item.image)}" alt="${esc(item.name)}"></div>
       <div class="finder-card-body">
         <div class="finder-card-top"><span class="finder-standard">${esc(item.toolTypes[0])}</span><span class="finder-range">${esc(item.hardness[0])}</span></div>
-        <h5>${esc(item.name)}</h5>
+        <h5>${detailHeading(item)}</h5>
         <p>${esc(item.summary)}</p>
         <div class="finder-card-chips"><span>${esc(item.workpieces.slice(0,2).join(' · '))}</span><span>${esc(item.geometries.slice(0,2).join(' / '))}</span>${item.coatings.length?`<span>${esc(item.coatings.join(' / '))}</span>`:''}</div>
         <div class="finder-card-actions"><button class="text-link finder-spec-btn" type="button" data-open-carbide="${esc(item.id)}">View specifications <span>→</span></button><a class="finder-rfq" href="/contact?product=${encodeURIComponent(item.name)}">RFQ</a></div>
