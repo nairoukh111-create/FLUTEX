@@ -89,7 +89,9 @@ async function attachments(data) {
 }
 
 async function network(fetcher,url,options,timeout) {
-  return fetcher(url,{...options,signal:AbortSignal.timeout(timeout),redirect:'error'});
+  // Workers supports manual/follow only. Keep credentials on the original URL;
+  // each caller rejects a 3xx response through its existing status check.
+  return fetcher(url,{...options,signal:AbortSignal.timeout(timeout),redirect:'manual'});
 }
 
 export function createService(fetcher=fetch) {

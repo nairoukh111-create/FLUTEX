@@ -192,6 +192,30 @@ test('Turnstile rejection, wrong action or wrong hostname never reaches Microsof
   }
 });
 
+test('outbound requests use a Workers-supported mode and never follow provider redirects',async()=>{
+  const {createService}=await worker();
+  const n=network();
+  const runtimeFetch=async(url,options)=>{
+    if(options.redirect==='error')throw new TypeError('Unsupported redirect mode');
+    assert.equal(options.redirect,'manual');
+    return n.fetch(url,options);
+  };
+  assert.equal((await createService(runtimeFetch).fetch(request(),env())).status,202);
+  assert.equal(n.calls.length,3);
+  for(const redirectAt of [0,1,2]) {
+    const upstream=network();let calls=0;
+    const redirected=async(url,options)=>{
+      assert.equal(options.redirect,'manual');
+      if(calls++===redirectAt)return new Response(null,{status:302,headers:{location:'https://outside.example/private-fixture'}});
+      return upstream.fetch(url,options);
+    };
+    const response=await createService(redirected).fetch(request(),env());
+    assert.equal(response.status,redirectAt===2?502:503);
+    assert.equal(calls,redirectAt+1,'Redirect targets and subsequent stages are never requested');
+    assert.doesNotMatch(await response.text(),/outside|private-fixture|fictional/);
+  }
+});
+
 test('credential errors and unconfirmed delivery do not become successful RFQs or leak provider data',async()=>{
   const {createService}=await worker();
   for(const overrides of [{tokenResponse:Response.json({error_description:'private-fixture'},{status:401})},
