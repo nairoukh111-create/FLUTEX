@@ -19,6 +19,11 @@ test('failure diagnostics exclude arbitrary server content, form details and tok
 });
 
 test('the browser failure log remains readable through text-only capture without exposing response details',async()=>{
+  for(const scenario of [
+    {response:Response.json({error:'service-unavailable',email:'private@example.test',token:'private-token',details:'private-body'},{status:503}),status:503,code:'service-unavailable'},
+    {response:new Response('<html>private gateway body</html>',{status:502}),status:502,code:'invalid-response'},
+    {failure:new TypeError('private transport details'),status:0,code:'network-error'},
+  ]) {
   let submit,script,requests=0,resets=0;
   const logs=[],status={},button={},note={};
   const form={reportValidity:()=>true,reset:()=>{resets++;},addEventListener:(event,fn)=>{if(event==='submit')submit=fn;},
@@ -28,18 +33,22 @@ test('the browser failure log remains readable through text-only capture without
   const document={documentElement:{lang:'en'},querySelector:()=>form,
     createElement:()=>{script={};return script;},head:{appendChild:()=>script.onload()},dispatchEvent:()=>{}};
   const context={document,FormData:Payload,CustomEvent:class{},console:{warn:(...args)=>logs.push(args.join(' '))},
-    window:{turnstile:{render:()=>1,reset:()=>{}}},fetch:async()=>++requests===1?
-      Response.json({available:true,turnstileSiteKey:'public-fixture'}):
-      Response.json({error:'service-unavailable',email:'private@example.test',token:'private-token',details:'private-body'},{status:503})};
+    window:{turnstile:{render:()=>1,reset:()=>{}}},fetch:async()=>{
+      if(++requests===1)return Response.json({available:true,turnstileSiteKey:'public-fixture'});
+      if(scenario.failure)throw scenario.failure;
+      return scenario.response;
+    }};
   vm.runInNewContext(fs.readFileSync(require.resolve('../assets/js/rfq.v18.js'),'utf8'),context);
   await new Promise(setImmediate);
   assert.equal(button.textContent,'Submit RFQ →');
   await submit({preventDefault:()=>{}});
   assert.equal(requests,2);assert.equal(logs.length,1);
-  assert.match(logs[0],/"status":503/);assert.match(logs[0],/"code":"service-unavailable"/);
+  const diagnostic=JSON.parse(logs[0].replace('FLUTEX RFQ response ',''));
+  assert.deepEqual(diagnostic,{status:scenario.status,code:scenario.code});
   assert.doesNotMatch(logs[0],/private|fictional-token|\[object Object\]/);
   assert.equal(resets,0);assert.equal(button.disabled,false);
   assert.match(status.textContent,/Sending could not be confirmed/);
+  }
 });
 const env=()=>({M365_TENANT_ID:'11111111-1111-4111-8111-111111111111',
   M365_CLIENT_ID:'22222222-2222-4222-8222-222222222222',M365_CLIENT_SECRET:'fictional-test-only',
