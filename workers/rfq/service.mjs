@@ -63,9 +63,11 @@ function base64(bytes) {
 }
 
 async function attachments(data) {
-  const files=data.getAll('attachments').filter(file=>typeof file!=='string' && file.size);
+  // An unselected browser file input can be parsed as an empty string.
+  const entries=data.getAll('attachments').filter(file=>file!=='');
+  const files=entries.filter(file=>typeof file!=='string' && file.size);
   if (files.length>4 || files.reduce((sum,f)=>sum+f.size,0)>MAX_ATTACHMENT_BYTES) throw fault('attachment-size',413);
-  if (data.getAll('attachments').some(file=>typeof file==='string')) throw fault('invalid-attachment');
+  if (entries.some(file=>typeof file==='string')) throw fault('invalid-attachment');
   const result=[];
   for (const file of files) {
     const name=file.name.split(/[\\/]/).pop().replace(/[\x00-\x1f\x7f]/g,'').slice(-120);

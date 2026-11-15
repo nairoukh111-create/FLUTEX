@@ -154,6 +154,18 @@ test('renamed executables and unexpected attachment types are rejected',async()=
   }
 });
 
+test('unselected file inputs accept empty parts while nonempty text attachments remain rejected',async()=>{
+  const {createService}=await worker();
+  for(const empty of ['',new File([], '',{type:'application/octet-stream'})]) {
+    const d=form();d.append('attachments',empty);const n=network();
+    assert.equal((await createService(n.fetch).fetch(request(d),env())).status,202);
+    assert.deepEqual(JSON.parse(n.calls[2].options.body).message.attachments,[]);
+  }
+  const d=form();d.append('attachments','not-a-file');const n=network();
+  assert.equal((await createService(n.fetch).fetch(request(d),env())).status,422);
+  assert.equal(n.calls.length,0);
+});
+
 test('drawing attachments retain their bytes and are normalized to safe filenames',async()=>{
   const {createService}=await worker();
   for(const [name,bytes] of [['part.dxf','0\r\nSECTION\r\n2\r\nHEADER'],['../part\r\n.dwg','AC1032 fixture']]) {

@@ -103,6 +103,7 @@
       set(text.files, 'error'); return;
     }
     const payload = new FormData(form);
+    if (!files.length) payload.delete('attachments');
     if (!payload.get('cf-turnstile-response')) { set(text.verify, 'error'); return; }
     button.disabled = true;
     button.textContent = text.sending;
