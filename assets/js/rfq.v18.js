@@ -10,7 +10,7 @@
       'invalid-request', 'rate-limited', 'request-too-large', 'empty-request',
       'invalid-form', 'invalid-fields', 'verification-required', 'attachment-size',
       'invalid-attachment', 'attachment-type', 'verification-unavailable',
-      'verification-failed', 'delivery-unconfirmed'];
+      'verification-failed', 'delivery-unconfirmed', 'invalid-response', 'network-error'];
     const status = Number.isInteger(response?.status) && response.status >= 100 && response.status <= 599 ? response.status : 0;
     return {status, code: codes.includes(data?.error) ? data.error : 'unconfirmed'};
   }
@@ -107,18 +107,24 @@
     if (!payload.get('cf-turnstile-response')) { set(text.verify, 'error'); return; }
     button.disabled = true;
     button.textContent = text.sending;
+    let responseStatus = 0;
+    let failureReported = false;
     try {
       const response = await fetch(cfg.rfqEndpoint || '/api/rfq', {method: 'POST', body: payload});
+      responseStatus = response.status;
       const result = await response.json();
       if (!acceptedServiceReply(response, result)) {
         // Only fixed operational codes; never log the response body or form values.
         console.warn('FLUTEX RFQ response ' + JSON.stringify(serviceFailureDiagnostic(response, result)));
+        failureReported = true;
         throw new Error('Submission not confirmed');
       }
       set((ar ? 'قُبل طلبك للإرسال. رقم المتابعة: ' : 'Your enquiry was accepted for sending. Reference: ') + result.reference, 'success');
       document.dispatchEvent(new CustomEvent('rfq_service_accepted'));
       form.reset();
     } catch (_) {
+      if (!failureReported) console.warn('FLUTEX RFQ response ' + JSON.stringify(serviceFailureDiagnostic(
+        {status: responseStatus}, {error: responseStatus ? 'invalid-response' : 'network-error'})));
       set(text.error, 'error');
     } finally {
       window.turnstile?.reset(widget);
