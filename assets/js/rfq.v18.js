@@ -5,6 +5,15 @@
     return response.status === 202 && data?.accepted === true &&
       /^[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}$/i.test(data.reference || '');
   }
+  function serviceFailureDiagnostic(response, data) {
+    const codes = ['service-unavailable', 'invalid-origin', 'invalid-content-type',
+      'invalid-request', 'rate-limited', 'request-too-large', 'empty-request',
+      'invalid-form', 'invalid-fields', 'verification-required', 'attachment-size',
+      'invalid-attachment', 'attachment-type', 'verification-unavailable',
+      'verification-failed', 'delivery-unconfirmed'];
+    const status = Number.isInteger(response?.status) && response.status >= 100 && response.status <= 599 ? response.status : 0;
+    return {status, code: codes.includes(data?.error) ? data.error : 'unconfirmed'};
+  }
   function enquiryText(values) {
     return ['Name: ' + (values.name || ''), 'Company: ' + (values.company || ''),
       'Email: ' + (values.email || ''), 'Phone: ' + (values.phone || ''),
@@ -17,7 +26,7 @@
     const subject = ('FLUTEX RFQ - ' + (values.partNumber || values.company || 'Industrial enquiry')).replace(/[\r\n]+/g, ' ');
     return 'mailto:' + email + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(enquiryText(values));
   }
-  if (typeof module !== 'undefined' && module.exports) module.exports = {enquiryText, emailDraft, acceptedServiceReply, MAX_ATTACHMENT_BYTES};
+  if (typeof module !== 'undefined' && module.exports) module.exports = {enquiryText, emailDraft, acceptedServiceReply, serviceFailureDiagnostic, MAX_ATTACHMENT_BYTES};
   if (typeof document === 'undefined') return;
   const form = document.querySelector('#rfq-form');
   if (!form) return;
@@ -100,7 +109,11 @@
     try {
       const response = await fetch(cfg.rfqEndpoint || '/api/rfq', {method: 'POST', body: payload});
       const result = await response.json();
-      if (!acceptedServiceReply(response, result)) throw new Error('Submission not confirmed');
+      if (!acceptedServiceReply(response, result)) {
+        // Only fixed operational codes; never log the response body or form values.
+        console.warn('FLUTEX RFQ response', serviceFailureDiagnostic(response, result));
+        throw new Error('Submission not confirmed');
+      }
       set((ar ? 'قُبل طلبك للإرسال. رقم المتابعة: ' : 'Your enquiry was accepted for sending. Reference: ') + result.reference, 'success');
       document.dispatchEvent(new CustomEvent('rfq_service_accepted'));
       form.reset();

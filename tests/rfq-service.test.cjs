@@ -2,9 +2,20 @@ const {test}=require('node:test');
 const assert=require('node:assert/strict');
 const {File}=require('node:buffer');
 const fs=require('node:fs');
-const {acceptedServiceReply,MAX_ATTACHMENT_BYTES}=require('../assets/js/rfq.v18.js');
+const {acceptedServiceReply,serviceFailureDiagnostic,MAX_ATTACHMENT_BYTES}=require('../assets/js/rfq.v18.js');
 const api=async()=>import('data:text/javascript;base64,'+Buffer.from(fs.readFileSync(require.resolve('../functions/api/rfq.js'),'utf8')).toString('base64'));
 const worker=()=>import('../workers/rfq/service.mjs');
+
+test('failure diagnostics exclude arbitrary server content, form details and tokens',()=>{
+  const data={error:'verification-failed',email:'private@example.test',token:'private-fixture',reference:'private-reference',details:'private-provider-body'};
+  assert.deepEqual(serviceFailureDiagnostic({status:403},data),{status:403,code:'verification-failed'});
+  for(const value of ['private@example.test','private-fixture',{},['verification-failed'],null]) {
+    const result=serviceFailureDiagnostic({status:503},{...data,error:value});
+    assert.deepEqual(result,{status:503,code:'unconfirmed'});
+    assert.doesNotMatch(JSON.stringify(result),/private/);
+  }
+  assert.deepEqual(serviceFailureDiagnostic({status:'private-fixture'},data),{status:0,code:'verification-failed'});
+});
 const env=()=>({M365_TENANT_ID:'11111111-1111-4111-8111-111111111111',
   M365_CLIENT_ID:'22222222-2222-4222-8222-222222222222',M365_CLIENT_SECRET:'fictional-test-only',
   TURNSTILE_SECRET_KEY:'fictional-test-only',RFQ_RATE_LIMITER:{limit:async()=>({success:true})}});
