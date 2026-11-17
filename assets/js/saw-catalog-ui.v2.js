@@ -37,9 +37,12 @@
     return {options:alt?[...new Set(nums)]:[],value:s};
   }
   function selection(row,card,index){
-    const tds=[...row.querySelectorAll('td')].slice(0,6).map(td=>norm(td.textContent));
-    const type=index>=33?'tool':'blade';
-    const defs=type==='tool'?[
+    const cells=[...row.querySelectorAll('td')].map(td=>norm(td.textContent));
+    const tds=index===34?[cells[0],'—','—',cells[1],cells[2],cells[3]]:cells.slice(0,6);
+    const type=index>=33?'tool':index===9?'pipe-hss':'blade';
+    const defs=index===34?[
+      ['outer',labels.outer,tds[0]],['bore',labels.bore,tds[3]],['teeth',labels.teeth,tds[4]]
+    ]:type==='tool'?[
       ['outer',labels.outer,tds[0]],
       ['kerf',index===35?(ar?'طول القطع':'Cutting length'):(ar?'العرض':'Width'),tds[1]],
       ['body',index===35?(ar?'قطر الساق':'Shank diameter'):(ar?'السماكة / ارتفاع الأداة':'Body / height'),tds[2]],
@@ -57,7 +60,12 @@
     const accept=values=>{
       field('saw-selected',card.querySelector('h4')?.textContent||'');
       field('saw-machine',document.getElementById('saw-machine')?.value||'');
-      if(type==='blade'){
+      if(type==='pipe-hss'){
+        field('saw-diameter',values.outer);
+        field('saw-kerf','');field('saw-body','');field('saw-bore','');
+        field('saw-teeth',values.teeth);
+        field('saw-notes',(ar?'عرض السن: ':'Tooth width: ')+values.kerf+' mm; '+(ar?'تأكيد فتحة المركز مطلوب':'Centre bore requires confirmation'));
+      }else if(type==='blade'){
         field('saw-diameter',values.outer);
         field('saw-kerf',values.kerf);
         field('saw-body',values.body);
@@ -120,15 +128,12 @@
   });
   const common=document.getElementById('saw-common-cold');
   common?.addEventListener('click',e=>{
-    const b=e.target.closest('[data-pick-size]');
-    if(!b)return;
-    const row=b.closest('tr');if(!row)return;
-    const tds=[...row.querySelectorAll('td')];
-    const val=(id,i)=>field(id,tds[i]?.textContent.trim()||'');
-    field('saw-selected',ar?'دسك قص بارد — مقاس مرجعي':'Metal cold saw — general size reference');
-    val('saw-diameter',0);val('saw-kerf',1);val('saw-body',2);val('saw-bore',3);val('saw-teeth',4);
-    document.getElementById('saw-rfq')?.scrollIntoView({behavior:'smooth',block:'start'});
-    document.getElementById('saw-status').textContent=labels.check;
+    const button=e.target.closest('[data-pick-size]');
+    if(!button)return;
+    const row=button.closest('tr');
+    if(row){
+      selection(row,{querySelector:()=>({textContent:ar?'دسك قص بارد — مقاس مرجعي':'Metal cold saw — general reference'})},0);
+    }
   });
   // Distinguish the technical groups without representing generic drawings as exact stock photos.
   const icons={
