@@ -40,3 +40,10 @@
 .saw-rfq .saw-next-step{padding:9px 11px;border-inline-start:3px solid #fbe12a;background:#273138;color:#d8e1e5;font-size:11px;line-height:1.7}
 @media(max-width:700px){.saw-pinhole-grid{grid-template-columns:1fr}.saw-choice-grid{grid-template-columns:1fr}.saw-dimensions summary{font-size:11px}.saw-choice-dialog{padding:16px}}
 @media(prefers-reduced-motion:reduce){.saw-choice-dialog{scroll-behavior:auto}}
+
+.saw-cutting-guide{padding:55px 0;background:#fff}
+.saw-cutting-guide h2{font-size:clamp(26px,3.6vw,42px);margin:10px 0}
+.saw-cutting-guide p{max-width:940px;font-size:12px;color:#58616a;line-height:1.8;margin:15px 0}
+.saw-cutting-guide .saw-size-table{min-width:560px;max-width:880px}
+.saw-cutting-guide .saw-size-table th{white-space:normal}
+.saw-cutting-guide .saw-size-table td:first-child{direction:auto}
