@@ -31,8 +31,9 @@
   const form = document.querySelector('#rfq-form');
   if (!form) return;
   // Prepopulate technical enquiries from the saw-blade selector. No request is sent here.
-  const inbound = new URLSearchParams(location.search);
-  if (inbound.get('category') === 'Industrial Saw Blades' && inbound.has('message')) {
+  if (typeof URLSearchParams !== 'undefined' && typeof location !== 'undefined') {
+    const inbound = new URLSearchParams(location.search);
+    if (inbound.get('category') === 'Industrial Saw Blades' && inbound.has('message')) {
     for (const name of ['partNumber', 'quantity', 'category', 'message']) {
       const element = form.elements.namedItem(name);
       const supplied = inbound.get(name) || '';
@@ -41,6 +42,7 @@
           if ([...element.options].some(o => o.value === supplied)) element.value = supplied;
         } else element.value = supplied.slice(0, element.maxLength > 0 ? element.maxLength : 6000);
       }
+    }
     }
   }
   const ar = document.documentElement.lang.startsWith('ar');
