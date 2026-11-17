@@ -1,0 +1,49 @@
+/* FLUTEX technical catalogue: scope only the saw catalogue. */
+.saw-dimensions,.saw-common-table{margin-top:14px;border:1px solid #d9dee1;border-radius:12px;overflow:hidden;background:#f8f9f9}
+.saw-dimensions summary,.saw-common-table summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 13px;font-size:12px;font-weight:850;color:#0b0d0f;border-inline-start:3px solid #fbe12a}
+.saw-dimensions summary::-webkit-details-marker,.saw-common-table summary::-webkit-details-marker{display:none}
+.saw-dimensions summary:after,.saw-common-table summary:after{content:'+';font-weight:900;font-size:18px;color:#9f8b00}
+.saw-dimensions[open] summary:after,.saw-common-table[open] summary:after{content:'−'}
+.saw-dimensions summary small{margin-inline-start:auto;background:#fbe12a;padding:3px 7px;border-radius:9px}
+.saw-size-scroll{overflow-x:auto;max-width:100%;scrollbar-width:thin}
+.saw-size-table{border-collapse:collapse;width:100%;min-width:610px;table-layout:auto;font-size:11px;text-align:start}
+.saw-size-table th{background:#16191d;color:#fff;white-space:nowrap;padding:9px 8px;text-align:start}
+.saw-size-table td{padding:9px 7px;border-bottom:1px solid #e2e5e7;color:#11181a;white-space:nowrap;font-variant-numeric:tabular-nums;direction:ltr;text-align:start}
+.saw-size-table tbody tr:nth-child(even){background:#f0f1f1}
+.saw-size-table tbody tr:hover{background:#fff9cc}
+.saw-pick-size{color:#0b0d0f;background:#fbe12a;border:1px solid #ddca00;border-radius:6px;padding:6px 8px;cursor:pointer;font-size:11px;font-weight:850;white-space:nowrap}
+.saw-pick-size:hover,.saw-pick-size:focus-visible{background:#e6cb00}
+.saw-dimension-note,.saw-application-note{font-size:11px;line-height:1.6;color:#596268;margin:9px 0}
+.saw-common-table{margin:20px 0 30px}
+.saw-common-table>p{padding:0 14px;font-size:12px;color:#596268}
+.saw-reference{background:#f5f6f7;padding:46px 0}
+.saw-reference h2{font-size:clamp(24px,3vw,34px);margin-bottom:12px}
+.saw-reference p{max-width:800px;font-size:13px;line-height:1.8;color:#4c555b}
+.saw-pinhole-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:19px 0}
+.saw-pinhole-grid>div{background:#fff;border:1px solid #dce2e5;border-top:4px solid #fbe12a;border-radius:10px;padding:15px;display:flex;flex-direction:column;gap:8px}
+.saw-pinhole-grid strong{font-weight:900;font-size:23px;color:#0b0d0f}
+.saw-pinhole-grid span{font-size:12px;line-height:1.6;font-variant-numeric:tabular-nums;direction:ltr}
+.saw-disc{width:65px;height:65px;border-color:#f0d900;background:#14191c;color:#fbe12a}
+.saw-disc svg{width:50px;height:50px}
+.saw-item{padding:16px}
+.saw-dimensions .saw-dimension-note{padding:0 12px 8px}
+.saw-choice-dialog{max-width:min(540px,calc(100vw - 24px));border:1px solid #ddd;border-radius:16px;padding:24px;width:95%;box-shadow:0 15px 65px #0006;color:#0b0d0f}
+.saw-choice-dialog::backdrop{background:rgba(11,13,15,.7)}
+.saw-choice-dialog h2{margin:0 0 7px;font-size:24px}
+.saw-choice-dialog p{font-size:12px;color:#697077;line-height:1.7;margin:0 0 17px}
+.saw-choice-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.saw-choice-grid label{font-size:12px;font-weight:800}
+.saw-choice-grid select,.saw-choice-grid input{display:block;margin-top:5px;width:100%;border:1px solid #aeb8bf;border-radius:8px;padding:10px;font-size:14px;min-height:42px;background:#fff;color:#111;direction:ltr}
+.saw-choice-dialog menu{padding:0;margin:20px 0 0;display:flex;gap:10px;justify-content:flex-end}
+.saw-choice-dialog menu button{border:1px solid #c7cccf;border-radius:9px;padding:10px 13px;font-weight:800;cursor:pointer}
+.saw-choice-dialog [data-choice-confirm]{background:#fbe12a;color:#0b0d0f;border-color:#d7bf00}
+.saw-rfq .saw-next-step{padding:9px 11px;border-inline-start:3px solid #fbe12a;background:#273138;color:#d8e1e5;font-size:11px;line-height:1.7}
+@media(max-width:700px){.saw-pinhole-grid{grid-template-columns:1fr}.saw-choice-grid{grid-template-columns:1fr}.saw-dimensions summary{font-size:11px}.saw-choice-dialog{padding:16px}}
+@media(prefers-reduced-motion:reduce){.saw-choice-dialog{scroll-behavior:auto}}
+
+.saw-cutting-guide{padding:55px 0;background:#fff}
+.saw-cutting-guide h2{font-size:clamp(26px,3.6vw,42px);margin:10px 0}
+.saw-cutting-guide p{max-width:940px;font-size:12px;color:#58616a;line-height:1.8;margin:15px 0}
+.saw-cutting-guide .saw-size-table{min-width:560px;max-width:880px}
+.saw-cutting-guide .saw-size-table th{white-space:normal}
+.saw-cutting-guide .saw-size-table td:first-child{direction:auto}
