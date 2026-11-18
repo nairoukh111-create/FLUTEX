@@ -182,10 +182,10 @@
   };
   const drawTool=(i)=>{
     const id='ft'+i,kind=i-32;
-    const head=kind===1?
+    const head=kind===0?
       '<rect x="65" y="59" width="107" height="51" rx="8" fill="url(#'+id+'m)" stroke="#e1e9ed"/>'+
       '<path d="M75 65l18 28 18-28 18 28 18-28 16 26" fill="none" stroke="#1b2930" stroke-width="13"/>':
-      kind===2?
+      kind===1?
       '<ellipse cx="117" cy="85" rx="56" ry="30" fill="url(#'+id+'m)" stroke="#eef4f4" stroke-width="3"/>'+
       '<circle cx="117" cy="85" r="18" fill="#27343c" stroke="#dee8e9" stroke-width="4"/>'+
       '<path d="M 72 66l10-15m38 6l2-16m39 27l13-10" stroke="#fbe12a" stroke-width="7"/>':
