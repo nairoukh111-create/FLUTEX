@@ -15,6 +15,8 @@ test('bilingual saw catalogue preserves product families and expands published s
   assert.ok(h.includes('id="saw-common-aluminum"'),page);
   assert.ok(h.includes('saw-safety-title'),page);
   assert.ok(h.includes('710</td>') && h.includes('5.5</td>'),page);
+  assert.ok(h.includes('<td>325</td><td>4.0</td><td>3.2</td><td>31.75</td><td>84</td><td>—</td>'),page);
+  assert.ok(h.includes('30 (30, 50, 80)'),page);
   assert.ok(h.includes('saw-catalog-ui.v2.css'),page);
   assert.ok(h.includes('saw-catalog-ui.v2.js'),page);
   assert.ok(h.includes('saw-cutting-guide'),page);
