@@ -143,26 +143,65 @@
       selection(row,card,0);
     });
   }
-  // Distinguish the technical groups without representing generic drawings as exact stock photos.
-  const icons={
-    cold:'<circle cx="50" cy="50" r="32"/><circle cx="50" cy="50" r="7"/><path d="M50 7v11M50 82v11M7 50h11M82 50h11M20 20l8 8m44 44 8 8M20 80l8-8m44-44 8-8"/>',
-    aluminum:'<circle cx="50" cy="50" r="33"/><circle cx="50" cy="50" r="8"/><path d="M50 12l6 10 14-6 2 11 13 1-5 11 9 8-9 8 5 11-13 1-2 11-14-6-6 10-6-10-14 6-2-11-13-1 5-11-9-8 9-8-5-11 13-1 2-11 14 6z"/>',
-    panel:'<circle cx="50" cy="50" r="32"/><circle cx="50" cy="50" r="8"/><path d="M20 29h60M20 71h60M18 50h15m34 0h15"/>',
-    special:'<circle cx="50" cy="50" r="32"/><circle cx="50" cy="50" r="9"/><path d="M28 28l12 9m32-9-12 9M28 72l12-9m32 9-12-9"/>',
-    pcd:'<circle cx="50" cy="50" r="33"/><circle cx="50" cy="50" r="8"/><path d="M50 10l8 13M78 22l-1 16M90 50l-13 8M78 78l-16-1M50 90l-8-13M22 78l1-16M10 50l13-8M22 22l16 1"/>',
-    tools:'<rect x="35" y="17" width="30" height="17" rx="2"/><path d="M30 34h40l-8 20H38zM42 54v28m16-28v28M34 82h32M26 45h48"/>'
-  };
-  document.querySelectorAll('article.saw-item').forEach(el=>{
-    const svg=el.querySelector('.saw-disc svg'),family=el.dataset.family;
-    if(svg&&icons[family]){
-      svg.setAttribute('viewBox','0 0 100 100');
-      svg.setAttribute('fill','none');
-      svg.setAttribute('stroke','currentColor');
-      svg.setAttribute('stroke-width','2.5');
-      svg.setAttribute('stroke-linecap','round');
-      svg.setAttribute('stroke-linejoin','round');
-      svg.innerHTML=icons[family];
-      svg.setAttribute('aria-hidden','true');
+
+  // Original, schematic product-family artwork. Never imply this drawing is an exact SKU photograph.
+  const drawBlade=(i,family)=>{
+    const id='fb'+i;
+    const num=family==='cold'?(i===8?70:40):(family==='aluminum'?46:(family==='pcd'?34:(family==='special'?54:30)));
+    const cx=112,cy=76,R=58;
+    const pts=[];
+    for(let j=0;j<num;j++){
+      const t=(j/num)*Math.PI*2-Math.PI/2;
+      const p=(j+.64)/num*Math.PI*2-Math.PI/2;
+      pts.push([cx+R*Math.cos(t),cy+R*Math.sin(t)],[cx+(R+6)*Math.cos(p),cy+(R+6)*Math.sin(p)]);
     }
+    const fmt=point=>point.map(n=>n.toFixed(2)).join(' ');
+    const edge='M '+pts.map(fmt).join(' L ')+' Z';
+    const grooveCount=family==='cold'?6:(family==='panel'?5:4);
+    const notches=Array.from({length:grooveCount},(_,j)=>{
+      const a=Math.PI*2*j/grooveCount+.45+i*.06;
+      const x=cx+40*Math.cos(a),y=cy+40*Math.sin(a);
+      return '<circle cx="'+x.toFixed(2)+'" cy="'+y.toFixed(2)+'" r="3.3" fill="#0e151a" stroke="#a9b6b9" stroke-width=".8"/>';
+    }).join('');
+    const rings=Array.from({length:13},(_,j)=>'<circle cx="'+cx+'" cy="'+cy+'" r="'+(18+j*3.2).toFixed(1)+'" fill="none" stroke="'+(j%3?'#fff':'#28343d')+'" stroke-opacity="'+(.045+j*.001).toFixed(3)+'" stroke-width=".65"/>').join('');
+    const inserts=family==='pcd'?Array.from({length:16},(_,j)=>{
+      const a=2*Math.PI*j/16;
+      return '<path d="M '+fmt([cx+58*Math.cos(a),cy+58*Math.sin(a)])+' l '+fmt([3*Math.cos(a+.65),3*Math.sin(a+.65)])+'" stroke="#fbe12a" stroke-width="2.7" stroke-linecap="round"/>';
+    }).join(''):'';
+    return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 150" role="presentation" aria-hidden="true">'+
+    '<defs><linearGradient id="'+id+'g" x1="4%" y1="7%" x2="91%" y2="94%"><stop stop-color="#dce5e8"/><stop offset=".21" stop-color="#8c9da4"/><stop offset=".43" stop-color="#f6f8f8"/><stop offset=".62" stop-color="#73848c"/><stop offset=".85" stop-color="#dae2e5"/><stop offset="1" stop-color="#85949a"/></linearGradient><radialGradient id="'+id+'r"><stop stop-color="#fff" stop-opacity=".2"/><stop offset=".62" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#020406" stop-opacity=".2"/></radialGradient></defs>'+
+    '<ellipse cx="112" cy="83" rx="73" ry="54" fill="#000" opacity=".52"/>'+
+    '<g transform="translate(0 6) rotate(-11 112 76) scale(1 .86)">'+
+    '<path d="'+edge+'" fill="url(#'+id+'g)" stroke="#e0edf0" stroke-width="1.2"/>'+
+    '<circle cx="'+cx+'" cy="'+cy+'" r="57" fill="url(#'+id+'r)"/>'+
+    rings+'<circle cx="'+cx+'" cy="'+cy+'" r="13" fill="none" stroke="#3d4f59" stroke-width="2"/>'+
+    '<circle cx="'+cx+'" cy="'+cy+'" r="8.2" fill="#111b21" stroke="#e9f2f4" stroke-width="3"/>'+
+    notches+inserts+'</g>'+
+    '<path d="M 171 31h35" stroke="#fbe12a" stroke-width="2" opacity=".8"/><path d="M 180 35h26" stroke="#fbe12a" stroke-width=".8" opacity=".35"/>'+
+    '</svg>';
+  };
+  const drawTool=(i)=>{
+    const id='ft'+i,kind=i-32;
+    const head=kind===1?
+      '<rect x="65" y="59" width="107" height="51" rx="8" fill="url(#'+id+'m)" stroke="#e1e9ed"/>'+
+      '<path d="M75 65l18 28 18-28 18 28 18-28 16 26" fill="none" stroke="#1b2930" stroke-width="13"/>':
+      kind===2?
+      '<ellipse cx="117" cy="85" rx="56" ry="30" fill="url(#'+id+'m)" stroke="#eef4f4" stroke-width="3"/>'+
+      '<circle cx="117" cy="85" r="18" fill="#27343c" stroke="#dee8e9" stroke-width="4"/>'+
+      '<path d="M 72 66l10-15m38 6l2-16m39 27l13-10" stroke="#fbe12a" stroke-width="7"/>':
+      '<rect x="104" y="31" width="25" height="75" rx="5" fill="url(#'+id+'m)" stroke="#dce8eb" stroke-width="2"/>'+
+      '<path d="M96 100l16-24 17 8 13-8-10 43-17 10-19-12z" fill="url(#'+id+'m)" stroke="#dce8eb" stroke-width="3"/>'+
+      '<path d="M99 109l35 5M108 92l24 3" stroke="#fbe12a" stroke-width="4"/>';
+    return '<svg viewBox="0 0 240 150" role="presentation" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="'+id+'m" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e8eceb"/><stop offset=".32" stop-color="#7d929b"/><stop offset=".64" stop-color="#e2e8eb"/><stop offset="1" stop-color="#4b606a"/></linearGradient></defs>'+
+    '<ellipse cx="120" cy="129" rx="82" ry="10" fill="#000" opacity=".42"/>'+head+
+    '<path d="M168 36h39" stroke="#fbe12a" stroke-width="2"/><path d="M182 41h25" stroke="#fbe12a" stroke-width="1" opacity=".45"/></svg>';
+  };
+  document.querySelectorAll('article.saw-item').forEach((el,i)=>{
+    const svg=el.querySelector('.saw-disc svg');
+    if(!svg)return;
+    const art=el.dataset.family==='tools'?drawTool(i):drawBlade(i,el.dataset.family);
+    const wrap=svg.parentElement;
+    wrap.innerHTML=art;
+    wrap.title=ar?'رسم توضيحي للفئة، وليس صورة منتج محدد':'Family illustration; not an exact product photograph';
   });
 })();
