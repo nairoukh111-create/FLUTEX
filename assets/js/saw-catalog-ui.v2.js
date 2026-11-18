@@ -34,6 +34,9 @@
     }
     const nums=s.match(/\d+(?:\.\d+)?/g)||[];
     const alt=/[,/()]/.test(s)&&nums.length>1;
+    // Preserve the unit suffix for cutter insert / tooth-count alternatives.
+    const plates=[...s.matchAll(/\d+(?:\.\d+)?\s*P\b/gi)].map(m=>m[0].replace(/\s+/g,''));
+    if(plates.length>1)return {options:[...new Set(plates)],value:''};
     return {options:alt?[...new Set(nums)]:[],value:s};
   }
   function selection(row,card,index){
@@ -71,7 +74,7 @@
         field('saw-body',values.body);
         field('saw-bore',values.bore);
         field('saw-teeth',values.teeth);
-        field('saw-tooth',tds[5]==='Dry cutting'||tds[5]==='HSS pipe cutting'?'':tds[5]);
+        field('saw-tooth',/^(Dry cutting|HSS pipe cutting|—)$/.test(tds[5])?'':tds[5]);
         const old=norm(document.getElementById('saw-notes').value);
         if(old.startsWith('Tool dimensions:')||old.startsWith('أبعاد الأداة:'))field('saw-notes','');
       }else{
@@ -126,15 +129,20 @@
     const idx=Number(d.id.replace('saw-dimensions-',''));
     selection(row,card,idx);
   });
-  const common=document.getElementById('saw-common-cold');
-  common?.addEventListener('click',e=>{
-    const button=e.target.closest('[data-pick-size]');
-    if(!button)return;
-    const row=button.closest('tr');
-    if(row){
-      selection(row,{querySelector:()=>({textContent:ar?'دسك قص بارد — مقاس مرجعي':'Metal cold saw — general reference'})},0);
-    }
-  });
+  // Shared dimensional tables are references, not guarantees of a finished blade for a particular machine.
+  for(const [id,family] of [
+    ['saw-common-cold',ar?'دسك قص بارد — مقاس مرجعي':'Metal cold saw — general reference'],
+    ['saw-common-aluminum',ar?'دسك ألمنيوم — مقاس مرجعي':'Aluminium blade — general reference']
+  ]){
+    document.getElementById(id)?.addEventListener('click',event=>{
+      const selected=event.target.closest('[data-pick-size]');
+      if(!selected)return;
+      const row=selected.closest('tr');
+      if(!row)return;
+      const card={querySelector:()=>({textContent:family})};
+      selection(row,card,0);
+    });
+  }
   // Distinguish the technical groups without representing generic drawings as exact stock photos.
   const icons={
     cold:'<circle cx="50" cy="50" r="32"/><circle cx="50" cy="50" r="7"/><path d="M50 7v11M50 82v11M7 50h11M82 50h11M20 20l8 8m44 44 8 8M20 80l8-8m44-44 8-8"/>',
