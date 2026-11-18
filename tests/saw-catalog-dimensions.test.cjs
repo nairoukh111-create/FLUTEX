@@ -10,8 +10,11 @@ test('bilingual saw catalogue preserves product families and expands published s
   assert.equal((h.match(/class="saw-item"/g)||[]).length,35,page);
   assert.equal((h.match(/class="saw-family"/g)||[]).length,6,page);
   assert.equal((h.match(/class="saw-dimensions"/g)||[]).length,28,page);
-  assert.equal((h.match(/data-pick-size/g)||[]).length,164,page);
+  assert.equal((h.match(/data-pick-size/g)||[]).length,180,page);
   assert.ok(h.includes('id="saw-common-cold"'),page);
+  assert.ok(h.includes('id="saw-common-aluminum"'),page);
+  assert.ok(h.includes('saw-safety-title'),page);
+  assert.ok(h.includes('710</td>') && h.includes('5.5</td>'),page);
   assert.ok(h.includes('saw-catalog-ui.v2.css'),page);
   assert.ok(h.includes('saw-catalog-ui.v2.js'),page);
   assert.ok(h.includes('saw-cutting-guide'),page);
@@ -28,6 +31,10 @@ test('saw size selection uses existing attachment-capable RFQ flow',()=>{
  assert.match(ui,/candidate\(value\)/);
  assert.match(ui,/type==='pipe-hss'/);
  assert.match(ui,/index===34/);
+ assert.match(ui,/saw-common-aluminum/);
+ assert.match(ui,/drawBlade\(/);
+ assert.match(ui,/drawTool\(/);
+ assert.match(ui,/const plates=/);
  assert.match(original,/category:'Industrial Saw Blades'/);
  assert.match(original,/\/contact/);
  assert.doesNotMatch(original,/mailto:sales@flutexindustrial\.com\?subject/);
