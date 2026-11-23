@@ -10,11 +10,15 @@ for(const [file,locale] of [['oils/flutex-esterion-35.html','en'],['ar/oils/flut
  const url='https://flutexindustrial.com/'+file.replace(/\.html$/,'');
  assert.ok(html.includes('rel="canonical" href="'+url+'"'),file);
  assert.ok(html.includes('href="/assets/css/esterion-applications.v1.css"'),file);
- for(const term of ['EMMEGI','ELUMATEC','Gear','MQL','310 C','35 cSt','type="application/ld+json"'])assert.ok(html.includes(term),file+': '+term);
+ for(const term of ['5-Axis CNC','Gear','MQL','310 C','35 cSt','type="application/ld+json"'])assert.ok(html.includes(term),file+': '+term);
  assert.ok(html.includes('esterion-application-matrix'),file);
+ const matrix=html.match(/<table[^>]+id="esterion-application-matrix"[\s\S]*?<\/table>/)?.[0];
+ assert.ok(matrix,file);
+ assert.equal((matrix.match(/<th /g)||[]).length,2,file);
+ assert.equal((matrix.match(/<tr>/g)||[]).length,15,file);
  assert.ok(html.includes('esterion-review-only'),file);
  assert.ok(html.includes('esterion-field-observation'),file);
- assert.ok(html.includes(locale==='ar'?'غير':'not an OEM'),file);
+ assert.doesNotMatch(html,/EMMEGI|ELUMATEC|Field-tested|TDS-listed process|Evidence \/ scope|حالة التحقق/,file);
  assert.ok(html.includes('gcc-industrial-consumables'),file);
  assert.ok(html.includes('flutex-esterion-35-tds.pdf'),file);
  assert.ok(!/aggregateRating|"price"|"availability":"InStock"/.test(html),file);
