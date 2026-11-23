@@ -12,6 +12,9 @@ for(const [file,locale] of [['oils/flutex-esterion-35.html','en'],['ar/oils/flut
  assert.ok(html.includes('href="/assets/css/esterion-applications.v1.css"'),file);
  for(const term of ['5-Axis CNC','Gear','MQL','310 C','35 cSt','type="application/ld+json"'])assert.ok(html.includes(term),file+': '+term);
  assert.ok(html.includes('esterion-application-matrix'),file);
+ assert.ok(html.includes('countryOfOrigin'),file);
+ assert.ok(html.includes('Switzerland'),file);
+ assert.ok(html.includes(locale==='ar'?'سويسري المنشأ':'Swiss-origin'),file);
  const matrix=html.match(/<table[^>]+id="esterion-application-matrix"[\s\S]*?<\/table>/)?.[0];
  assert.ok(matrix,file);
  assert.equal((matrix.match(/<th /g)||[]).length,2,file);
