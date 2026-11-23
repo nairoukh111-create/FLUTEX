@@ -31,3 +31,19 @@ test('ESTERION application page sitemaps remain bilingual',()=>{
  const map=read('sitemap.xml');
  for(const locale of ['','ar/'])assert.ok(map.includes('<loc>https://flutexindustrial.com/'+locale+'oils/flutex-esterion-35</loc><lastmod>2026-11-23</lastmod>'));
 });
+
+test('ESTERION all published machining terms appear in EN/AR pages without changing the matrix',()=>{
+const terms=['5-Axis CNC','Gear hobbing','Gear shaping','Power skiving','Broaching','Cold sawing','CNC milling','CNC turning','Reaming','Thread cutting','Gear milling','Face milling','Profile milling','Slot milling','Pocket milling','Swiss-type','Thread milling','Turn-mill','Gear shaving','Slotting','Punching','CNC drilling','Deep-hole drilling','Counterboring'];
+for(const locale of ['','ar/']){
+ const html=read(locale+'oils/flutex-esterion-35.html');
+ const content=html.replace(/<[^>]+>/g,' ').replace(/&amp;/g,'&').replace(/\\s+/g,' ').toLowerCase();
+ for(const term of terms) assert.ok(content.includes(term.toLowerCase()),locale+': '+term);
+ for(const group of ['esterion-machining-processes','esterion-5-axis','esterion-gears','esterion-milling','esterion-turning','esterion-finishing'])assert.ok(html.includes('id="'+group+'"'),locale+': '+group);
+ const matrix=html.match(/<table[^>]+id="esterion-application-matrix"[\\s\\S]*?<\\/table>/)?.[0];
+ assert.ok(matrix,locale);
+ assert.equal((matrix.match(/<th /g)||[]).length,2,locale);
+ assert.equal((matrix.match(/<tr>/g)||[]).length,16,locale);
+ assert.ok(html.includes('id="esterion-review-only"'),locale);
+ assert.doesNotMatch(html,/Evidence \\/ scope|حالة التحقق|TDS-listed process|Field-tested/,locale);
+}
+});
