@@ -1,0 +1,27 @@
+/* ESTERION 35: product-specific, bilingual application evidence and buyer guidance. */
+.esterion-section{margin:34px 0 42px}
+.esterion-section>h2{margin:0 0 12px}
+.esterion-intro{max-width:940px;line-height:1.75}
+.esterion-field{background:#0b0d0f;color:#fff;padding:28px;border-radius:15px;border-inline-start:5px solid #fbe12a;margin:26px 0 36px}
+.esterion-field h2{color:#fbe12a;font-size:clamp(1.35rem,2.7vw,2.15rem);margin:8px 0 12px}
+.esterion-field p{color:#e7e7e7;line-height:1.8;margin:9px 0}
+.esterion-field .esterion-disclosure{color:#c8cdd0;font-size:.88rem;margin-top:15px}
+.esterion-kicker{font-size:.78rem;letter-spacing:.09em;text-transform:uppercase;font-weight:800;color:#665800}
+.esterion-field .esterion-kicker{color:#fbe12a}
+.esterion-keylist{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0}
+.esterion-keylist span{display:inline-block;background:#f5f6f7;color:#1d2529;border:1px solid #e3e6e8;border-radius:7px;padding:9px 12px;font-size:.93rem;font-weight:650}
+.esterion-field .esterion-keylist span{background:#24282a;color:white;border-color:#4d5357}
+.esterion-table th,.esterion-table td{vertical-align:top}
+.esterion-table .esterion-status{font-size:.85rem;font-weight:750}
+.esterion-recommended{color:#1a5f46}
+.esterion-tested{color:#1a5f46}
+.esterion-review{color:#795500}
+.esterion-note{background:#f7f8f8;border-inline-start:3px solid #fbe12a;padding:16px 19px;margin:20px 0;color:#354048;line-height:1.7}
+.esterion-faq{border-top:1px solid #e4e6e8;padding:18px 0}
+.esterion-faq h3{margin:0 0 6px;font-size:1.08rem;line-height:1.45}
+.esterion-faq p{margin:0}
+.esterion-cta{margin:35px 0;background:#f6f7f8;border:1px solid #e1e5e8;border-radius:13px;padding:25px}
+.esterion-cta h2{margin:0 0 10px}
+.esterion-cta .flutex-oil-actions{margin-top:18px}
+[dir=rtl] .esterion-kicker{letter-spacing:0;text-transform:none}
+@media(max-width:760px){.esterion-field,.esterion-cta{padding:19px}.esterion-section{margin:26px 0 33px}.esterion-keylist{gap:7px}.esterion-keylist span{font-size:.88rem}}
