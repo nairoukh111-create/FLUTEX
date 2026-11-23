@@ -25,3 +25,12 @@
 .esterion-cta .flutex-oil-actions{margin-top:18px}
 [dir=rtl] .esterion-kicker{letter-spacing:0;text-transform:none}
 @media(max-width:760px){.esterion-field,.esterion-cta{padding:19px}.esterion-section{margin:26px 0 33px}.esterion-keylist{gap:7px}.esterion-keylist span{font-size:.88rem}}
+
+
+/* Search-oriented process families: readable, indexable content for the published application matrix. */
+.esterion-processes{scroll-margin-top:90px}
+.esterion-process-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:20px 0}
+.esterion-process{border:1px solid #e4e6e8;border-radius:11px;background:#fff;padding:20px;min-width:0;scroll-margin-top:90px}
+.esterion-process h3{font-size:1.04rem;line-height:1.4;font-weight:750;margin:0 0 10px}
+.esterion-process p{line-height:1.75;margin:0;color:#374149}
+@media(max-width:720px){.esterion-process-grid{grid-template-columns:1fr;gap:12px}.esterion-process{padding:16px}}
