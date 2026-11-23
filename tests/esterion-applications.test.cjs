@@ -15,7 +15,7 @@ for(const [file,locale] of [['oils/flutex-esterion-35.html','en'],['ar/oils/flut
  const matrix=html.match(/<table[^>]+id="esterion-application-matrix"[\s\S]*?<\/table>/)?.[0];
  assert.ok(matrix,file);
  assert.equal((matrix.match(/<th /g)||[]).length,2,file);
- assert.equal((matrix.match(/<tr>/g)||[]).length,15,file);
+ assert.equal((matrix.match(/<tr>/g)||[]).length,16,file);
  assert.ok(html.includes('esterion-review-only'),file);
  assert.ok(html.includes('esterion-field-observation'),file);
  assert.doesNotMatch(html,/EMMEGI|ELUMATEC|Field-tested|TDS-listed process|Evidence \/ scope|حالة التحقق/,file);
