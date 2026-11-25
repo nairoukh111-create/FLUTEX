@@ -1,0 +1,32 @@
+.parameter-finder .calculator-card{max-width:none}
+.parameter-finder .pf-context,.parameter-finder .pf-note{font-size:14px;line-height:1.6;color:var(--muted,#555)}
+.parameter-finder .pf-fields{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-block:24px 8px}
+.parameter-finder .pf-field{min-width:0;padding:14px;border:1px solid var(--line,#d1d5db);border-radius:8px;background:var(--paper,#fff);display:flex;flex-direction:column;gap:10px}
+.parameter-finder .pf-field label{font-weight:700;font-size:14px;line-height:1.4;min-height:40px;display:block}
+.parameter-finder .pf-sketch{width:100%;height:auto;aspect-ratio:244/108;background:#f6f7f8;border-radius:5px;display:block;direction:ltr}
+.parameter-finder .pf-field input{box-sizing:border-box;min-width:0;width:100%;padding:12px;border:1px solid var(--line,#c9cdd1);border-radius:6px;font:inherit;font-size:18px;background:var(--paper,#fff);color:var(--text,#111)}
+.parameter-finder .pf-field input:focus{outline:2px solid #9e8800;outline-offset:2px}
+.parameter-finder .pf-clear{margin-inline-start:12px}
+.parameter-finder .pf-result{margin-top:18px;border-top:1px solid var(--line,#ddd);padding-top:20px}
+.parameter-finder .pf-result[hidden]{display:none!important}
+.parameter-finder .pf-status{font-weight:600;min-height:1.5em;margin-top:16px}
+.parameter-finder .pf-status:empty{display:none}
+.parameter-finder .pf-result h3{font-size:clamp(18px,2.4vw,24px);overflow-wrap:anywhere;text-align:start}
+.parameter-finder .pf-warning{border-inline-start:4px solid #FBE12A;padding:10px 14px;background:var(--paper-2,#f6f7f8);font-weight:700}
+.parameter-finder .pf-values{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:16px 0}
+.parameter-finder .pf-values div{border:1px solid var(--line,#ddd);padding:12px;border-radius:6px;min-width:0}
+.parameter-finder .pf-values dt{font-size:13px;color:var(--muted,#555);overflow-wrap:anywhere}
+.parameter-finder .pf-values dd{margin:4px 0 0;font-size:24px;font-weight:700;text-align:start;overflow-wrap:anywhere}
+@media(max-width:900px){.parameter-finder .pf-fields,.parameter-finder .pf-values{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:420px){.parameter-finder .pf-fields{gap:8px}.parameter-finder .pf-field{padding:8px}.parameter-finder .pf-field label{min-height:42px;font-size:12px}.parameter-finder .pf-values dd{font-size:20px}}
+
+.parameter-finder .pf-condition-set{border:0;padding:0;margin:22px 0 24px;min-width:0}
+.parameter-finder .pf-condition-set legend,.parameter-finder .pf-step-title{font-weight:700;font-size:18px;margin:0 0 12px;padding:0}
+.parameter-finder .pf-conditions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.parameter-finder .pf-condition{min-width:0;display:flex;flex-direction:column;gap:7px}
+.parameter-finder .pf-condition label{font-weight:600;font-size:14px;line-height:1.4}
+.parameter-finder .pf-condition select{width:100%;min-width:0;box-sizing:border-box;padding:12px;border:1px solid var(--line,#d1d5db);border-radius:6px;color:var(--text,#111);background:var(--paper,#fff);font:inherit;font-size:14px;min-height:48px}
+.parameter-finder .pf-condition select:focus{outline:2px solid #9e8800;outline-offset:2px}
+.parameter-finder .pf-fields{margin-top:0}
+@media(max-width:760px){.parameter-finder .pf-conditions{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:480px){.parameter-finder .pf-conditions{grid-template-columns:1fr}}
