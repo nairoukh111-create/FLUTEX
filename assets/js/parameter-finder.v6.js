@@ -15,7 +15,7 @@ function colletOptions(p){
 function longTool(p){return p.diameter===10&&p.fluteLength===20&&p.shankDiameter===10&&p.overallLength===120;}
 function clampingSketch(p,o){
  if(!colletOptions(p).some(x=>x.size===o.size&&x.A===o.A&&x.B===o.B&&x.C===o.C&&x.outer===o.outer))return '';
- const W=760,H=260,x0=42,y=117,s=Math.min(640/p.overallLength,106/Math.max(o.outer,p.diameter,p.shankDiameter));
+ const W=900,x0=42,maxOuter=Math.max(...colletOptions(p).map(x=>x.outer),p.diameter,p.shankDiameter),s=Math.min(640/p.overallLength,200/maxOuter),maxR=maxOuter*s/2,y=65+maxR,flY=y+maxR+22,abY=flY+35,cY=abY+30,H=cY+14;
  const x=n=>Math.round((x0+n*s)*1000)/1000;
  const q=n=>Math.round(n*1000)/1000;
  const tip=x(0),fl=x(p.fluteLength),front=x(o.B),end=x(p.overallLength),rd=p.diameter*s/2,rs=p.shankDiameter*s/2,R=o.outer*s/2;
@@ -29,7 +29,10 @@ function clampingSketch(p,o){
  for(const k of [.42,.68]){const sy=y-rs-(R*.78-rs)*k,ey=y-rs-(rear-rs)*k;slots+='<path d="M'+q(front+1)+' '+q(sy)+' L'+q(end-3)+' '+q(ey)+' M'+q(front+1)+' '+q(2*y-sy)+' L'+q(end-3)+' '+q(2*y-ey)+'" stroke="#363e45" stroke-width="1.7" fill="none"/>';}
  const cut='<path d="M'+tip+' '+q(y-rd)+'H'+fl+'V'+q(y-rs)+'H'+end+'V'+q(y+rs)+'H'+fl+'V'+q(y+rd)+'H'+tip+'Z" fill="#cdd2d6" stroke="#363e45" stroke-width="1.3"/>';
  const helix='<path d="M'+tip+' '+q(y+rd*.75)+' Q'+q((tip+fl)/2)+' '+q(y-rd*1.7)+' '+fl+' '+q(y-rd*.45)+' M'+tip+' '+q(y-rd*.65)+' Q'+q((tip+fl)/2)+' '+q(y+rd*1.3)+' '+fl+' '+q(y+rd*.35)+'" fill="none" stroke="#555f66" stroke-width="1.5"/>';
- return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 '+W+' '+H+'" width="100%" role="img" aria-label="Tool and ER '+o.size+' collet, dimensions in millimetres" style="display:block;width:100%;height:auto;direction:ltr"><rect width="760" height="260" rx="8" fill="#f5f6f7"/><g fill="#20262a" font-family="Arial,sans-serif">'+dim(tip,end,32,'OAL '+p.overallLength+' mm')+'<path d="M'+(tip-8)+' '+y+'H'+(end+12)+'" stroke="#a2a8ad" stroke-dasharray="4 3"/>'+cut+helix+'<rect x="'+front+'" y="'+q(y-rs)+'" width="'+q(end-front)+'" height="'+q(2*rs)+'" fill="#FBE12A" opacity=".85"/><polygon points="'+points(upper)+'" fill="#a7afb5" stroke="#343b40" stroke-width="1.4"/><polygon points="'+points(lower)+'" fill="#89949c" stroke="#343b40" stroke-width="1.4"/>'+slots+'<path d="M'+front+' '+(top-4)+'V'+(bottom+4)+'" stroke="#414a50" stroke-dasharray="3 2"/><text x="'+q((front+end)/2)+'" y="'+q(top-13)+'" text-anchor="middle" font-size="14" font-weight="700">ER '+o.size+'</text>'+dim(tip,fl,183,'FL '+p.fluteLength)+dim(tip,front,219,'B '+o.B)+dim(front,end,219,'A '+o.A)+dim(front,end,249,'C '+o.C)+'</g></svg>';
+ const faceX=800,faceR=42,faceBore=faceR*p.shankDiameter/o.outer;let faceSlots='';
+ for(let i=0;i<8;i++){const a=i*Math.PI/4,inner=i%2===0?faceBore:faceBore+(faceR-faceBore)*.40,outer=i%2===0?faceR*.85:faceR;faceSlots+='<path d="M'+q(faceX+inner*Math.cos(a))+' '+q(y+inner*Math.sin(a))+' L'+q(faceX+outer*Math.cos(a))+' '+q(y+outer*Math.sin(a))+'" stroke="#343b40" stroke-width="2.8"/>';}
+ const face='<circle cx="'+faceX+'" cy="'+y+'" r="'+faceR+'" fill="#a7afb5" stroke="#343b40" stroke-width="1.4"/><circle cx="'+faceX+'" cy="'+y+'" r="'+q(faceBore)+'" fill="#FBE12A" stroke="#343b40" stroke-width="1.4"/>'+faceSlots+'<text x="'+faceX+'" y="'+q(y-faceR-12)+'" text-anchor="middle" font-size="13" font-weight="700">ER '+o.size+'</text><text x="'+faceX+'" y="'+q(y+faceR+17)+'" text-anchor="middle" font-size="12">Ø'+p.shankDiameter+'</text>';
+ return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 '+W+' '+H+'" width="'+W+'" height="'+H+'" role="img" aria-label="Tool and ER '+o.size+' collet, dimensions in millimetres" style="display:block;width:100%;height:auto;direction:ltr"><rect width="'+W+'" height="'+H+'" rx="8" fill="#f5f6f7"/><g fill="#20262a" font-family="Arial,sans-serif">'+dim(tip,end,32,'OAL '+p.overallLength+' mm')+'<path d="M'+(tip-8)+' '+y+'H'+(end+12)+'" stroke="#a2a8ad" stroke-dasharray="4 3"/>'+cut+helix+'<rect x="'+front+'" y="'+q(y-rs)+'" width="'+q(end-front)+'" height="'+q(2*rs)+'" fill="#FBE12A" opacity=".85"/><polygon points="'+points(upper)+'" fill="#a7afb5" stroke="#343b40" stroke-width="1.4"/><polygon points="'+points(lower)+'" fill="#89949c" stroke="#343b40" stroke-width="1.4"/>'+slots+'<path d="M'+front+' '+(top-4)+'V'+(bottom+4)+'" stroke="#414a50" stroke-dasharray="3 2"/><text x="'+q((front+end)/2)+'" y="'+q(top-13)+'" text-anchor="middle" font-size="14" font-weight="700">ER '+o.size+'</text>'+face+dim(tip,fl,flY,'FL '+p.fluteLength)+dim(tip,front,abY,'B '+o.B)+dim(front,end,abY,'A '+o.A)+dim(front,end,cY,'C '+o.C)+'</g></svg>';
 }
 
 if(typeof module!=='undefined'&&module.exports)module.exports={parseDimension,payload,matchesResponse,colletOptions,clampingSketch,longTool};
@@ -66,7 +69,7 @@ function clampingGuide(p,onSelection){
  }
  select.onchange=render;render();
  section.append(field,drawing,values,note,trial);
- section.append(el('p',t('Proportional to entered dimensions; flute and collet details are illustrative. Options require full nominal collet length.','النسب حسب الأبعاد المدخلة؛ تفاصيل الفلوت والكوليت توضيحية. الخيارات تتطلب طول الكوليت الاسمي كاملًا.'),'pf-note'));
+ section.append(el('p',t('Side view proportional to tool dimensions; front view and cutting geometry illustrative. Options require full nominal collet length.','المنظر الجانبي بنسب أبعاد الريشة؛ المنظر الأمامي وشكل القطع توضيحيان. الخيارات تتطلب طول الكوليت الاسمي كاملًا.'),'pf-note'));
  return section;
 }
 form.addEventListener('input',clear);form.addEventListener('reset',clear);
