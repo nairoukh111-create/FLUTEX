@@ -5,7 +5,34 @@ const OPTIONS={"toolMaterial":["carbide","hss","other"],"flutes":["1","2","3","4
 function parseDimension(value){const s=String(value).trim().replace(/[٠-٩۰-۹]/g,c=>String('٠١٢٣٤٥٦٧٨٩'.includes(c)?'٠١٢٣٤٥٦٧٨٩'.indexOf(c):'۰۱۲۳۴۵۶۷۸۹'.indexOf(c))).replace(/[٫,]/g,'.');if(!/^[0-9]+(?:[.][0-9]+)?$/.test(s))return null;const n=Number(s);return Number.isFinite(n)&&n>0&&n<=1000?n:null;}
 function payload(values){const p={};for(const k of FIELDS){const n=parseDimension(values[k]);if(n===null)return null;p[k]=n;}for(const k of Object.keys(OPTIONS)){if(!OPTIONS[k].includes(values[k]))return null;p[k]=values[k];}if(p.fluteLength>=p.overallLength)return null;return p;}
 function matchesResponse(data,p){return Array.isArray(data?.dimensions)&&data.dimensions.length===4&&FIELDS.every((k,i)=>data.dimensions[i]===p[k]);}
-if(typeof module!=='undefined'&&module.exports)module.exports={parseDimension,payload,matchesResponse};
+
+// Conservative common ER series; nominal standard collet dimensions in mm.
+const ER_SERIES=[[11,1,7,18,11.5],[16,1,10,27.5,17],[20,2,13,31.5,21],[25,2,16,34,26],[32,3,20,40,33],[40,4,26,46,41]];
+function colletOptions(p){
+ if(!FIELDS.every(k=>Number.isFinite(p[k])&&p[k]>0)||p.fluteLength>=p.overallLength)return [];
+ return ER_SERIES.filter(([size,min,max,C])=>p.shankDiameter>=min&&p.shankDiameter<=max&&C<=p.overallLength-p.fluteLength).map(([size,min,max,C,outer])=>({size,C,outer,A:C,B:Math.round((p.overallLength-C)*1000)/1000}));
+}
+function longTool(p){return p.diameter===10&&p.fluteLength===20&&p.shankDiameter===10&&p.overallLength===120;}
+function clampingSketch(p,o){
+ if(!colletOptions(p).some(x=>x.size===o.size&&x.A===o.A&&x.B===o.B&&x.C===o.C&&x.outer===o.outer))return '';
+ const W=760,H=260,x0=42,y=117,s=Math.min(640/p.overallLength,106/Math.max(o.outer,p.diameter,p.shankDiameter));
+ const x=n=>Math.round((x0+n*s)*1000)/1000;
+ const q=n=>Math.round(n*1000)/1000;
+ const tip=x(0),fl=x(p.fluteLength),front=x(o.B),end=x(p.overallLength),rd=p.diameter*s/2,rs=p.shankDiameter*s/2,R=o.outer*s/2;
+ const groove=x(o.B+o.C*.12),shoulder=x(o.B+o.C*.25),grooveEnd=x(o.B+o.C*.20),rear=R*.60;
+ const top=q(y-R),bottom=q(y+R);
+ const upper=[ [front,y-rs],[front,y-R*.78],[groove,y-R],[groove,y-R*.86],[grooveEnd,y-R*.86],[grooveEnd,y-R],[shoulder,y-R],[end,y-rear],[end,y-rs] ];
+ const points=a=>a.map(([a,b])=>q(a)+','+q(b)).join(' ');
+ const lower=upper.map(([a,b])=>[a,2*y-b]);
+ const dim=(a,b,yy,label)=>'<path d="M'+a+' '+(yy-6)+'V'+(yy+6)+' M'+b+' '+(yy-6)+'V'+(yy+6)+' M'+a+' '+yy+'H'+b+'" stroke="#353b40" fill="none"/><text x="'+q((a+b)/2)+'" y="'+(yy-8)+'" text-anchor="middle" font-size="13" font-weight="600">'+label+'</text>';
+ let slots='';
+ for(const k of [.42,.68]){const sy=y-R*k,ey=y-rear*k;slots+='<path d="M'+q(front+1)+' '+q(sy)+' L'+q(end-3)+' '+q(ey)+' M'+q(front+1)+' '+q(2*y-sy)+' L'+q(end-3)+' '+q(2*y-ey)+'" stroke="#363e45" stroke-width="1.7" fill="none"/>';}
+ const cut='<path d="M'+tip+' '+q(y-rd)+'H'+fl+'V'+q(y-rs)+'H'+end+'V'+q(y+rs)+'H'+fl+'V'+q(y+rd)+'H'+tip+'Z" fill="#cdd2d6" stroke="#363e45" stroke-width="1.3"/>';
+ const helix='<path d="M'+tip+' '+q(y+rd*.75)+' Q'+q((tip+fl)/2)+' '+q(y-rd*1.7)+' '+fl+' '+q(y-rd*.45)+' M'+tip+' '+q(y-rd*.65)+' Q'+q((tip+fl)/2)+' '+q(y+rd*1.3)+' '+fl+' '+q(y+rd*.35)+'" fill="none" stroke="#555f66" stroke-width="1.5"/>';
+ return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 '+W+' '+H+'" width="100%" role="img" aria-label="Tool and ER '+o.size+' collet, dimensions in millimetres" style="display:block;width:100%;height:auto;direction:ltr"><rect width="760" height="260" rx="8" fill="#f5f6f7"/><g fill="#20262a" font-family="Arial,sans-serif">'+dim(tip,end,32,'OAL '+p.overallLength+' mm')+'<path d="M'+(tip-8)+' '+y+'H'+(end+12)+'" stroke="#a2a8ad" stroke-dasharray="4 3"/>'+cut+helix+'<rect x="'+front+'" y="'+q(y-rs)+'" width="'+q(end-front)+'" height="'+q(2*rs)+'" fill="#FBE12A" opacity=".85"/><polygon points="'+points(upper)+'" fill="#a7afb5" stroke="#343b40" stroke-width="1.4"/><polygon points="'+points(lower)+'" fill="#89949c" stroke="#343b40" stroke-width="1.4"/>'+slots+'<path d="M'+front+' '+(top-4)+'V'+(bottom+4)+'" stroke="#414a50" stroke-dasharray="3 2"/><text x="'+q((front+end)/2)+'" y="'+q(top-13)+'" text-anchor="middle" font-size="14" font-weight="700">ER '+o.size+'</text>'+dim(tip,fl,183,'FL '+p.fluteLength)+dim(tip,front,219,'B '+o.B)+dim(front,end,219,'A '+o.A)+dim(front,end,249,'C '+o.C)+'</g></svg>';
+}
+
+if(typeof module!=='undefined'&&module.exports)module.exports={parseDimension,payload,matchesResponse,colletOptions,clampingSketch,longTool};
 if(typeof document==='undefined')return;
 const form=document.querySelector('[data-parameter-finder]');if(!form)return;
 const result=document.querySelector('[data-pf-result]'),status=document.querySelector('[data-pf-status]'),button=form.querySelector('[type=submit]');
@@ -16,14 +43,30 @@ function el(tag,txt,cls){const e=document.createElement(tag);if(txt!==undefined)
 function contact(){const a=el('a',t('Contact FLUTEX','تواصل مع FLUTEX'),'btn btn-primary');a.href=ar?'/ar/contact':'/contact';return a;}
 function clampingGuide(p){
  const section=el('section',undefined,'pf-clamping-guide');
- section.append(el('h4',t('ER collet — correct tool clamping','الكوليت ER — التثبيت الصحيح للريشة')));
- const img=el('img',undefined,'pf-clamping-sketch');img.src='/assets/diagrams/er-collet-insertion.v1.svg';img.alt=t('Sectional sketch: A insertion, B stick-out, C collet length','رسم مقطعي: A عمق الإدخال، B البروز، C طول الكوليت');img.width=460;img.height=190;img.loading='lazy';section.append(img);
- section.append(el('p',t('A = shank insertion depth · B = stick-out · C = collet length','A = عمق إدخال الشنك · B = البروز · C = طول الكوليت'),'pf-note'));
- section.append(el('p',t('Insert the plain shank over the full collet length whenever possible. For standard ER collets, ensure at least two thirds of the collet length is engaged (A ≥ 2/3 C), unless the holder maker specifies a greater minimum. Follow the actual holder manufacturer’s requirements; never grip the flutes or force the tool against an internal stop. Use the specified tightening torque and minimize stick-out.','أدخل الجزء الأسطواني من الشنك بطول الكوليت كاملًا متى أمكن. في كوليت ER القياسي، لا يقل عمق الإدخال عن ثلثي طول الكوليت (A ≥ 2/3 C)، أو الحد الأكبر الذي يحدده مصنع الحامل. اتبع تعليمات مصنع الحامل المستخدم؛ لا تثبت الفلوت داخل الكوليت ولا تجبر الريشة على الارتطام بمصد داخلي. استخدم عزم الشد المحدد وقلل البروز قدر الإمكان.'),'pf-note'));
- if(p.diameter===10&&p.fluteLength===20&&p.shankDiameter===10&&p.overallLength===120){
-  section.append(el('p',t('120 mm tool — proposed setup: 40 mm shank insertion and approximately 80 mm stick-out (8 × cutting diameter), measured from the collet face. Confirm the actual collet length, available bore and clearance. Long overhang remains vibration-sensitive; cutting data requires setup verification and resolution of abnormal noise before use.','ريشة 120 مم — التركيب المقترح: إدخال الشنك 40 مم وبروز نحو 80 مم (8 أضعاف قطر القطع)، قياسًا من وجه الكوليت. تحقق من طول الكوليت الفعلي وعمق التجويف والخلوص. البروز الطويل يبقى حساسًا للاهتزاز؛ يلزم التحقق من التركيب ومعالجة الصوت غير الطبيعي قبل اعتماد قيم القطع.'),'pf-warning'));
+ section.append(el('h4',t('ER collet — tool-specific setup','كوليت ER — تثبيت الريشة')));
+ section.append(el('p','Ø'+p.diameter+' × FL'+p.fluteLength+' × Ø'+p.shankDiameter+' × OAL'+p.overallLength+' mm','pf-tool-dimensions'));
+ const opts=colletOptions(p);
+ if(!opts.length){section.append(el('p',t('No full-length ER fit in this guide. Check the actual holder.','لا يوجد خيار ER بتثبيت كامل الطول في هذا الدليل. تحقق من الحامل الفعلي.'),'pf-warning'));return section;}
+ const field=el('label',t('Select your installed ER holder','اختر نوع كوليت ER المركب'),'pf-condition');
+ const select=el('select');select.setAttribute?.('aria-label',t('ER collet size','مقاس كوليت ER'));
+ for(const o of opts){const option=el('option','ER'+o.size+' — Ø'+p.shankDiameter+' mm');option.value=String(o.size);select.append(option);}
+ const initial=longTool(p)?opts.find(o=>o.size===32)||opts[0]:opts[0];
+ select.value=String(initial.size);field.append(select);
+ const drawing=el('div',undefined,'pf-clamping-drawing'),values=el('dl',undefined,'pf-values pf-clamping-values'),note=el('p',undefined,'pf-note'),trial=el('p',undefined,'pf-warning');
+ function render(){
+  const o=opts.find(x=>String(x.size)===select.value)||initial;
+  drawing.innerHTML=clampingSketch(p,o);
+  values.replaceChildren();
+  for(const [label,value] of [[t('A — insertion','A — الإدخال'),o.A],[t('B — stick-out','B — البروز'),o.B],[t('C — collet length','C — طول الكوليت'),o.C]]){
+   const box=el('div'),dd=el('dd',String(value)+' mm');dd.dir='ltr';box.append(el('dt',label),dd);values.append(box);
+  }
+  note.textContent=t('Nominal full-length insertion. Verify plain shank, bore clearance and tightening torque. Never grip flutes. Stop on abnormal noise/vibration.','إدخال اسمي بطول الكوليت. تحقق من الشنك الأملس والخلوص وعزم الشد. لا تثبت الفلوت. أوقف التشغيل عند صوت أو اهتزاز غير طبيعي.');
+  trial.hidden=!longTool(p);
+  if(longTool(p))trial.textContent=o.size===32?t('120 mm trial: A = 40 mm; B = 80 mm max. Verify setup and center-cutting before plunge.','تجربة 120 مم: A = 40 مم؛ B = 80 مم كحد أقصى. تحقق من التركيب والقطع المركزي قبل النزول.'):t('Different setup: the listed 180 mm/min plunge trial is not verified for this ER selection.','تركيب مختلف: تجربة النزول 180 مم/دقيقة غير متحققة لهذا الخيار.');
  }
- section.append(el('p',t('Illustration is schematic, not to scale. Insertion depth is not a universal 40 mm value.','الرسم توضيحي وليس بمقياس رسم. عمق 40 مم ليس قيمة عامة لكل الريش.'),'pf-note'));
+ select.onchange=render;render();
+ section.append(field,drawing,values,note,trial);
+ section.append(el('p',t('Proportional to entered dimensions; flute and collet details are illustrative. Options require full nominal collet length.','النسب حسب الأبعاد المدخلة؛ تفاصيل الفلوت والكوليت توضيحية. الخيارات تتطلب طول الكوليت الاسمي كاملًا.'),'pf-note'));
  return section;
 }
 form.addEventListener('input',clear);form.addEventListener('reset',clear);
@@ -44,11 +87,10 @@ form.addEventListener('submit',async event=>{
  result.append(el('h4',t('Slot milling — open-edge entry only','تفريز مجرى — دخول من حافة مفتوحة فقط'),'pf-operation-title'));
  const frame=el('section',undefined,'pf-parameter-frame');frame.append(el('h4',t('Machine input values','قيم الإدخال للماكينة'),'pf-frame-title'));
  const dl=el('dl',undefined,'pf-values');const names=['RPM',t('Removal¹','Removal¹'),t('Feed (mm/min)','التغذية (مم/دقيقة)'),t('fz (mm/tooth)','fz (مم/سن)'),t('Vc (m/min)','Vc (م/دقيقة)'),t('ap — initial step-down (mm)','ap — عمق التمريرة الأولية (مم)'),t('ae — cutting width (mm)','ae — عرض القطع (مم)')];
- names.forEach((name,i)=>{const box=el('div');const dt=el('dt',name),dd=el('dd',String(data.values[i]));dd.dir='ltr';box.append(dt,dd);dl.append(box);});if(data.plungeTrial){const q=data.plungeTrial;if(p.diameter!==10||p.fluteLength!==20||p.shankDiameter!==10||p.overallLength!==120||q.status!=='conditional-trial'||q.feed!==180||q.insertion!==40||q.stickOut!==80)throw Error('Invalid plunge trial');const box=el('div',undefined,'pf-plunge-value');const dd=el('dd',String(q.feed));dd.dir='ltr';box.append(el('dt',t('Plunge / Z feed (mm/min) — conditional','سرعة النزول Z (مم/دقيقة) — مشروطة')),dd);dl.append(box);}frame.append(dl);if(data.plungeTrial)frame.append(el('p',t('Plunge value is conditional: verify center-cutting geometry, 40 mm insertion, maximum 80 mm actual stick-out, clearance, chip evacuation and absence of abnormal vibration. Verify axial entry depth separately.','سرعة النزول مشروطة: تحقق من القطع المركزي، وإدخال 40 مم، وبروز فعلي لا يتجاوز 80 مم، والخلوص وإخراج الرايش وعدم وجود اهتزاز غير طبيعي. تحقق من عمق الدخول المحوري بشكل مستقل.'),'pf-note'));result.append(frame);
- result.append(el('p',t('¹ Removal applies only to controllers using 0.01 mm/rev. Use Feed on mm/min controllers.','¹ قيمة Removal تنطبق فقط على وحدات التحكم التي تستخدم 0.01 مم/دورة. استخدم Feed لأنظمة مم/دقيقة.'),'pf-note'),el('p',t('For trained operators. Verify tool identity and rated RPM, spindle/holder limits, actual stick-out, runout, clamping, engagement and MQL chip evacuation. Stop on abnormal noise, vibration, chip packing or edge damage. For shallow full-width slotting in 6063-T6 profiles with external MQL only. The milling values assume open-edge entry. Any separately listed plunge trial has its own conditions. Do not use for full wall breakthrough in one pass.','للمشغلين المدربين. تحقق من هوية الأداة وحدود دورانها وحدود الإسبندل والحامل والبروز الفعلي والانحراف وتثبيت القطعة وعمق وعرض القطع ووصول MQL وإخراج الرايش. أوقف التشغيل عند صوت أو اهتزاز غير طبيعي أو تكدس الرايش أو تلف السن. للقطع بتمريرات سطحية بكامل عرض الريشة في بروفايلات 6063-T6 مع MQL خارجي فقط. قيم التفريز تفترض الدخول من حافة مفتوحة. أي قيمة نزول مدرجة بشكل منفصل تخضع لشروطها الخاصة. لا تستخدم لاختراق الجدار كاملًا في تمريرة واحدة.'),'pf-note'));
- const extra=el('div',undefined,'pf-operation-grid');
- for(const [heading,description] of [[t('Straight plunge / Z feed','النزول العمودي / تغذية Z'),t('Not released. Center-cutting capability and axial feed must be verified. Do not use milling Feed as plunge feed.','غير منشورة. يجب التحقق من قابلية القطع المركزي وسرعة النزول. لا تستخدم تغذية التفريز كسرعة نزول.')]]){const box=el('section',undefined,'pf-operation-card');box.append(el('h4',heading));if(heading===t('Straight plunge / Z feed','النزول العمودي / تغذية Z')&&data.plungeTrial){const q=data.plungeTrial;if(p.diameter!==10||p.fluteLength!==20||p.shankDiameter!==10||p.overallLength!==120||q.status!=='conditional-trial'||q.feed!==180||q.insertion!==40||q.stickOut!==80)throw Error('Invalid plunge trial');box.append(el('p',t('180 mm/min — conditional trial','180 مم/دقيقة — اختبار مشروط'),'pf-warning'),el('p',t('Conditional initial trial, not a validated production setting. Use only after confirming center-cutting geometry, 40 mm shank engagement, maximum 80 mm actual stick-out, adequate clearance and chip evacuation, and resolution of abnormal noise or vibration. Stop if instability occurs. The axial entry depth must be verified separately. Do not use milling Feed as plunge feed.','قيمة اختبار أولي مشروطة، وليست إعداد إنتاج مثبتًا. لا تستخدم إلا بعد تأكيد القطع المركزي، وتثبيت الشنك 40 مم، وبروز فعلي لا يتجاوز 80 مم، والخلوص وإخراج الرايش ومعالجة أي صوت أو اهتزاز غير طبيعي. أوقف التشغيل عند عدم الاستقرار. يجب التحقق من عمق الدخول المحوري بشكل مستقل. لا تستخدم تغذية التفريز كسرعة نزول.'),'pf-note'));}else box.append(el('p',description,'pf-note'));extra.append(box);}
- result.append(extra,clampingGuide(p),contact());result.hidden=false;
+ names.forEach((name,i)=>{const box=el('div');const dt=el('dt',name),dd=el('dd',String(data.values[i]));dd.dir='ltr';box.append(dt,dd);dl.append(box);});if(data.plungeTrial){const q=data.plungeTrial;if(p.diameter!==10||p.fluteLength!==20||p.shankDiameter!==10||p.overallLength!==120||q.status!=='conditional-trial'||q.feed!==180||q.insertion!==40||q.stickOut!==80)throw Error('Invalid plunge trial');const box=el('div',undefined,'pf-plunge-value');const dd=el('dd',String(q.feed));dd.dir='ltr';box.append(el('dt',t('Plunge / Z feed (mm/min) — conditional','سرعة النزول Z (مم/دقيقة) — مشروطة')),dd);dl.append(box);}frame.append(dl);if(data.plungeTrial)frame.append(el('p',t('Plunge trial only: A = 40 mm, B ≤ 80 mm; verify center-cutting, clearance, chip evacuation and axial depth.','تجربة نزول فقط: A = 40 مم، B ≤ 80 مم؛ تحقق من القطع المركزي والخلوص وإخراج الرايش وعمق الدخول.'),'pf-note'));result.append(frame);
+ result.append(el('p',t('¹ Removal: 0.01 mm/rev controllers only; otherwise use Feed.','¹ Removal: لأنظمة 0.01 مم/دورة فقط؛ وإلا استخدم Feed.'),'pf-note'),el('p',t('6063-T6 · external MQL · shallow full-width passes · open-edge entry. No one-pass wall breakthrough. Verify RPM limits, clamping, runout and chip evacuation.','6063-T6 · MQL خارجي · تمريرات سطحية بعرض الريشة · دخول من حافة مفتوحة. لا تخترق الجدار بتمريرة واحدة. تحقق من حدود الدوران والتثبيت والانحراف وإخراج الرايش.'),'pf-note'));
+ if(!data.plungeTrial)result.append(el('p',t('Plunge: not released. Do not use milling Feed as plunge feed.','النزول: غير منشور. لا تستخدم تغذية التفريز للنزول.'),'pf-note'));
+ result.append(clampingGuide(p),contact());result.hidden=false;
  }catch(err){if(requestSerial!==serial)return;result.replaceChildren();result.hidden=true;status.textContent=t('Lookup is temporarily unavailable. Please contact FLUTEX.','البحث غير متاح مؤقتًا. تواصل مع FLUTEX.');}finally{if(requestSerial===serial)button.disabled=false;}
 });
 })();
