@@ -19,14 +19,14 @@ function clampingSketch(p,o){
  const x=n=>Math.round((x0+n*s)*1000)/1000;
  const q=n=>Math.round(n*1000)/1000;
  const tip=x(0),fl=x(p.fluteLength),front=x(o.B),end=x(p.overallLength),rd=p.diameter*s/2,rs=p.shankDiameter*s/2,R=o.outer*s/2;
- const groove=x(o.B+o.C*.12),shoulder=x(o.B+o.C*.25),grooveEnd=x(o.B+o.C*.20),rear=R*.60;
+ const groove=x(o.B+o.C*.12),shoulder=x(o.B+o.C*.25),grooveEnd=x(o.B+o.C*.20),rear=Math.max(rs+s,R*.64);
  const top=q(y-R),bottom=q(y+R);
  const upper=[ [front,y-rs],[front,y-R*.78],[groove,y-R],[groove,y-R*.86],[grooveEnd,y-R*.86],[grooveEnd,y-R],[shoulder,y-R],[end,y-rear],[end,y-rs] ];
  const points=a=>a.map(([a,b])=>q(a)+','+q(b)).join(' ');
  const lower=upper.map(([a,b])=>[a,2*y-b]);
  const dim=(a,b,yy,label)=>'<path d="M'+a+' '+(yy-6)+'V'+(yy+6)+' M'+b+' '+(yy-6)+'V'+(yy+6)+' M'+a+' '+yy+'H'+b+'" stroke="#353b40" fill="none"/><text x="'+q((a+b)/2)+'" y="'+(yy-8)+'" text-anchor="middle" font-size="13" font-weight="600">'+label+'</text>';
  let slots='';
- for(const k of [.42,.68]){const sy=y-R*k,ey=y-rear*k;slots+='<path d="M'+q(front+1)+' '+q(sy)+' L'+q(end-3)+' '+q(ey)+' M'+q(front+1)+' '+q(2*y-sy)+' L'+q(end-3)+' '+q(2*y-ey)+'" stroke="#363e45" stroke-width="1.7" fill="none"/>';}
+ for(const k of [.42,.68]){const sy=y-rs-(R*.78-rs)*k,ey=y-rs-(rear-rs)*k;slots+='<path d="M'+q(front+1)+' '+q(sy)+' L'+q(end-3)+' '+q(ey)+' M'+q(front+1)+' '+q(2*y-sy)+' L'+q(end-3)+' '+q(2*y-ey)+'" stroke="#363e45" stroke-width="1.7" fill="none"/>';}
  const cut='<path d="M'+tip+' '+q(y-rd)+'H'+fl+'V'+q(y-rs)+'H'+end+'V'+q(y+rs)+'H'+fl+'V'+q(y+rd)+'H'+tip+'Z" fill="#cdd2d6" stroke="#363e45" stroke-width="1.3"/>';
  const helix='<path d="M'+tip+' '+q(y+rd*.75)+' Q'+q((tip+fl)/2)+' '+q(y-rd*1.7)+' '+fl+' '+q(y-rd*.45)+' M'+tip+' '+q(y-rd*.65)+' Q'+q((tip+fl)/2)+' '+q(y+rd*1.3)+' '+fl+' '+q(y+rd*.35)+'" fill="none" stroke="#555f66" stroke-width="1.5"/>';
  return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 '+W+' '+H+'" width="100%" role="img" aria-label="Tool and ER '+o.size+' collet, dimensions in millimetres" style="display:block;width:100%;height:auto;direction:ltr"><rect width="760" height="260" rx="8" fill="#f5f6f7"/><g fill="#20262a" font-family="Arial,sans-serif">'+dim(tip,end,32,'OAL '+p.overallLength+' mm')+'<path d="M'+(tip-8)+' '+y+'H'+(end+12)+'" stroke="#a2a8ad" stroke-dasharray="4 3"/>'+cut+helix+'<rect x="'+front+'" y="'+q(y-rs)+'" width="'+q(end-front)+'" height="'+q(2*rs)+'" fill="#FBE12A" opacity=".85"/><polygon points="'+points(upper)+'" fill="#a7afb5" stroke="#343b40" stroke-width="1.4"/><polygon points="'+points(lower)+'" fill="#89949c" stroke="#343b40" stroke-width="1.4"/>'+slots+'<path d="M'+front+' '+(top-4)+'V'+(bottom+4)+'" stroke="#414a50" stroke-dasharray="3 2"/><text x="'+q((front+end)/2)+'" y="'+q(top-13)+'" text-anchor="middle" font-size="14" font-weight="700">ER '+o.size+'</text>'+dim(tip,fl,183,'FL '+p.fluteLength)+dim(tip,front,219,'B '+o.B)+dim(front,end,219,'A '+o.A)+dim(front,end,249,'C '+o.C)+'</g></svg>';
@@ -41,7 +41,7 @@ let serial=0,controller;
 function clear(){serial++;if(controller)controller.abort();button.disabled=false;result.replaceChildren();result.hidden=true;status.textContent='';}
 function el(tag,txt,cls){const e=document.createElement(tag);if(txt!==undefined)e.textContent=txt;if(cls)e.className=cls;return e;}
 function contact(){const a=el('a',t('Contact FLUTEX','تواصل مع FLUTEX'),'btn btn-primary');a.href=ar?'/ar/contact':'/contact';return a;}
-function clampingGuide(p){
+function clampingGuide(p,onSelection){
  const section=el('section',undefined,'pf-clamping-guide');
  section.append(el('h4',t('ER collet — tool-specific setup','كوليت ER — تثبيت الريشة')));
  section.append(el('p','Ø'+p.diameter+' × FL'+p.fluteLength+' × Ø'+p.shankDiameter+' × OAL'+p.overallLength+' mm','pf-tool-dimensions'));
@@ -55,13 +55,13 @@ function clampingGuide(p){
  const drawing=el('div',undefined,'pf-clamping-drawing'),values=el('dl',undefined,'pf-values pf-clamping-values'),note=el('p',undefined,'pf-note'),trial=el('p',undefined,'pf-warning');
  function render(){
   const o=opts.find(x=>String(x.size)===select.value)||initial;
-  drawing.innerHTML=clampingSketch(p,o);
+  drawing.innerHTML=clampingSketch(p,o);onSelection?.(o);
   values.replaceChildren();
   for(const [label,value] of [[t('A — insertion','A — الإدخال'),o.A],[t('B — stick-out','B — البروز'),o.B],[t('C — collet length','C — طول الكوليت'),o.C]]){
    const box=el('div'),dd=el('dd',String(value)+' mm');dd.dir='ltr';box.append(el('dt',label),dd);values.append(box);
   }
   note.textContent=t('Nominal full-length insertion. Verify plain shank, bore clearance and tightening torque. Never grip flutes. Stop on abnormal noise/vibration.','إدخال اسمي بطول الكوليت. تحقق من الشنك الأملس والخلوص وعزم الشد. لا تثبت الفلوت. أوقف التشغيل عند صوت أو اهتزاز غير طبيعي.');
-  trial.hidden=!longTool(p);
+  trial.hidden=!longTool(p)||o.size===32;
   if(longTool(p))trial.textContent=o.size===32?t('120 mm trial: A = 40 mm; B = 80 mm max. Verify setup and center-cutting before plunge.','تجربة 120 مم: A = 40 مم؛ B = 80 مم كحد أقصى. تحقق من التركيب والقطع المركزي قبل النزول.'):t('Different setup: the listed 180 mm/min plunge trial is not verified for this ER selection.','تركيب مختلف: تجربة النزول 180 مم/دقيقة غير متحققة لهذا الخيار.');
  }
  select.onchange=render;render();
@@ -87,10 +87,11 @@ form.addEventListener('submit',async event=>{
  result.append(el('h4',t('Slot milling — open-edge entry only','تفريز مجرى — دخول من حافة مفتوحة فقط'),'pf-operation-title'));
  const frame=el('section',undefined,'pf-parameter-frame');frame.append(el('h4',t('Machine input values','قيم الإدخال للماكينة'),'pf-frame-title'));
  const dl=el('dl',undefined,'pf-values');const names=['RPM',t('Removal¹','Removal¹'),t('Feed (mm/min)','التغذية (مم/دقيقة)'),t('fz (mm/tooth)','fz (مم/سن)'),t('Vc (m/min)','Vc (م/دقيقة)'),t('ap — initial step-down (mm)','ap — عمق التمريرة الأولية (مم)'),t('ae — cutting width (mm)','ae — عرض القطع (مم)')];
- names.forEach((name,i)=>{const box=el('div');const dt=el('dt',name),dd=el('dd',String(data.values[i]));dd.dir='ltr';box.append(dt,dd);dl.append(box);});if(data.plungeTrial){const q=data.plungeTrial;if(p.diameter!==10||p.fluteLength!==20||p.shankDiameter!==10||p.overallLength!==120||q.status!=='conditional-trial'||q.feed!==180||q.insertion!==40||q.stickOut!==80)throw Error('Invalid plunge trial');const box=el('div',undefined,'pf-plunge-value');const dd=el('dd',String(q.feed));dd.dir='ltr';box.append(el('dt',t('Plunge / Z feed (mm/min) — conditional','سرعة النزول Z (مم/دقيقة) — مشروطة')),dd);dl.append(box);}frame.append(dl);if(data.plungeTrial)frame.append(el('p',t('Plunge trial only: A = 40 mm, B ≤ 80 mm; verify center-cutting, clearance, chip evacuation and axial depth.','تجربة نزول فقط: A = 40 مم، B ≤ 80 مم؛ تحقق من القطع المركزي والخلوص وإخراج الرايش وعمق الدخول.'),'pf-note'));result.append(frame);
+ let plungeDisplay;
+ names.forEach((name,i)=>{const box=el('div');const dt=el('dt',name),dd=el('dd',String(data.values[i]));dd.dir='ltr';box.append(dt,dd);dl.append(box);});if(data.plungeTrial){const q=data.plungeTrial;if(p.diameter!==10||p.fluteLength!==20||p.shankDiameter!==10||p.overallLength!==120||q.status!=='conditional-trial'||q.feed!==180||q.insertion!==40||q.stickOut!==80)throw Error('Invalid plunge trial');const box=el('div',undefined,'pf-plunge-value');const dd=el('dd',String(q.feed));plungeDisplay=dd;dd.dir='ltr';box.append(el('dt',t('Plunge / Z feed (mm/min) — conditional','سرعة النزول Z (مم/دقيقة) — مشروطة')),dd);dl.append(box);}frame.append(dl);if(data.plungeTrial)frame.append(el('p',t('Plunge trial only: A = 40 mm, B ≤ 80 mm; verify center-cutting, clearance, chip evacuation and axial depth.','تجربة نزول فقط: A = 40 مم، B ≤ 80 مم؛ تحقق من القطع المركزي والخلوص وإخراج الرايش وعمق الدخول.'),'pf-note'));result.append(frame);
  result.append(el('p',t('¹ Removal: 0.01 mm/rev controllers only; otherwise use Feed.','¹ Removal: لأنظمة 0.01 مم/دورة فقط؛ وإلا استخدم Feed.'),'pf-note'),el('p',t('6063-T6 · external MQL · shallow full-width passes · open-edge entry. No one-pass wall breakthrough. Verify RPM limits, clamping, runout and chip evacuation.','6063-T6 · MQL خارجي · تمريرات سطحية بعرض الريشة · دخول من حافة مفتوحة. لا تخترق الجدار بتمريرة واحدة. تحقق من حدود الدوران والتثبيت والانحراف وإخراج الرايش.'),'pf-note'));
  if(!data.plungeTrial)result.append(el('p',t('Plunge: not released. Do not use milling Feed as plunge feed.','النزول: غير منشور. لا تستخدم تغذية التفريز للنزول.'),'pf-note'));
- result.append(clampingGuide(p),contact());result.hidden=false;
+ result.append(clampingGuide(p,o=>{if(plungeDisplay)plungeDisplay.textContent=o.size===32?'180':'—';}),contact());result.hidden=false;
  }catch(err){if(requestSerial!==serial)return;result.replaceChildren();result.hidden=true;status.textContent=t('Lookup is temporarily unavailable. Please contact FLUTEX.','البحث غير متاح مؤقتًا. تواصل مع FLUTEX.');}finally{if(requestSerial===serial)button.disabled=false;}
 });
 })();
