@@ -53,3 +53,11 @@
 .parameter-finder .pf-parameter-frame .pf-values div{border-color:#d9dce0;background:#fff}
 .parameter-finder .pf-plunge-value{border-color:#FBE12A!important}
 .parameter-finder .pf-operation-grid{grid-template-columns:1fr}
+
+.parameter-finder .pf-clamping-guide .pf-condition{max-width:300px;margin:12px 0}
+.parameter-finder .pf-tool-dimensions{font-weight:600;direction:ltr;unicode-bidi:isolate;text-align:start}
+.parameter-finder .pf-clamping-drawing{max-width:840px;margin:12px 0}
+.parameter-finder .pf-clamping-values{max-width:840px;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.parameter-finder .pf-clamping-guide .pf-note{max-width:840px;margin:8px 0}
+.parameter-finder .pf-clamping-guide .pf-warning[hidden]{display:none!important}
+@media(max-width:480px){.parameter-finder .pf-clamping-values div{padding:8px}.parameter-finder .pf-clamping-values dd{font-size:16px}.parameter-finder .pf-clamping-values dt{font-size:11px}}

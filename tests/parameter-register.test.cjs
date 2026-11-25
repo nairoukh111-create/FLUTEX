@@ -1,5 +1,5 @@
 const test=require('node:test');const assert=require('node:assert/strict');const fs=require('node:fs');const path=require('node:path');const vm=require('node:vm');
-const {parseDimension,payload,matchesResponse}=require('../assets/js/parameter-finder.v6.js');
+const {parseDimension,payload,matchesResponse,colletOptions,clampingSketch}=require('../assets/js/parameter-finder.v6.js');
 const expected=[[[10,20,10,120],[6500,3.6,234,0.036,204.2,0.5,10]],[[10,20,10,75],[10000,5,500,0.05,314.16,1,10]],[[8,32,8,75],[12000,3.5,420,0.035,301.59,1,8]],[[6,25,6,60],[10000,3,300,0.03,188.5,1,6]],[[6,22,6,60],[10000,3.5,350,0.035,188.5,1,6]],[[6,18,8,60],null],[[6,14,8,60],[12000,4,480,0.04,226.19,1,6]],[[5,14,8,80],[8000,4,320,0.04,125.66,1,5]],[[5,22,8,80],null],[[5,16,5,48],[12000,3.5,420,0.035,188.5,1,5]],[[4,14,8,60],[12000,2.5,300,0.025,150.8,0.5,4]],[[4,14,4,60],[12000,2.5,300,0.025,150.8,0.5,4]]];
 const fields=["diameter","fluteLength","shankDiameter","overallLength"];const application={"toolMaterial":"carbide","flutes":"1","workpiece":"al6063-t6-profile","cooling":"mql-external"};const alternatives={"toolMaterial":["carbide","hss","other"],"flutes":["1","2","3","4","other"],"workpiece":["al6063-t6-profile","al6061","al6082","other"],"cooling":["mql-external","flood","dry","other"]};const slotApplication={"toolMaterial":"carbide","flutes":"1","workpiece":"al6063-t6-profile","cooling":"mql-external","operation":"full-slot-shallow","entry":"open-edge"};
 const data=d=>({...Object.fromEntries(fields.map((k,i)=>[k,d[i]])),...application});
@@ -13,4 +13,34 @@ test('operation and entry restrictions retained after removal from search form',
 
 for(const [page,note] of [["parameters.html","These cutting parameters are intended exclusively for FLUTEX® cutting tools. They do not apply to tools from other brands."],["ar/parameters.html","براميتر القطع هذه مخصصة حصريًا لريش FLUTEX®، ولا تنطبق على ريش العلامات التجارية الأخرى."]])test('brand-specific scope precedes lookup in '+page,()=>{const s=fs.readFileSync(path.join(__dirname,'..',page),'utf8');assert.equal((s.match(/data-flutex-tool-scope/g)||[]).length,1);assert.ok(s.includes(note));assert.ok(s.indexOf('data-flutex-tool-scope')<s.indexOf('<form class="pf-input-frame" data-parameter-finder'));});
 
-test('clamping guidance appears on trial and held tool results without altering parameters',async()=>{const {lookup}=await api();for(const lang of ['en','ar'])for(const dims of [[8,32,8,75],[10,20,10,120]]){const handlers={},elements=data(dims.map(String));const node=()=>({hidden:true,children:[],append(...args){this.children.push(...args)},replaceChildren(){this.children=[]}});const result=node(),status=node(),button=node();const form={elements:{namedItem:k=>({value:elements[k]})},querySelector:()=>button,reportValidity:()=>true,addEventListener:(k,f)=>handlers[k]=f};const doc={documentElement:{lang},querySelector:q=>q==='[data-parameter-finder]'?form:q==='[data-pf-result]'?result:status,createElement:node};vm.runInNewContext(fs.readFileSync(require.resolve('../assets/js/parameter-finder.v6.js'),'utf8'),{document:doc,AbortController,fetch:async(url,o)=>Response.json(lookup(JSON.parse(o.body)))});await handlers.submit({preventDefault(){}});assert.equal(result.hidden,false);const guide=result.children.find(x=>x.className==='pf-clamping-guide');assert.ok(guide);assert.ok(guide.children.some(x=>x.src==='/assets/diagrams/er-collet-insertion.v1.svg'));assert.ok(guide.children.some(x=>x.textContent?.includes('2/3 C')));assert.ok(!guide.children.some(x=>x.href));assert.equal(guide.children.some(x=>x.textContent?.includes('80 mm')||x.textContent?.includes('80 مم')),dims[3]===120);if(dims[3]===120){const frame=result.children.find(x=>x.className==='pf-parameter-frame');assert.ok(frame);assert.equal(frame.children[1].children.length,8);assert.equal(frame.children[1].children[7].children[1].textContent,'180');const ops=result.children.find(x=>x.className==='pf-operation-grid');assert.ok(ops.children[0].children.some(x=>x.textContent?.includes('180')));}else {const ops=result.children.find(x=>x.className==='pf-operation-grid');assert.ok(!ops.children[0].children.some(x=>x.textContent?.includes('180')));}}assert.ok(fs.existsSync(path.join(__dirname,'../assets/diagrams/er-collet-insertion.v1.svg')));});
+
+test('ER options respect shank range and full-length engagement; nominal dimensions and drawing',()=>{
+ const p=data([10,20,10,120]);const options=colletOptions(p);
+ assert.deepEqual(options.map(o=>[o.size,o.A,o.B,o.C]),[[16,27.5,92.5,27.5],[20,31.5,88.5,31.5],[25,34,86,34],[32,40,80,40],[40,46,74,46]]);
+ for(const [dims] of expected){const p=data(dims);const opts=colletOptions(p);assert.ok(opts.length>0);for(const o of opts){assert.equal(o.A,o.C);assert.equal(o.A+o.B,p.overallLength);assert.ok(o.B>=p.fluteLength);const svg=clampingSketch(p,o);assert.match(svg,/<svg/);assert.match(svg,/<polygon/);assert.ok(svg.includes('OAL '+p.overallLength+' mm'));assert.ok(svg.includes('ER '+o.size));assert.ok(svg.includes('FL '+p.fluteLength));assert.ok(svg.includes('B '+o.B));}}
+ assert.deepEqual(colletOptions(data([10,20,10,40])),[]);
+ assert.equal(clampingSketch(p,{...options[0],A:100}),'');
+});
+test('dynamic clamping guide on released and held results; switching ER updates sketch and warns on unverified plunge',async()=>{
+ const {lookup}=await api();
+ for(const lang of ['en','ar'])for(const dims of [[8,32,8,75],[6,18,8,60],[10,20,10,120]]){
+ const handlers={},elements=data(dims.map(String));const node=()=>({hidden:true,children:[],append(...args){this.children.push(...args)},replaceChildren(){this.children=[]}});
+ const result=node(),status=node(),button=node();
+ const form={elements:{namedItem:k=>({value:elements[k]})},querySelector:()=>button,reportValidity:()=>true,addEventListener:(k,f)=>handlers[k]=f};
+ const doc={documentElement:{lang},querySelector:q=>q==='[data-parameter-finder]'?form:q==='[data-pf-result]'?result:status,createElement:node};
+ vm.runInNewContext(fs.readFileSync(require.resolve('../assets/js/parameter-finder.v6.js'),'utf8'),{document:doc,AbortController,fetch:async(url,o)=>Response.json(lookup(JSON.parse(o.body)))});
+ await handlers.submit({preventDefault(){}});assert.equal(result.hidden,false);
+ const guide=result.children.find(x=>x.className==='pf-clamping-guide');assert.ok(guide);
+ const select=guide.children.find(x=>x.className==='pf-condition').children[0];
+ const drawing=guide.children.find(x=>x.className==='pf-clamping-drawing');
+ const values=guide.children.find(x=>x.className==='pf-values pf-clamping-values');
+ const opts=colletOptions(data(dims));assert.equal(select.children.length,opts.length);
+ const initial=dims[3]===120?'32':String(opts[0].size);assert.equal(select.value,initial);assert.ok(drawing.innerHTML.includes('ER '+initial));
+ const originalFrame=result.children.find(x=>x.className==='pf-parameter-frame');if(dims[3]===120)assert.equal(originalFrame.children[1].children[7].children[1].textContent,'180');
+ const before=drawing.innerHTML;const alt=opts.find(x=>String(x.size)!==initial);
+ if(alt){select.value=String(alt.size);select.onchange();assert.notEqual(drawing.innerHTML,before);assert.ok(drawing.innerHTML.includes('ER '+alt.size));assert.equal(values.children[1].children[1].textContent,String(alt.B)+' mm');}
+ assert.ok(!result.children.some(x=>x.className==='pf-operation-grid'));
+ const frame=result.children.find(x=>x.className==='pf-parameter-frame');
+ if(dims[3]===120){assert.equal(frame.children[1].children.length,8);assert.equal(frame.children[1].children[7].children[1].textContent,'—');assert.ok(guide.children.find(x=>x.className==='pf-warning').textContent.includes('180'));select.value='32';select.onchange();assert.equal(frame.children[1].children[7].children[1].textContent,'180');}else if(dims[1]===18){assert.equal(frame,undefined);}else assert.equal(frame.children[1].children.length,7);
+ }
+});
