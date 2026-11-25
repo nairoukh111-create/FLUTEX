@@ -8,10 +8,31 @@ const RECORDS = [
       120
     ],
     "name": "Carbide End Mill – 1F, Ø10 × 20 × Ø10 × 120 mm",
-    "application": null,
-    "release": "contact",
-    "values": null,
-    "revision": "2026-11-25-r05"
+    "application": {
+      "toolMaterial": "carbide",
+      "flutes": "1",
+      "workpiece": "al6063-t6-profile",
+      "cooling": "mql-external",
+      "operation": "full-slot-shallow",
+      "entry": "open-edge"
+    },
+    "release": "initial-trial",
+    "values": [
+      6500,
+      3.6,
+      234,
+      0.036,
+      204.2,
+      0.5,
+      10
+    ],
+    "revision": "2026-11-25-r06",
+    "plungeTrial": {
+      "feed": 180,
+      "status": "conditional-trial",
+      "insertion": 40,
+      "stickOut": 80
+    }
   },
   {
     "dimensions": [
@@ -306,7 +327,7 @@ export function lookup(input){
  if(!hit)return {status:'not-found'};
  if(!Object.keys(SUPPORTED).every(k=>!(k in input)||input[k]===SUPPORTED[k]))return {status:'unsupported'};
  if(hit.release!=='initial-trial'||!hit.application||!Object.keys(hit.application).every(k=>!(k in input)||input[k]===hit.application[k]))return {status:'contact',dimensions:hit.dimensions,name:hit.name};
- return {status:'trial',dimensions:hit.dimensions,name:hit.name,application:hit.application,revision:hit.revision,values:hit.values};
+ return {status:'trial',dimensions:hit.dimensions,name:hit.name,application:hit.application,revision:hit.revision,values:hit.values,...(hit.plungeTrial?{plungeTrial:hit.plungeTrial}:{})};
 }
 function json(body,status=200){return new Response(JSON.stringify(body),{status,headers:{'content-type':'application/json; charset=utf-8','cache-control':'no-store','x-content-type-options':'nosniff'}});}
 export async function onRequest({request}){
