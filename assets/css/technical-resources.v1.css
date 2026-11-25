@@ -9,3 +9,14 @@
 .formula { display: block; direction: ltr; text-align: start; padding: 16px; margin: 16px 0; background: var(--paper-2); font-size: 18px; white-space: normal; }
 .resource-copy a { text-decoration: underline; text-underline-offset: 3px; }
 @media(max-width: 760px) { .calculator-grid { grid-template-columns: 1fr; } .calculator-card { padding: 22px; } }
+
+/* Cutting parameter register; scoped to the existing technical resource pages. */
+.parameter-registry .calculator-card{max-width:none}
+.parameter-registry .parameter-warning{border-inline-start:4px solid var(--accent,#FBE12A);padding-inline-start:14px;line-height:1.65}
+.parameter-registry .parameter-table-scroll{max-width:100%;overflow-x:auto;margin:16px 0}
+.parameter-registry .parameter-table{border-collapse:collapse;width:100%;min-width:860px;font-size:14px;text-align:start}
+.parameter-registry .parameter-table th,.parameter-registry .parameter-table td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:start;vertical-align:top}
+.parameter-registry .parameter-table thead{background:var(--paper-2);font-weight:700}
+.parameter-registry .parameter-table tbody th{font-weight:600;min-width:200px}
+.parameter-registry [hidden]{display:none!important}
+.parameter-registry .parameter-footnote{font-size:14px;line-height:1.65}
