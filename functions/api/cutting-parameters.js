@@ -295,15 +295,17 @@ const RECORDS = [
 const DIMENSIONS=["diameter","fluteLength","shankDiameter","overallLength"];
 const OPTIONS={"toolMaterial":["carbide","hss","other"],"flutes":["1","2","3","4","other"],"workpiece":["al6063-t6-profile","al6061","al6082","other"],"cooling":["mql-external","flood","dry","other"],"operation":["full-slot-shallow","side-milling","drilling","other"],"entry":["open-edge","ramp","plunge","other"]};
 const SUPPORTED={"toolMaterial":"carbide","flutes":"1","workpiece":"al6063-t6-profile","cooling":"mql-external","operation":"full-slot-shallow","entry":"open-edge"};
-const KEYS=[...DIMENSIONS,...Object.keys(OPTIONS)];
+const SEARCH_OPTIONS={"toolMaterial":["carbide","hss","other"],"flutes":["1","2","3","4","other"],"workpiece":["al6063-t6-profile","al6061","al6082","other"],"cooling":["mql-external","flood","dry","other"]};
+const KEYS=[...DIMENSIONS,...Object.keys(SEARCH_OPTIONS)];
+const LEGACY_KEYS=[...DIMENSIONS,...Object.keys(OPTIONS)];
 const index=new Map(RECORDS.map(record=>[record.dimensions.join('x'),record]));
 export function lookup(input){
- if(!input||typeof input!=='object'||Array.isArray(input)||Object.keys(input).length!==KEYS.length||!KEYS.every(k=>Object.prototype.hasOwnProperty.call(input,k))||!DIMENSIONS.every(k=>typeof input[k]==='number'&&Number.isFinite(input[k])&&input[k]>0&&input[k]<=1000)||!Object.keys(OPTIONS).every(k=>OPTIONS[k].includes(input[k])))return {status:'invalid'};
+ if(!input||typeof input!=='object'||Array.isArray(input)||!([KEYS,LEGACY_KEYS].some(keys=>Object.keys(input).length===keys.length&&keys.every(k=>Object.prototype.hasOwnProperty.call(input,k))))||!DIMENSIONS.every(k=>typeof input[k]==='number'&&Number.isFinite(input[k])&&input[k]>0&&input[k]<=1000)||!Object.keys(OPTIONS).every(k=>!(k in input)||OPTIONS[k].includes(input[k])))return {status:'invalid'};
  if(input.fluteLength>=input.overallLength)return {status:'invalid'};
  const hit=index.get(DIMENSIONS.map(k=>input[k]).join('x'));
  if(!hit)return {status:'not-found'};
- if(!Object.keys(SUPPORTED).every(k=>input[k]===SUPPORTED[k]))return {status:'unsupported'};
- if(hit.release!=='initial-trial'||!hit.application||!Object.keys(hit.application).every(k=>input[k]===hit.application[k]))return {status:'contact',dimensions:hit.dimensions,name:hit.name};
+ if(!Object.keys(SUPPORTED).every(k=>!(k in input)||input[k]===SUPPORTED[k]))return {status:'unsupported'};
+ if(hit.release!=='initial-trial'||!hit.application||!Object.keys(hit.application).every(k=>!(k in input)||input[k]===hit.application[k]))return {status:'contact',dimensions:hit.dimensions,name:hit.name};
  return {status:'trial',dimensions:hit.dimensions,name:hit.name,application:hit.application,revision:hit.revision,values:hit.values};
 }
 function json(body,status=200){return new Response(JSON.stringify(body),{status,headers:{'content-type':'application/json; charset=utf-8','cache-control':'no-store','x-content-type-options':'nosniff'}});}
