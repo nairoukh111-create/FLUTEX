@@ -1,0 +1,15 @@
+/* Shared primary navigation; preserve the existing mobile toggle and RFQ action. */
+.site-header .nav-links a{white-space:nowrap}
+@media(min-width:1101px){
+.site-header .nav{gap:20px}
+.site-header .nav-links{gap:22px}
+.site-header .brand,.site-header .nav-actions{flex-shrink:0}
+}
+@media(min-width:901px) and (max-width:1100px){
+.site-header .nav{min-height:68px}
+.site-header .brand{width:160px}
+.site-header .mobile-toggle{display:block}
+.site-header .nav-actions .btn,.site-header .search-button-label{display:none}
+.site-header .nav-links{display:none;position:absolute;left:0;right:0;top:68px;padding:18px 20px 24px;flex-direction:column;align-items:flex-start;background:#fbe12a;border-bottom:1px solid rgba(11,13,15,.12);box-shadow:0 16px 30px rgba(0,0,0,.06)}
+.site-header .nav-links.open{display:flex}
+}

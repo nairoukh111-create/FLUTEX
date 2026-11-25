@@ -38,6 +38,20 @@ def fetch(url):
             row['canonical']=doc.xpath('//link[@rel="canonical"]/@href')
             if row['canonical']!=[url]:row['errors'].append('Delivered canonical mismatch')
             if not doc.xpath('//main'):row['errors'].append('No delivered main')
+            from urllib.parse import urlparse
+            pathname = urlparse(url).path
+            prefix = '/ar' if pathname.startswith('/ar/') else ''
+            nav = doc.xpath('//header[contains(concat(" ",normalize-space(@class)," ")," site-header ")]//nav[contains(concat(" ",normalize-space(@class)," ")," nav-links ")]/a')
+            hrefs = [a.get('href') for a in nav]
+            target = prefix + '/parameters'
+            if hrefs.count(target) != 1 or prefix+'/products' not in hrefs or hrefs.index(target) != hrefs.index(prefix+'/products')+1:
+                row['errors'].append('Delivered cutting parameters navigation missing or out of order')
+            else:
+                anchor = nav[hrefs.index(target)]
+                expected = 'براميتر القطع' if prefix else 'Cutting Parameters'
+                if anchor.text_content().strip() != expected or (anchor.get('aria-current') == 'page') != (pathname == target):
+                    row['errors'].append('Delivered cutting parameters navigation label or active state mismatch')
+
             if any('noindex' in x.lower() for x in doc.xpath('//meta[@name="robots"]/@content')):row['errors'].append('Noindex meta')
             row['analytics_beacon']='static.cloudflareinsights.com/beacon.min.js' in raw
             for script in doc.xpath('//script[@type="application/ld+json"]/text()'):json.loads(script)
