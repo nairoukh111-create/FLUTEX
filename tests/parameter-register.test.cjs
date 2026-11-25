@@ -36,10 +36,11 @@ test('dynamic clamping guide on released and held results; switching ER updates 
  const values=guide.children.find(x=>x.className==='pf-values pf-clamping-values');
  const opts=colletOptions(data(dims));assert.equal(select.children.length,opts.length);
  const initial=dims[3]===120?'32':String(opts[0].size);assert.equal(select.value,initial);assert.ok(drawing.innerHTML.includes('ER '+initial));
+ const originalFrame=result.children.find(x=>x.className==='pf-parameter-frame');if(dims[3]===120)assert.equal(originalFrame.children[1].children[7].children[1].textContent,'180');
  const before=drawing.innerHTML;const alt=opts.find(x=>String(x.size)!==initial);
  if(alt){select.value=String(alt.size);select.onchange();assert.notEqual(drawing.innerHTML,before);assert.ok(drawing.innerHTML.includes('ER '+alt.size));assert.equal(values.children[1].children[1].textContent,String(alt.B)+' mm');}
  assert.ok(!result.children.some(x=>x.className==='pf-operation-grid'));
  const frame=result.children.find(x=>x.className==='pf-parameter-frame');
- if(dims[3]===120){assert.equal(frame.children[1].children.length,8);assert.equal(frame.children[1].children[7].children[1].textContent,'180');assert.ok(guide.children.find(x=>x.className==='pf-warning').textContent.includes('180'));}else if(dims[1]===18){assert.equal(frame,undefined);}else assert.equal(frame.children[1].children.length,7);
+ if(dims[3]===120){assert.equal(frame.children[1].children.length,8);assert.equal(frame.children[1].children[7].children[1].textContent,'—');assert.ok(guide.children.find(x=>x.className==='pf-warning').textContent.includes('180'));select.value='32';select.onchange();assert.equal(frame.children[1].children[7].children[1].textContent,'180');}else if(dims[1]===18){assert.equal(frame,undefined);}else assert.equal(frame.children[1].children.length,7);
  }
 });
