@@ -1,7 +1,7 @@
 (() => {
 'use strict';
 const FIELDS=["diameter","fluteLength","shankDiameter","overallLength"];
-function parseDimension(value){const s=String(value).trim().replace(/[٠-٩۰-۹]/g,c=>String('٠١٢٣٤٥٦٧٨٩'.includes(c)?'٠١٢٣٤٥٦٧٨٩'.indexOf(c):'۰۱۲۳۴۵۶۷۸۹'.indexOf(c))).replace(/[٫,]/g,'.');if(!/^\\d+(?:\\.\\d+)?$/.test(s))return null;const n=Number(s);return Number.isFinite(n)&&n>0&&n<=1000?n:null;}
+function parseDimension(value){const s=String(value).trim().replace(/[٠-٩۰-۹]/g,c=>String('٠١٢٣٤٥٦٧٨٩'.includes(c)?'٠١٢٣٤٥٦٧٨٩'.indexOf(c):'۰۱۲۳۴۵۶۷۸۹'.indexOf(c))).replace(/[٫,]/g,'.');if(!/^[0-9]+(?:[.][0-9]+)?$/.test(s))return null;const n=Number(s);return Number.isFinite(n)&&n>0&&n<=1000?n:null;}
 function payload(values){const p={};for(const k of FIELDS){const n=parseDimension(values[k]);if(n===null)return null;p[k]=n;}return p;}
 function matchesResponse(data,p){return Array.isArray(data?.dimensions)&&data.dimensions.length===4&&FIELDS.every((k,i)=>data.dimensions[i]===p[k]);}
 if(typeof module!=='undefined'&&module.exports)module.exports={parseDimension,payload,matchesResponse};
