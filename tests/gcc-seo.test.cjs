@@ -46,3 +46,12 @@ test('GCC and UAE region pages are in sitemap, internal search and site navigati
   assert.ok(html.includes('href="/'+(file.startsWith('ar/')?'ar/':'')+'gcc-industrial-consumables"'),file);
  }
 });
+
+test('Home and product entry pages present GCC-wide supply rather than Saudi-only positioning',()=>{
+ for(const [file,link,phrase] of [['index.html','/gcc-industrial-consumables','Industrial Supply Across the GCC'],['ar/index.html','/ar/gcc-industrial-consumables','التوريد الصناعي لجميع دول الخليج']]){
+  const s=read(file);const hero=s.match(/<div class="hero-actions">[\s\S]*?<\/div>/)[0];
+  assert.ok(hero.includes('href="'+link+'"'),file);assert.ok(hero.includes(phrase),file);assert.ok(!hero.includes('saudi-arabia-industrial-supply'),file);
+ }
+ assert.ok(read('products.html').includes('Industrial supply across all six GCC countries'));
+ assert.ok(read('ar/products.html').includes('توريد صناعي لجميع دول مجلس التعاون الخليجي'));
+});
